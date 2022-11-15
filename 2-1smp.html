@@ -7,11 +7,20 @@
 
 <body>
     <script>
-        //alert("ようこそJavaScriptの世界へ")
+        //alert("ようこそJavaScriptの世界へ")短めのコメントアウト
         /*
         alert(4+5);
-        alert(10-2);
+        alert(10-2);長めのコメントアウト
         */
+    </script>
+    <script>
+        document.write("<h1>ようこそJavaScriptの世界へ</h1>");
+        document.write("<h1>","ようこそJavaScriptの世界へ","</h1>");//引数ごとに分割
+
+        document.title = "プロパティのテスト" //タブの名前 書式（オブジェクト.プロパティ = "プロパティ名"）
+        document.body.style.color = "green"; //documentの色
+        document.body.style.backgroundColor = "gray" //背景色
+        alert(documet.title);
     </script>
 </body>
 </html>
