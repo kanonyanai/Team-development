@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset = "utf-8">
+    <title>第四章</title>
+</head>
+<body>
+    <script>
+        var score;
+        var refValue = 80;
+        var count;
+        score = prompt("点数を入力してください。",80);
+        count = prompt("挑戦回数を入力してください。",1)
+        if(refValue < score && count == 1){
+            document.write("<h1>一発合格です！</h1>");
+        }else if(refValue <= score){
+            document.write("<h1>合格です</h1>");
+        }else if(refValue > score){
+            document.write("<h1>不合格です</h1>");
+        }else{
+            document.write("<h1>数字を入力してください。</h1>");
+        }
+        for(i = 0;i < 20; i++){
+            document.write(i);
+        }
+    </script>
+    <table>
+        <script>
+            
+        </script>
+    </table>
+</body>
+</html>
