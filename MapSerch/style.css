@@ -1,0 +1,12 @@
+#header {
+    background-color: darkblue;
+    padding: 3px;
+    width: 1195px;
+    font-family: Meriyo UI;
+    font-size: 14px;
+    color: white;
+}
+#target {
+  width: 1200px;
+  height: 700px;
+}
