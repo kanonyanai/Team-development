@@ -42,9 +42,19 @@
 
         //マップ表示
         map = new google.maps.Map(target, {
-          center: centerp,
           zoom: 16,
-          mapId: '6f69c882c9ca3496'
+          mapId: '6f69c882c9ca3496',
+          center: centerp,
+          //地図の表示範囲選択
+          restriction: {
+		    latLngBounds: {
+			    north: 38.370938,
+			    south: 38.158939,
+			    west: 140.590667,
+			    east: 141.028747
+		    },
+		strictBounds: false
+	}
         });
 
         // 検索実行ボタンが押下されたとき
