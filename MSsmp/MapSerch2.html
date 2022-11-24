@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Placeサーチ</title>
+    <style>
+        #header {
+            background-color: darkblue;
+            padding: 3px;
+            width: 1195px;
+            font-family: Meriyo UI;
+            font-size: 14px;
+            color: white;
+        }
+
+        #map {
+            width: 1200px;
+            height: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"><b>Google Maps検索機能</b></div>
+    <div>施設名称検索 （例：仙台駅、東北電子専門学校）</div>
+
+    <input type="text" id="pac-input"><button id="search">検索実行</button>
+    <button id="clear">結果クリア</button>
+    <div id="map"></div>
+    <script>
+        let geocoder
+        let map
+        function initMap() {
+
+            geocoder = new google.maps.Geocoder()
+
+            const SENDAI_BOUNDS = {
+                north: 38.370938,
+                south: 38.158939,
+                west: 140.590667,
+                east: 141.028747
+            };
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 38.260260, lng: 140.879723 },
+                zoom: 16,
+                mapId: '6f69c882c9ca3496',
+                latLngBounds: SENDAI_BOUNDS,
+                strictBounds: false
+            });
+            // 予測変換
+            const input = document.getElementById("pac-input");
+            const autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.bindTo("bounds", map);
+        }
+        //ピンの表示機能
+        function codeAddress() {
+            let inputAddress = document.getElementById('pac-input').value.addEventListener('click', function (){
+
+            var place = document.getElementById('pac-input').value;
+            var geocoder = new google.maps.Geocoder();      // geocoderのコンストラクタ
+            geocoder.geocode({address: place} , function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+
+                    var bounds = new google.maps.LatLngBounds();
+
+                    for (var i in results) {
+                        if (results[0].geometry) {
+                            // 緯度経度を取得
+                            var latlng = results[0].geometry.location;
+                            // 住所を取得
+                            var address = results[0].formatted_address;
+                            // 検索結果地が含まれるように範囲を拡大
+                            bounds.extend(latlng);
+                            // マーカーのセット
+                            setMarker(latlng);
+                            // マーカーへの吹き出しの追加
+                            setInfoW(place, latlng, address);
+                            // マーカーにクリックイベントを追加
+                            markerEvent();
+                        }
+                    }
+                } else {
+                    alert('該当する結果がありませんでした：' + status);
+                }
+            });
+        });
+    }
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyD_Gakxu8FkBHY5fuXiJWq7smmLFXjUctg&callback=initMap&libraries=places&v=weekly"
+        async defer></script>
+</body>
+
+</html>
