@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Placeサーチ</title>
+</head>
+
+<body>
+    <h1>
+        Google検索
+    </h1>
+    <div>施設名称検索 （例：仙台駅、東北電子専門学校）</div>
+    <input type="text" id="in_word"><button id="search">検索実行</button>
+    <button id="clear">結果クリア</button>
+    <div id="target"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyD_Gakxu8FkBHY5fuXiJWq7smmLFXjUctg&callback=initMap">
+
+    </script>
+
+    <script>
+        var map;
+        var maker;
+        var infoWindow;
+        function initMap() {
+
+            geocoder = new google.maps.Geocoder()
+
+            //表示範囲の設定
+            const SENDAI_BOUNDS = {
+                north: 38.370938,
+                south: 38.158939,
+                west: 140.590667,
+                east: 141.028747
+            };
+            //地図の設定
+            var target = document.getElementById('target');
+            map = new google.maps.Map(target, {
+                center: { lat: 38.260260, lng: 140.879723 },
+                zoom: 16,
+                mapId: '6f69c882c9ca3496',
+                latLngBounds: SENDAI_BOUNDS,
+                strictBounds: false
+            });
+
+            //対応するテキストボックス
+            const input = document.getElementById('in_word');
+            //検索優先領域
+            var LatLngFrom = new google.maps.LatLng(38.370938, 140.590667);
+            var LatLngTo = new google.maps.LatLng(38.158939, 141.028747);
+            var bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
+            //Autocompleteのオプションの設定
+            var options = {
+                types: ['(regions)'],                      // 検索タイプ
+                bounds: bounds,                            // 範囲優先検索
+                componentRestrictions: { country: 'jp' }     // 日本国内の住所のみ
+            };
+            const autocomplete = new google.maps.places.Autocomplete(input, options);
+            autocomplete.bindTo("bounds", map);
+
+            //検索ボタン押した後の処理
+        }
+
+    </script>
+</body>
+
+</html>
