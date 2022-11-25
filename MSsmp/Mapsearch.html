@@ -34,6 +34,7 @@
       var marker;
       var infoWindow;
 
+
       function initMap() {
 
         //マップ初期表示の位置設定
@@ -58,6 +59,15 @@
           strictBounds: false
         }
       });
+
+        const input = document.getElementById("keyword");
+        const autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo("bounds", map);
+        
+      };
+
+
+
 
         // 検索実行ボタンが押下されたとき
         document.getElementById('search').addEventListener('click', function() {
@@ -103,14 +113,12 @@
           deleteMakers();
         });
 
-      }
-
       // マーカーのセットを実施する
       function setMarker(setplace) {
         // 既にあるマーカーを削除
         deleteMakers();
 
-        var iconUrl = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+        var iconUrl = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
           marker = new google.maps.Marker({
             position: setplace,
             map: map,
