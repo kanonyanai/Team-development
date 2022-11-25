@@ -19,8 +19,8 @@ class DecimalEncoder(json.JSONEncoder):
 def All_handler(event, context):
 #関数の名前は「All_handler」とする　event引数＝関数に渡される値　context引数＝実行環境の情報
 	try:
-		# accountbook テーブルから全データを参照する。
-		table = dynamodb.Table('持ってきたい情報が載っているDBの名前')
+		# テーブルから全データを参照する。
+		table = dynamodb.Table('持ってきたい情報が載っているDBのテーブルの名前')
 		response = table.scan()
 
 		# 結果を返す
