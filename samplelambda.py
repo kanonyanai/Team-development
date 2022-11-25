@@ -8,7 +8,7 @@ def samplelambda (event, context):
  x = int(event["x"]) #渡された値の取得
  y = int(event["y"])
 
- print("x=" + str(x)) #print関数で表示する。strかんすうで数値を文字列に
+ print("x=" + str(x)) #print関数で表示する。str関数で数値を文字列に
  print("y=" + str(y))
 
  answer = {"result" : x/y}
