@@ -5,16 +5,24 @@ import json
 import boto3
 import decimal
 
+from boto3.dynamodb.conditions import Key	
+#Keyオブジェクトを利用できるようにする
+
 # DynamoDBオブジェクト
-dynamodb = boto3.resource('dynamodb')
+dynamodb = boto3.resource('dynamodb') #アクセスのためのオブジェクト取得
+table = dynamodb.Table('持ってきたい情報が載っているDBのテーブルの名前')
+ #指定テーブルへのアクセス
 
-class DecimalEncoder(json.JSONEncoder):
-    def default(self, obj):
-       if isinstance(obj, decimal.Decimal):
-           return int(obj)
-       return json.JSONEncoder.default(self, obj)
+#テーブルスキャン
+def DBscanm_scan()::
+	scanData = table.scan()
+	items = scanDta['Items']
+	print(items)    #レコード一覧を表示
+	return scanData
 
-#secimalをjsonで返そうとするとダメなのでエンコードする
+
+
+
 
 def All_handler(event, context):
 #関数の名前は「All_handler」とする　event引数＝関数に渡される値　context引数＝実行環境の情報
