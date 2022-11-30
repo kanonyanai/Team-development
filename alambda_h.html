@@ -1,0 +1,44 @@
+<!--ボタンにlambda起動のトリガーを仕込むためのhtml-->
+
+<!doctype html>
+<html>
+ <head>
+  
+  <script type="text/javascrip" src="パス/jquery-3.4.1.min.js"></script>
+  <!-- jquery(少ないコードで記述できるようにするライブラリ。)
+       パスの部分には実際にjsファイルを保存した場所を記述-->
+  
+  <script>
+  function onSubmit(){ <!--送信ボタンが押されたときに実行する処理-->
+   
+   ver data = {
+    <!--送信する情報-->
+   };
+   
+   $.post('apigatewayのエンドポイント',
+    json.stringify(data)
+    ).done(function (data, textStatus, jqXHR){
+    <!--成功-->
+    
+    alert('送信完了しました');
+    $('「送信する情報」のうちの一つ').val(''); <!--情報の数だけ追加-->
+     
+     }).done(function (data, textStatus, jqXHR){
+      ver err = [];
+      try{
+       err = $.parseJSON(jqXHR.responeText);
+       } catch(e){
+       }
+       alert('エラーが発生しました。' + err['error']);
+    });
+  }
+  
+  </script>
+  
+</head>
+ 
+ <body>
+    <!--head内に記述する-->
+ </body>
+
+ </html>
