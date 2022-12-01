@@ -9,22 +9,22 @@
        パスの部分には実際にjsファイルを保存した場所を記述-->
   
   <script>
-  function onSubmit(){ <!--送信ボタンが押されたときに実行する処理-->
+  function onSubmit(){ 
    
-   ver data = {
-    <!--送信する情報-->
+   var data = {
+    //送信する情報
    };
    
    $.post('apigatewayのエンドポイント',
     json.stringify(data)
     ).done(function (data, textStatus, jqXHR){
-    <!--成功-->
+  // 成功
     
     alert('送信完了しました');
     $('「送信する情報」のうちの一つ').val(''); <!--情報の数だけ追加-->
      
      }).done(function (data, textStatus, jqXHR){
-      ver err = [];
+      var err = [];
       try{
        err = $.parseJSON(jqXHR.responeText);
        } catch(e){
