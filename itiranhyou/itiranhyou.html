@@ -1,10 +1,12 @@
 <!--ボタンにlambda起動のトリガーを仕込むためのhtml(すべての情報を取ってくる)-->
 <!--この場合、ホーム画面にはチェックボックスと決定ボタンのみ。新たなページに一覧表を作成する-->
 
-<!doctype html>
-
+<!Doctype html>
 <html>
     <head>
+        <title>表ページ</title>
+        <link rel="stylesheet" href="itiranhyou.css"/>
+        
   
         <script type="text/javascript">
             $('#btnSend').on('click', function() { // ボタンをクリックしたときに実行(btnSendのidを持つパーツがクリックされたとき)
@@ -36,28 +38,30 @@
             });
         </script>
 
-         <link rel="styleseet" href="/itiranhyou.css">
+       
             
     </head>
  
  <body>
-        
-
-                    <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse">
                     
-                        <div class="container">
-                        <div class="daimei">
-                            <p>一覧</p>
-                        </div>
-                    </div>
-                    </nav>
+            <div class="container">
+             <div class="daimei">
+                <p>一覧</p>
+             </div>
+            </div>
+        
+        </nav>
                 
-                    <div class="container">
-                    <div class="card card-primary mb-3">
-                        <div class="card-header">
-                            <h5 class="card-title">サンプルフォーム</h5>
-                        </div>
-                        <table class="table table-striped" th:if="${items.size()}">
+                    
+        <div class="container">
+            <div class="card card-primary mb-3">
+                    <div class="card-header">
+                        <h5 class="card-title">すべての施設</h5>
+                    </div>
+                       
+            
+                    <table class="table table-striped" th:if="${items.size()}">
                             <thead>
                                 <tr>
                                     <th style="width: 20%">施設ID(例)</th>
@@ -66,20 +70,25 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody id='情報を取ってきたいDBの名前'>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="form-group row">
-                        <div class="offset-md-2 col-md-10">
-                            <button class="btn btn-secondary" onclick="location.href='ホーム画面へのURL'">戻る</button> 
-                            <!--戻るのはホーム画面に-->
-                        </div>
-                    </div>
+                            
+                             <tbody id='情報を取ってきたいDBの名前'></tbody>
+                   
+                    </table>
+                
+            </div>
+                    
+            <div class="form-group row">
+                <div class="offset-md-2 col-md-10">
+                    <button class="btn btn-secondary" onclick="location.href='ホーム画面へのURL'">戻る</button> 
+                    <!--戻るのはホーム画面に-->
                 </div>
+            </div>
+        
+        
+        </div>
+        
+        <link rel="styleseet" href="/itiranhyou.css">
 
-
-                <link rel="styleseet" href="/itiranhyou.css">
  </body>
 
- </html>
+</html>
