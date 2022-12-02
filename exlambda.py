@@ -7,7 +7,7 @@ from boto3.dynamodb.conditions import Key	            #Keyオブジェクトを�
 dynamodb = boto3.resource('dynamodb')	                #Dynamodbアクセスのためのオブジェクト取得
 table = dynamodb.Table("情報を取ってきたいDBの名前")	  #指定テーブルのアクセスオブジェクト取得
 
-# テーブルスキャン
+# テーブルの表示
 def operation_scan()::
     scanData = table.scan()	        #scan()メソッドでテーブル内をscan。一覧を取得
     items=scanData['Items']	        #応答からレコード一覧を抽出
