@@ -1,0 +1,16 @@
+
+#sampleTable2  th {
+    border : 1px solid #666;
+}
+
+#sampleTable2  td {
+    border : 1px solid #666;
+}
+
+.allNoDisplay2 tr:not(.colTitle) {
+    display: none;
+}
+
+.baby2        tr[baby]         {display: table-row;}
+  .kuruma2    tr[kuruma]     {display: table-row;}
+  .stuff2         tr[stuff]          {display: table-row;}
