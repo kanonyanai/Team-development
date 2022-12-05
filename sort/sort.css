@@ -11,6 +11,50 @@
     display: none;
 }
 
-.baby2        tr[baby]         {display: table-row;}
-  .kuruma2    tr[kuruma]     {display: table-row;}
-  .stuff2         tr[stuff]          {display: table-row;}
+.kbaby2    tr[kbaby]{
+    display: table-row;
+}
+  
+.kuruma2  tr[kuruma]{
+    display: table-row;
+}
+ 
+.knyutenok2   tr[knyutenok]{
+    display: table-row;
+}
+
+.ksheet2   tr[ksheet]{
+    display: table-row;
+}
+
+.dansang2   tr[dansang]{
+    display: table-row;
+}
+
+.babyroom2   tr[babyroom]{
+    display: table-row;
+}
+
+.kidsroom2   tr[kidsroom]{
+    display: table-row;
+}
+
+.omutu2   tr[omutu]{
+    display: table-row;
+}
+
+.kyukei2   tr[kyukei]{
+    display: table-row;
+}
+
+.tesuri2   tr[tesuri]{
+    display: table-row;
+}
+
+.osuto2   tr[osuto]{
+    display: table-row;
+}
+
+.kyugo2   tr[kyugo]{
+    display: table-row;
+}
