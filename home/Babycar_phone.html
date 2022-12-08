@@ -10,6 +10,12 @@
   <head>
     <meta charset="UTF-8">
     <title>ベビーカー・車椅子地図マップ</title>
+
+    <!--polyfillのインストール-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!--jsファイルの読み込み-->
+    <script src="./index.js"></script>
+
      
 
     <div class="h11">
@@ -32,6 +38,9 @@
           class="change_phone">スマホ用</button>       
       </div>
 
+      <!--検索機能でinputの内容追加-->
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
+
 
 
       <!--必ず入れる。idの名前は変えない！！！-->
@@ -52,16 +61,6 @@
 
       <!---------------ここまで--------------->
 
-      
-      <!--
-      <div>
-        <input type="submit" id="submit" value="検索">
-      </div>
-      
-      <div>        
-        <input type="text"  id="search" placeholder="施設名を入力">      
-      </div>     
-      -->
 
       <div>
         <input type="button" onclick="location.href='../opinion/opinion_phone.html'"
@@ -71,36 +70,13 @@
 
   </body>
 
-
-<!--------(API)使わない！！！-------->
-
-  
     <div id="map" ></div>
-    <script type="text/javascript">
-      function initMap() {
-          map = new google.maps.Map(document.getElementById("map"),{
-          zoom: 15,
-          center:{lat: 38.260247,lng: 140.879723},
-          mapId: '39f262e385f01678'
-        });
-      }
-      </script>
+
     <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Gakxu8FkBHY5fuXiJWq7smmLFXjUctg&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Gakxu8FkBHY5fuXiJWq7smmLFXjUctg&callback=initAutocomplete&libraries=places&v=weekly">
     </script>
 
-
-
-<!--
-<div id="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.6442637894493!2d140.8795500512312!3d38.26455579150149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a2821304050b1%3A0x13e04f5de76af222!2z5p2x5YyX6Zu75a2Q5bCC6ZaA5a2m5qCh!5e0!3m2!1sja!2sjp!4v1669859068104!5m2!1sja!2sjp"></iframe>
-</div>
--->
-
       <link rel="stylesheet" href="Babycar_phone.css">
-
-      <!--phoneの仮のcss指定-->
-      <!--<link rel="stylesheet" href="Babycar_phone.css">-->
 
     </form>
 
