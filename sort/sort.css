@@ -61,15 +61,20 @@
 
 
 .categori{
-    color: rgb(1, 145, 49);
+    color: rgb(1, 145, 49);                       /*カテゴリーの文字の色を変更*/
+}
+
+#ue{
+    border-style:none;                              /*一番上のセルの背景色を変更*/
+    background-color: rgb(239, 255, 238);    
 }
 
 #sorttable{
-    text-align: left;
-    font-size: 10px;
+    text-align: left;    /*文字を左詰め*/
+    font-size: 10px;    /*文字の大きさを指定*/
 
     width: 400px;
-    height: 800px;
+    height: 800px;         /*スクロールバーの表示(いらなければ消していい)*/
     display: block;
     overflow-y: scroll;
     overflow-x: scroll;
