@@ -213,46 +213,6 @@
 }
 
 
-/*検索ボタン*/
-
-/*#submit{
-
-    position:absolute;
-    top:13%;
-    right:3%;
-
-    /*width: 12%; /*--幅--*/
-    /*padding: 0.5%; /*--余白--*/
-    /*border-radius: 5px; /*--角丸--*/ 
-    /*font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size:medium;
-
-}*/
-
-
-
-/*施設名入力*/
-
-/*input[type="text"]{
-    
-   
-    position: absolute;
-    top:13%;
-    left: 16%;
-
-    text-align: center;
-    width: 67%; /*--幅--*/
-    /*padding: 0.5%; /*--余白--*/
-    /*border: solid 2px #cccccc; /*--ボーダー線--*/
-    /*border-radius: 5px; /*--角丸--*/ 
-    /*font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size: medium;
-   
-}*/
-
-
 /*ご意見ボタン*/
 
 input[type="button"]{
@@ -275,18 +235,6 @@ input[type="button"]{
 
       
 /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
-
-/*javasript用に使う内容*/
-/*#map{
-
-    top: 33%;
-    width: 100%;
-    bottom:33%;
-    /*height: 5%;*/
-   
-    /*position:absolute;
-
-  }*/
 
   #map{
 
