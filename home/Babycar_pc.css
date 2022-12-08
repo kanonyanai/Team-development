@@ -1,0 +1,351 @@
+/*---メモ---*/
+
+/*デスクトップ用をスマホ用の二つの画面を作成する。*/
+/*可変については考えなくてよい！！！！！*/
+
+/*文字、ボタンetcについて：PCは幅を変えたい(width)、高さは変えない(height)*/
+
+/*ディスプレイサイズに合わせて可変にする
+→vw:幅の何％か、vh:高さの何％か*/
+
+/*フォントサイズを可変にする関数
+→clamp関数…font-size: clamp(最小値, 推奨値, 最大値);*/
+
+
+/*h1タグ*/
+
+.h11{
+
+    position:absolute;
+    
+    top:0.1%;
+    right: 30%;
+    left: 30%;
+    
+
+    font-family:'游明朝 Medium', serif;
+    text-align:center;
+    font-weight:bolder;
+
+    /*↓お試しのサイズ*/
+    font-size:1vh;/*--高さの何％か--*/
+    /*font-size:1.5vw; --幅の何％か--*/
+    font-size:clamp(11px,1.8vw,20px);
+    
+    /*例）font-size:clamp(16px,2.9vw,32px); ←幅を変える*/
+    
+}
+
+/*h2タグ*/
+
+.h22{   
+    
+    position:absolute;
+    top: 8%;
+    right: 30%;
+    left: 30%;
+   
+    font-family:'游明朝 Medium', serif;
+    text-align:center;
+    font-weight:bolder;
+    
+    color:#3CB371;
+    font-family: '游明朝 Medium', serif;
+    /*↓お試しのサイズ*/
+    font-size:1vh;/*--高さの何％か--*/
+    /*font-size:1vw;　--幅の何％か--*/
+    font-size:clamp(10px,1vw,16px);
+    
+}
+
+/*切り替えボタン*/
+
+.change_pc{
+
+    position: absolute;
+    top: 3%;
+    right: 6%;
+
+    width: 5%; /*--幅--*/
+    padding: 0.5%; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    background-color:lavender;/*--背景色--*/
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size:small;
+}
+
+.change_phone{
+
+    position: absolute;
+    top: 3%;
+    right: 11.5%;
+
+    width: 5%; /*--幅--*/
+    padding: 0.5%; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    background-color:lavender;/*--背景色--*/
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size:small;
+}
+
+
+/*-----出発地-----*/
+
+/*出発地の文字*/
+
+#start{
+
+    position: absolute;
+    top: 14%;
+    left: 10%;
+
+    font-family:'游明朝 Medium', serif;
+    text-align:center;
+    
+    font-size:x-large;
+
+}
+
+/*出発地の入力するテキストボックス*/
+
+#startword{
+
+    position: absolute;
+    top: 16%;
+    left: 15%;
+
+    text-align: center;
+    width: 39%; /*--幅--*/
+    padding: 0.3%; /*--余白--*/
+    border: solid 2px #cccccc; /*--ボーダー線--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: large;
+
+}
+
+/*出発地の確定ボタン*/
+
+#startconfirm{
+
+    position: absolute;
+    top: 16%;
+    left: 55.5%;
+
+    width: 4%; /*--幅--*/
+    padding: 0.3%; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size:medium;
+
+}
+
+/*出発地のクリア*/
+
+#startclear{
+
+    position: absolute;
+    top: 16%;
+    left: 60%;
+
+
+    width: 4%; /*--幅--*/
+    padding: 0.3%; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: medium;
+
+}
+
+/*-----目的地-----*/
+
+/*目的地の文字*/
+
+#end{
+
+    position: absolute;
+    top: 20%;
+    left: 10%;
+
+    font-family:'游明朝 Medium', serif;
+    text-align:center;
+    
+    font-size:x-large;
+
+}
+
+/*目的地の入力するテキストボックス*/
+
+#endword{
+
+    position: absolute;
+    top: 22%;
+    left: 15%;
+
+    text-align: center;
+    width: 39%; /*--幅--*/
+    padding: 0.3%; /*--余白--*/
+    border: solid 2px #cccccc; /*--ボーダー線--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: large;
+}
+
+/*目的地の確定ボタン*/
+
+#endconfirm{
+
+    position: absolute;
+    top: 22%;
+    left: 55.5%;
+    
+    width: 4%; /*--幅--*/
+    padding: 0.3%; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size:medium;
+
+}
+
+/*目的地のクリア*/
+
+#endclear{
+
+    position: absolute;
+    top: 22%;
+    left: 60%;
+
+    width: 4%; /*--幅--*/
+    padding: 0.3%; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: medium;
+
+}
+
+
+/*検索ボタン*/
+
+/*#submit{
+
+    position:absolute;
+    top:16%;
+    left:23.5%;*/
+
+    /*width: 4%; /*--幅--*/
+    /*padding: 0.5%; /*--余白--*/
+    /*border-radius: 5px; /*--角丸--*/ 
+    /*font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: medium;
+
+}*/
+
+/*施設名入力*/
+
+/*#search{
+    
+   
+    position: absolute;
+    top:16%;
+    left: 7%;
+
+    /*text-align: center;
+    /*width: 15%; /*--幅--*/
+    /*padding: 0.3%; /*--余白--*/
+    /*border: solid 2px #cccccc; /*--ボーダー線--*/
+    /*border-radius: 5px; /*--角丸--*/ 
+    /*font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: large;
+    
+
+}*/
+
+/*ご意見ボタン*/
+
+input[type="button"]{
+
+    position:absolute;
+    bottom: 4%;
+    right: 8%;
+
+    text-align: center;
+    
+    width: 22%;
+    padding: 0.5%; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    background-color:lightgoldenrodyellow; /*--背景色--*/
+    font-family: '游明朝 Medium', serif;
+    font-weight:bolder;
+    font-size:large;
+
+}
+   
+
+/*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
+
+#map{
+
+    
+    width: 56%;
+    bottom: 5%;
+    height: 65%;
+    left: 8%;
+   
+    position:absolute;
+
+  }
+  
+
+  /*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
+
+  iframe {
+	width: 100%;
+	height: 100%;
+}
+
+
+ 
+
+/*@media screen and (min-width:481px) {
+	/* ここにパソコン版だけの記述 */
+	
+	/*input{
+		width	: 325px;
+		
+		right	: 17%;
+	}
+}*/
+
+
+/*スマホ対応化*/
+/*
+@media screen and (max-width:480px) {
+/*画面サイズが480px以下の場合（スマホ版）ここの記述が適用される*/
+
+	/*スマホ変換の時は以下二つは脳死で入れるべきコピペらしい*/
+	/* {
+		float: none;
+		position: static;
+	}
+	 
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	input{
+		width:400px;
+		right	: 1px;
+	}	
+}
+*/

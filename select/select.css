@@ -1,0 +1,181 @@
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+/*ホームページ名のところ-------------------------------------------------------------------------------------------------*/
+p{
+  text-align:center;
+  font-family: '游明朝 Medium', serif;
+
+}
+
+body{
+  
+	background-color:ghostwhite;
+}
+
+table th{/*table内のthに対して*/
+	padding:10px;
+}
+
+table td {/*table内のtdに対して*/
+  padding: 50px 10px;/*上下3pxで左右10px*/
+  width:600px
+  
+}
+
+/*上は全体--------------------------------------------------------------------------------------------------------*/
+
+.sumaho-waku .sumaho-moji, .sumaho-waku:after, .sumaho-waku:before {
+    max-width: 150px;/*スマホ幅の最大値*/
+    background-color: #111;/*スマホの色*/
+    color: #666;/*◎ボタンの色*/
+    display: block;
+}
+.sumaho-waku .sumaho-moji {
+    background-color: #fff;/*スマホ画面の背景色*/
+    border-left: 5px #111 solid;/*スマホの色*/
+    border-right: 5px #111 solid;/*スマホの色*/
+    height: 200px;/*スマホ画面の高さ*/
+    font-size:large;/*画面内のフォントサイズ*/
+    font-weight: bolder;
+    font-family:"HG明朝E";
+    width: 100%;
+    padding-top: 23%;
+    box-sizing: border-box;
+}
+.sumaho-waku:before, .sumaho-waku:after {
+    display: block;
+    text-align: center;
+    font-family: 'MS PGothic', sans-serif;
+    line-height: 1em;
+}
+.sumaho-waku:before {
+    content: '…';
+    font-size: 28px;
+    border-radius: 30px 30px 0 0;
+    height: 30px;
+}
+.sumaho-waku:after {
+    font-size: 50px;
+    content: "◎";
+    border-radius: 0px 0px 30px 30px;
+    height: 60px;
+}
+
+/*上はスマホアイコンa---------------------------------------------------------*/
+
+.stand {
+    margin-bottom: 30px;
+}
+
+.monitor {
+  width:100%;
+  height: 100px;
+  overflow:hidden;
+  border: solid 0.6em #333;
+  border-radius:.5em;
+  margin: 0 auto;
+  max-width: 400px;
+  padding:15% 0% 5% 0%;
+  background-color: white;
+  font-weight: bolder;
+  font-family:"HG明朝E";
+  font-size: larger;
+  padding-top: 23%;
+}
+
+.monitor img {
+  width: 100%;
+}
+
+.monitor::-webkit-scrollbar {
+      width: 15px;
+}
+.monitor::-webkit-scrollbar-thumb {
+  background: #666;
+}
+::-webkit-scrollbar-track {
+      background-color: #888;
+}
+
+.monitorbar {
+  position:relative;
+  margin:0 auto;
+  height: 35px;
+  width: 80px;
+  background: #333;
+}
+
+.monitorunder {
+  position:relative;
+  /*以下marginはモニター足部分の広さ*/
+  margin:0px 15px 0px 40px;
+  height: 15px;
+  width: 300px;
+  background: #333;
+  border-radius: 10px 10px 2px 2px;
+  filter: drop-shadow(0px 12px 5px #dcdcdc);
+}
+
+
+/*上はデスクトップpc風アイコン---------------------------------------------------*/
+
+/*PC画面は全画面に合わせているため画面幅を481px以上にするとレイアウトが狂う-------*/
+/*以下スマホ画面設定----------------------------------------------------------*/
+@media screen and (max-width:480px) { 
+	.monitorunder {
+	    height: 10px;
+	    width: 260px;
+	}
+	.monitorbar {
+	    height: 25px;
+	    width: 110px;
+	}
+	.monitor {
+	    height: 100px;
+	    border: solid 0.7em #333;
+	    
+	}
+
+  p{
+    font-weight:bolder;
+    font-size:xx-large;
+    margin: 0% 0% 0% 0%;
+    text-align: center;
+  }
+  .body{
+    margin-left: 10%;
+    max-width: 480px;
+    text-align: center;
+  }
+}
+
+/*以下pc画面設定*/
+@media screen and (min-width:481px) { 
+
+  /*主に画面の位置を設定している*/
+  body{
+  margin-top:1%;
+	margin-left:35%;
+	margin-right:65%;
+  }
+
+  p{
+    font-weight:bolder;
+    font-size:xxx-large;
+    margin: 0% 0% 0% 15%;
+    text-align: center;
+    width:max-content
+  }
+}
+
+/*上はpcで開いたかスマホで開いたかを画面幅で判定して、描画する画面を切り替える設定-----------------------------------*/
+
+.pctext{
+	font-size:30px;
+}
+
+.sptext{
+	font-size:30px;
+}
+
+/*上はアイコン横の文字----------------------------------------------------------*/
