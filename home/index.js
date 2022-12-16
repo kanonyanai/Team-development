@@ -81,8 +81,8 @@ function initAutocomplete() {
       position: MyLatLng, // マーカーを立てる位置を指定
       map: map, // マーカーを立てる地図を指定
       icon: {
-        url: './helpmark.jpg',
-        scaledSize: new google.maps.Size(25, 40), //マーカーのサイズを縮小
+        url: './BarrierFree.png',
+        scaledSize: new google.maps.Size(40, 40), //マーカーのサイズを縮小
       }
     });
     //マーカーに表示する吹き出しの設定
