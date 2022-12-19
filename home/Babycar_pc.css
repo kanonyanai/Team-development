@@ -280,10 +280,6 @@ input[type="button"]{
     font-weight: 300;
   }
 
-  #infowindow-content .title {
-    font-weight: bold;
-  }
-
   #infowindow-content {
     display: none;
   }
@@ -335,13 +331,6 @@ input[type="button"]{
     border-color: #4d90fe;
   }
 
-  #title {
-    color: #fff;
-    background-color: #4d90fe;
-    font-size: 25px;
-    font-weight: 500;
-    padding: 6px 12px;
-  }
 
   #target {
     width: 345px;
