@@ -1,5 +1,6 @@
 /*オートコンプリート機能を利用した予測変換と地図情報の取得*/
 //デフォルトで表示するピンの情報
+let geocoder
 var marker_d = [];
 var infoWindow_d = [];
 var markerData = [ // マーカーを立てる場所名・緯度・経度
@@ -73,6 +74,11 @@ function initAutocomplete() {
     zoom: 15,
     bounds: bounds,
   });
+
+  // 予測変換
+  const input_start = document.getElementById("startword");
+  const autocomplete = new google.maps.places.Autocomplete(input_start);
+  autocomplete.bindTo("bounds", map);
 
   //サービス提供施設のマーカー設置処理
   for (var i = 0; i < markerData.length; i++) {
@@ -160,6 +166,41 @@ function markerEvent(i) {
 document.getElementById('search').addEventListener('click', initAutocomplete(), {
 
 })
+
+ //経路のピンの表示機能
+ function codeAddress() {
+  let inputAddress = document.getElementById('startword').value.addEventListener('click', function (){
+
+  var place = document.getElementById('startword').value;
+  var geocoder = new google.maps.Geocoder();      // geocoderのコンストラクタ
+  geocoder.geocode({address: place} , function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+
+          var bounds = new google.maps.LatLngBounds();
+
+          for (var i in results) {
+              if (results[0].geometry) {
+                  // 緯度経度を取得
+                  var latlng = results[0].geometry.location;
+                  // 住所を取得
+                  var address = results[0].formatted_address;
+                  // 検索結果地が含まれるように範囲を拡大
+                  bounds.extend(latlng);
+                  // マーカーのセット
+                  setMarker(latlng);
+                  // マーカーへの吹き出しの追加
+                  setInfoW(place, latlng, address);
+                  // マーカーにクリックイベントを追加
+                  markerEvent();
+              }
+          }
+      } else {
+          alert('該当する結果がありませんでした：' + status);
+      }
+  });
+  
+});
+}
 
 function goFilter2(){
   var wTable = document.getElementById("sortTable");
