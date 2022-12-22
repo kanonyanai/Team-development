@@ -77,12 +77,12 @@ function initAutocomplete() {
 
 
   // 予測変換
-  const input_start = document.getElementById("startword");
+  /*const input_start = document.getElementById("startword");
   const input_end = document.getElementById("endword");
   const autocomplete_start = new google.maps.places.Autocomplete(input_start,);
   const autocomplete_end = new google.maps.places.Autocomplete(input_end);
   autocomplete_start.bindTo("bounds", map);
-  autocomplete_end.bindTo("bounds", map);
+  autocomplete_end.bindTo("bounds", map);*/
 
   
   //サービス提供施設のマーカー設置処理
@@ -161,6 +161,60 @@ function initAutocomplete() {
     bounds.extend(marker.position);
     map.fitBounds(bounds);
   });
+
+
+  const input_start = document.getElementById("startword");
+  const StartBox = new google.maps.places.SearchBox(input_start);
+
+  map.addListener("bounds_changed", () => {
+    StartBox.setBounds(map.getBounds());
+  });
+  let markers_s = [];
+
+  // 予測変換を選択したときのイベント
+  // 場所の詳細
+  StartBox.addListener("places_changed", () => {
+    const places = StartBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // 古いマーカーを消去
+    markers_s.forEach((marker) => {
+      marker.setMap(null);
+    });
+    markers_s = [];
+
+    // 場所ごとに、アイコン、名前、および場所を取得
+    const bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
+    places.forEach((place) => {
+      if (!place.geometry || !place.geometry.location) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon_red = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+
+      // マップ上にマーカーを表示
+      markers_s.push(
+        new google.maps.Marker({
+          map,
+          icon_red,
+          title: place.name,
+          position: place.geometry.location,
+        })
+      );
+
+      if (place.geometry.viewport) {
+        // ジオコーダーのみが場所の情報を持つ
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    bounds.extend(marker.position);
+    map.fitBounds(bounds);
+  });
 }
 //マーカーのクリックイベントの処理
 function markerEvent(i) {
@@ -177,37 +231,60 @@ document.getElementById('search').addEventListener('click', initAutocomplete(), 
 
  //経路のピンの表示機能
  function codeAddress() {
-  let inputAddress = document.getElementById('startword').value.addEventListener('click', function (){
 
-  var place = document.getElementById('startword').value;
-  var geocoder = new google.maps.Geocoder();      // geocoderのコンストラクタ
-  geocoder.geocode({address: place} , function (results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
+  // 検索ボックスを作成し、UIとのリンク
+  const input_start = document.getElementById("startword");
+  const StartBox = new google.maps.places.SearchBox(input_start);
 
-          var bounds = new google.maps.LatLngBounds();
-
-          for (var i in results) {
-              if (results[0].geometry) {
-                  // 緯度経度を取得
-                  var latlng = results[0].geometry.location;
-                  // 住所を取得
-                  var address = results[0].formatted_address;
-                  // 検索結果地が含まれるように範囲を拡大
-                  bounds.extend(latlng);
-                  // マーカーのセット
-                  setMarker(latlng);
-                  // マーカーへの吹き出しの追加
-                  setInfoW(place, latlng, address);
-                  // マーカーにクリックイベントを追加
-                  markerEvent();
-              }
-          }
-      } else {
-          alert('該当する結果がありませんでした：' + status);
-      }
+  map.addListener("bounds_changed", () => {
+    StartBox.setBounds(map.getBounds());
   });
-  
-});
+  let markers_s = [];
+
+  // 予測変換を選択したときのイベント
+  // 場所の詳細
+  StartBox.addListener("places_changed", () => {
+    const places = StartBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // 古いマーカーを消去
+    markers_s.forEach((marker) => {
+      marker.setMap(null);
+    });
+    markers_s = [];
+
+    // 場所ごとに、アイコン、名前、および場所を取得
+    const bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
+    places.forEach((place) => {
+      if (!place.geometry || !place.geometry.location) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon_red = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+
+      // マップ上にマーカーを表示
+      markers_s.push(
+        new google.maps.Marker({
+          map,
+          icon_red,
+          title: place.name,
+          position: place.geometry.location,
+        })
+      );
+
+      if (place.geometry.viewport) {
+        // ジオコーダーのみが場所の情報を持つ
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    bounds.extend(marker.position);
+    map.fitBounds(bounds);
+  });
 }
 
 function goFilter2(){
