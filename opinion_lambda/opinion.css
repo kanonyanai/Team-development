@@ -1,0 +1,66 @@
+/*ご意見・ご要望フォームの文字*/
+.opinion{
+    
+	font-size:large;
+	font-weight: bolder;
+	text-align:center;
+	font-family:'游明朝 Medium', serif;
+}
+
+/*metaタグの中*/
+#name {
+	margin-left: 230px;
+	margin-bottom: 10px;
+}
+
+
+/*意見内容のテキストエリアの調整*/
+.textarea-con {
+
+    position: absolute;
+    bottom: 23%;
+    left: 30%;
+    
+    text-align: center;
+	width: 40%; /*--幅--*/
+    height: 53%;/*--高さ--*/
+    padding: 1%; /*--余白--*/
+	border-radius: 5px; /*--角丸--*/  
+    resize: none;
+    font-size:large;
+    font-family:'游明朝 Medium', serif;
+}
+
+
+
+/*ホームに戻る*/
+.back{
+	
+	text-align: center;
+	width: 13%; /*--幅--*/
+    padding: 0.5%; /*--余白--*/
+	border-radius: 5px; /*--角丸--*/  
+	background-color:rgb(253, 191, 133);
+	font-size:large;
+	font-weight: bolder;
+	font-family:'游明朝 Medium', serif;
+}
+
+
+/*送信ボタン*/
+.submit{
+
+	position: absolute;
+	bottom: 8%;
+    left: 41%;
+	
+	text-align: center;
+	width: 20%;/*--幅--*/
+	padding: 0.5%; /*--余白--*/
+	border-radius: 5px; /*--角丸--*/  
+	background-color:rgb(253, 191, 133);
+	font-weight: bolder;
+	font-size:x-large;
+	font-family:'游明朝 Medium', serif;
+}
+
