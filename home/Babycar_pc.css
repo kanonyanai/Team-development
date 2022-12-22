@@ -1,445 +1,474 @@
 /*---メモ---*/
+/*cssの記述を『position:absolute』ではなく、『display:flex』に変更する！*/
 
-/*デスクトップ用をスマホ用の二つの画面を作成する。*/
-/*可変については考えなくてよい！！！！！*/
-
-/*文字、ボタンetcについて：PCは幅を変えたい(width)、高さは変えない(height)*/
-
-/*ディスプレイサイズに合わせて可変にする
-→vw:幅の何％か、vh:高さの何％か*/
-
-/*フォントサイズを可変にする関数
-→clamp関数…font-size: clamp(最小値, 推奨値, 最大値);*/
+/*mapはflexを使わずに位置調整をする*/
+/*mapの上に謎の空白が出来てしまうため、その調節をする必要がある*/
 
 
-/*h1タグ*/
+/*全体の画面大きさの分割*/
 
-.h11{
+.container{
 
-  position:absolute;
+  display: flex;
+  justify-content:flex-end;
   
-  top:0.1%;
-  right: 30%;
-  left: 30%;
+  }
   
-
-  font-family:'游明朝 Medium', serif;
-  text-align:center;
-  font-weight:bolder;
-
-  /*↓お試しのサイズ*/
-  font-size:1vh;/*--高さの何％か--*/
-  /*font-size:1.5vw; --幅の何％か--*/
-  font-size:clamp(11px,1.8vw,20px);
+  /*画面右側の分割サイズ指定*/
   
-  /*例）font-size:clamp(16px,2.9vw,32px); ←幅を変える*/
+  .bun1_container{
   
-}
-
-/*h2タグ*/
-
-.h22{   
+    width: calc(100% * 3/8);
+    /*width: calc(100% / 3);*/
   
-  position:absolute;
-  top: 8%;
-  right: 30%;
-  left: 30%;
+  }
+  
+  /*画面左側の分割サイズ指定*/
+  
+  .bun2_container{
+  
+    width: calc(100% * 5/8);
+  
+  }
+  
+  
+  /*h1タグのコンテナ*/
+  .flex_container_h1{
+  
+    display: flex;
+    margin-left: 65%;
+   
+    
+  }
+  
+  /*h2タグのコンテナ*/
+  .flex_container_h2{
+  
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 58%;
+  
+  }
+  
+  /*切り替えボタンのコンテナ*/
+  .flex_container_change{
+  
+    display: flex;
+    justify-content: flex-end;
+      
+  }
+  
+  /*入力ボタン諸々のコンテナ*/
+  .flex_container_word{
+  
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+    gap: 1.5%;
+         
+  }
+  
+/*以下、変更部分*/
+
+  /*出発地と目的地を結ぶ矢印のコンテナ*/
+  
+  #arrow_cotainer{
+  
+    display: flex;
+    align-items:center;
+    justify-content: center;
+      
+  }
+
+  /*.flex_container_seachbox{            mapをflexなしで記述したら反映されなくなったため不要*/
+
+    /*display: flex;
+    justify-content: flex-end;
+
+  }*/
+
+/*ここまで*/
+
+  /*検索ボックスのコンテナ*/  
+
+  .flex_container_seachbox{
+    display: flex;
+    align-items:center;
+    
+    gap: 1.5%;
+  }
+  
+  /*意見画面に遷移ボタンのコンテナ*/
+  .flex_container_opinion{
+  
+      display: flex;
+      justify-content:center;
+      margin: 10%;
+  }
+  
+  /*一覧表示のコンテナ*/
+  
+  .sort_container{
+  
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+  
+  }
+
  
-  font-family:'游明朝 Medium', serif;
-  text-align:center;
-  font-weight:bolder;
   
-  color:#3CB371;
-  font-family: '游明朝 Medium', serif;
-  /*↓お試しのサイズ*/
-  font-size:1vh;/*--高さの何％か--*/
-  /*font-size:1vw;　--幅の何％か--*/
-  font-size:clamp(10px,1vw,16px);
+  /*h1タグ*/
   
-}
-
-/*切り替えボタン*/
-
-.change_pc{
-
-  position: absolute;
-  top: 3%;
-  right: 6%;
-
-  width: 5%; /*--幅--*/
-  padding: 0.5%; /*--余白--*/
-  border-radius: 5px; /*--角丸--*/ 
-  background-color:lavender;/*--背景色--*/
-  font-family: '游明朝 Medium', serif;;
-  font-weight:bolder;
-  font-size:small;
-}
-
-.change_phone{
-
-  position: absolute;
-  top: 3%;
-  right: 11.5%;
-
-  width: 5%; /*--幅--*/
-  padding: 0.5%; /*--余白--*/
-  border-radius: 5px; /*--角丸--*/ 
-  background-color:lavender;/*--背景色--*/
-  font-family: '游明朝 Medium', serif;;
-  font-weight:bolder;
-  font-size:small;
-}
-
-
-/*-----出発地-----*/
-
-/*出発地の文字*/
-
-#start{
-
-  position: absolute;
-  top: 14%;
-  left: 10%;
-
-  font-family:'游明朝 Medium', serif;
-  text-align:center;
+  .h11{ 
   
-  font-size:x-large;
-
-}
-
-/*出発地の入力するテキストボックス*/
-
-#inputBegin{
-
-  position: absolute;
-  top: 16%;
-  left: 15%;
-
-  text-align: center;
-  width: 15%; /*--幅--*/
-  padding: 0.3%; /*--余白--*/
-  border: solid 2px #cccccc; /*--ボーダー線--*/
-  border-radius: 5px; /*--角丸--*/ 
-  font-family: '游明朝 Medium', serif;;
-  font-weight:bolder;
-  font-size: large;
-
-}
-
-/*出発地の検索ボタン*/
-
-#searchButton{
-
-  position: absolute;
-  top: 16%;
-  left: 55.5%;
-
-  width: 4%; /*--幅--*/
-  padding: 0.3%; /*--余白--*/
-  border-radius: 5px; /*--角丸--*/ 
-  font-family: '游明朝 Medium', serif;;
-  font-weight:bolder;
-  font-size:medium;
-
-}
-
-/*出発地のクリア*/
-
-#startclear{
-
-  position: absolute;
-  top: 16%;
-  left: 60%;
-
-
-  width: 4%; /*--幅--*/
-  padding: 0.3%; /*--余白--*/
-  border-radius: 5px; /*--角丸--*/ 
-  font-family: '游明朝 Medium', serif;;
-  font-weight:bolder;
-  font-size: medium;
-
-}
-
-/*-----目的地-----*/
-
-/*目的地の文字*/
-
-#ends{
-
-position: absolute;
-top: 14%;
-left: 33%;
-
-font-family:'游明朝 Medium', serif;
-text-align:center;
-
-font-size:x-large;
-}
-
-/*目的地の入力するテキストボックス*/
-
-#inputEnd{
-
-position: absolute;
-top: 16%;
-left: 38%;
-
-  text-align: center;
-  width: 15%; /*--幅--*/
-  padding: 0.3%; /*--余白--*/
-  border: solid 2px #cccccc; /*--ボーダー線--*/
-  border-radius: 5px; /*--角丸--*/ 
-  font-family: '游明朝 Medium', serif;;
-  font-weight:bolder;
-  font-size: large;
-}
-
-/*出発地表示*/
-
-#bigin{
-position: absolute;
-top: 23%;
-left: 10%;
-font-family: '游明朝 Medium', serif;;
-font-weight:bolder;
-font-size: large;
-}
-
-/*目的地表示*/
-
-#end{
-position: absolute;
-top: 23%;
-left: 33%;
-font-family: '游明朝 Medium', serif;;
-font-weight:bolder;
-font-size: large;
-}
-
-/*矢印の文字*/
-
-#arrow{
-position: absolute;
-top: 23%;
-left: 30%;
-font-family: '游明朝 Medium', serif;;
-font-weight:bolder;
-font-size: x-large;
-}
-
-
-/*ご意見ボタン*/
-
-input[type="button"]{
-
-  position:absolute;
-  bottom: 4%;
-  right: 8%;
-
-  text-align: center;
+      font-family:'游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size: large;
+         
+  }
   
-  width: 22%;
-  padding: 0.5%; /*--余白--*/
-  border-radius: 5px; /*--角丸--*/ 
-  background-color:lightgoldenrodyellow; /*--背景色--*/
-  font-family: '游明朝 Medium', serif;
-  font-weight:bolder;
-  font-size:large;
-
-}
- 
-
-/*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
-
-#map{
-
+  /*h2タグ*/
   
-  width: 25%;
-  bottom: 3%;
-  /*height: 5%;*/
-  left: 6%;
-  padding: 16.5%;
-  position:absolute;
-
-}
-/*以下、検索機能とデフォルトマーカー表示機能のcss*/
-html,
-body {
-  height: 70%;
-  margin: 0;
-  padding: 0;
-}
-
-#description {
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-#infowindow-content .title {
-  font-weight: bold;
-}
-
-#infowindow-content {
-  display: none;
-}
-
-#map #infowindow-content {
-  display: inline;
-}
-
-.pac-card {
-  margin: 10px 10px 0 0;
-  border-radius: 2px 0 0 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
-  font-family: Roboto;
-}
-
-#pac-container {
-  padding-bottom: 12px;
-  margin-right: 12px;
-}
-
-.pac-controls {
-  display: inline-block;
-  padding: 5px 11px;
-}
-
-.pac-controls label {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: 300;
-}
-
-#pac-input {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 400px;
-  height: 45px;
-}
-
-#pac-input:focus {
-  border-color: #4d90fe;
-}
-
-#title {
-  color: #fff;
-  background-color: #4d90fe;
-  font-size: 25px;
-  font-weight: 500;
-  padding: 6px 12px;
-}
-
-#target {
-  width: 345px;
-}
-
-/*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
-
-iframe {
-width: 100%;
-height: 100%;
-}
-
-/*以下、サービス提供施設の一覧表示機能のcss*/
-
-#sampleTable2  th {
-  border : 1px solid #666;
-}
-
-#sampleTable2  td {
-  border : 1px solid #666;
-}
-
-.allNoDisplay2 tr:not(.colTitle) {
-  display: none;
-}
-
-.kbaby2    tr[kbaby]{
-  display: table-row;
-}
-
-.kuruma2  tr[kuruma]{
-  display: table-row;
-}
-
-.knyutenok2   tr[knyutenok]{
-  display: table-row;
-}
-
-.ksheet2   tr[ksheet]{
-  display: table-row;
-}
-
-.dansang2   tr[dansang]{
-  display: table-row;
-}
-
-.babyroom2   tr[babyroom]{
-  display: table-row;
-}
-
-.kidsroom2   tr[kidsroom]{
-  display: table-row;
-}
-
-.omutu2   tr[omutu]{
-  display: table-row;
-}
-
-.kyukei2   tr[kyukei]{
-  display: table-row;
-}
-
-.tesuri2   tr[tesuri]{
-  display: table-row;
-}
-
-.osuto2   tr[osuto]{
-  display: table-row;
-}
-
-.kyugo2   tr[kyugo]{
-  display: table-row;
-}
-
-
-.categori{
-  color: rgb(1, 145, 49);                       /*カテゴリーの文字の色を変更*/
-}
-
-#ue{
-  border-style:none;                              /*一番上のセルの背景色を変更*/
-  background-color: rgb(239, 255, 238);    
-}
-
-#sortTable{
-  text-align: left;    /*文字を左詰め*/
-  font-size: 10px;    /*文字の大きさを指定*/
-
-  margin-right: 7%;
-  margin-top: 15%;
-  margin-bottom: 15%;
-  margin-left: auto;
-
-  width: 25%;
-  height: 50%; 
-
-  display: block;
-  overflow-y: scroll;
-  overflow-x: scroll;
-  /*right: 25%;
-  height: 50%;         /*スクロールバーの表示(いらなければ消していい)*/
-
-}
+  .h22{        
+        
+      font-family:'游明朝 Medium', serif;
+      font-weight:bolder;
+      color:#3CB371;
+      font-family: '游明朝 Medium', serif;
+      font-size:large;
+      
+  }
+  
+  
+  
+  
+  /*切り替えボタン*/
+  
+  .change{
+      
+      text-align: center;
+      width: 80px; /*--幅--*/
+      padding: 10px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      background-color:lavender;/*--背景色--*/
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size:small;
+  }
+  
+  
+  
+  /*-----出発地-----*/
+  
+  /*出発地の文字*/
+  
+  #start{
+  
+      display: flex;
+    
+      font-family:'游明朝 Medium', serif;
+      text-align:center;
+      
+      font-size:x-large;
+  
+  }
+  
+  /*出発地の入力するテキストボックス*/
+  
+  #inputBegin{
+     
+      text-align: center;
+      width: 350px; /*--幅--*/
+      padding: 6px; /*--余白--*/
+      border: solid 2px #cccccc; /*--ボーダー線--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size: large;
+  }
+  
+  /*検索ボタン*/
+  
+  #searchButton{
+      
+      width: 70px; /*--幅--*/
+      padding: 7px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size:medium;
+  
+  }
+  
+  /*クリアボタン*/
+  
+  #startclear{
+  
+      width: 70px; /*--幅--*/
+      padding: 7px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size: medium;
+  
+  }
+  
+  /*-----目的地-----*/
+  
+  /*目的地の文字*/
+  
+  #ends{
+  
+      display: flex;
+  
+      font-family:'游明朝 Medium', serif;
+      
+      font-size:x-large;
+  
+  }
+  
+  /*目的地の入力するテキストボックス*/
+  
+  #inputEnd{
+      
+      text-align: center;
+      width: 350px;
+      padding: 6px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      border: solid 2px #cccccc; /*--ボーダー線--*/
+      font-family: '游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size:large;
+  }
+  
+  /*出発地と目的地を結ぶ矢印*/
+  
+  #arrow{
+  
+    font-size:x-large;
+    font-weight: bolder;
+    font-family: '游明朝 Medium', serif;
+  
+  }
+  
+  /*ご意見ボタン*/
+  
+  input[type="button"]{   
+      
+      width: 380px;
+      padding: 10px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      background-color:lightgoldenrodyellow; /*--背景色--*/
+      font-family: '游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size:large;
+  
+  }
+     
+  
+  /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
+  
+  /*変更した（12/21）*/
+  #map{
+  
+    width: 90%;
+    height: 80%;
+    left: 10%;
+    
+    
+    }
+    
+  
+    /*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
+  
+    /*iframe {
+    width: 100%;
+    height: 100%;
+  }
+  */
+  
+   
+  
+  
+  /*以下、検索機能とデフォルトマーカー表示機能のcss*/
+  html,
+  body {
+    height: 70%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  #infowindow-content .title {
+    font-weight: bold;
+  }
+  
+  #infowindow-content {
+    display: none;
+  }
+  
+  #map #infowindow-content {
+    display: inline;
+  }
+  
+  .pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+  }
+  
+  #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
+  
+  .pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+  }
+  
+  .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  
+  #pac-input {
+  
+    text-align: center;
+    font-family: '游明朝 Medium', serif;
+  
+    background-color: #fff;
+    /*font-family: Roboto;*/
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 40%;
+    height: 45px;
+  }
+  
+  #pac-input:focus {
+    border-color: #4d90fe;
+  }
+  
+  #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+  }
+  
+  #target {
+    width: 345px;
+  }
+  
+  /*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
+  
+  iframe {
+  width: 100%;
+  height: 100%;
+  }
+  
+  /*以下、サービス提供施設の一覧表示機能のcss*/
+  
+  #sampleTable2  th {
+    border : 1px solid #666;
+  }
+  
+  #sampleTable2  td {
+    border : 1px solid #666;
+  }
+  
+  .allNoDisplay2 tr:not(.colTitle) {
+    display: none;
+  }
+  
+  .kbaby2    tr[kbaby]{
+    display: table-row;
+  }
+  
+  .kuruma2  tr[kuruma]{
+    display: table-row;
+  }
+  
+  .knyutenok2   tr[knyutenok]{
+    display: table-row;
+  }
+  
+  .ksheet2   tr[ksheet]{
+    display: table-row;
+  }
+  
+  .dansang2   tr[dansang]{
+    display: table-row;
+  }
+  
+  .babyroom2   tr[babyroom]{
+    display: table-row;
+  }
+  
+  .kidsroom2   tr[kidsroom]{
+    display: table-row;
+  }
+  
+  .omutu2   tr[omutu]{
+    display: table-row;
+  }
+  
+  .kyukei2   tr[kyukei]{
+    display: table-row;
+  }
+  
+  .tesuri2   tr[tesuri]{
+    display: table-row;
+  }
+  
+  .osuto2   tr[osuto]{
+    display: table-row;
+  }
+  
+  .kyugo2   tr[kyugo]{
+    display: table-row;
+  }
+  
+  
+  .categori{
+    color: rgb(1, 145, 49);                       /*カテゴリーの文字の色を変更*/
+  }
+  
+  #ue{
+    border-style:none;                              /*一番上のセルの背景色を変更*/
+    background-color: rgb(239, 255, 238);    
+  }
+  
+  /*一覧表示のテーブル*/
+  
+  #sortTable{
+  
+    text-align: left;    /*文字を左詰め*/
+    font-size: 10px;    /*文字の大きさを指定*/
+  
+    
+    width: 68%;
+    
+    display: block;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    /*right: 25%;
+    height: 50%;         /*スクロールバーの表示(いらなければ消していい)*/
+  
+  }

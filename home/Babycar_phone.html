@@ -1,12 +1,15 @@
-
 <!--pc用とスマホ用に切り替えるボタンを付ける！-->
 
-
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
+</script>
+<script src="jquery-3.6.1.min.js"></script>
 <!DOCTYPE html>
 <html lang="ja">
-  <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
+<!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
 
-  <form method="post" action="" method="get">
+<form method="post" action="" method="get">
+
   <head>
     <meta charset="UTF-8">
     <title>ベビーカー・車椅子地図マップ</title>
@@ -16,56 +19,65 @@
     <!--jsファイルの読み込み-->
     <script src="./index.js"></script>
 
-     
-
-    <div class="h11">
-        <h1>バリアフリーマップ</h1>
-      </div>
-
-      <div class="h22"><h2>ベビーカー・車いす利用者の不安を解消！</h2></div>
-      
   </head>
 
   <body>
 
-      <div>
-        <button type="button" onclick="location.href='Babycar_pc.html'"
-          class="change_pc">PC用</button>       
+    <div class="flex_container_change">
+      <button type="button" onclick="location.href='Babycar_pc.html'" class="change">PC用</button>
+      <button type="button" onclick="location.href='Babycar_phone.html'" class="change">スマホ用</button>
       </div>
 
-      <div>
-        <button onclick="location.href='Babycar_phone.html'"
-          class="change_phone">スマホ用</button>       
+    
+      <div class="flex_container_h1">
+    <div class="h11">
+      <h1>バリアフリーマップ</h1>
+    </div>   
+  </div>
+
+  
+    <div class="flex_container_h2">
+    <div class="h22">
+      <h2>ベビーカー・車いす利用者の不安を解消</h2>
+    </div> 
+    </div>  
+      
+    <!--検索機能でinputの内容追加-->
+    <input id="pac-input" class="controls" type="text" placeholder="施設名を入力" />
+
+
+    <!--必ず入れる。idの名前は変えない！！！-->
+
+    <div>
+      <div class="flex_container_word">
+      <p id="start">出発地</p>
+      <input type="text" id="inputBegin" placeholder="出発地を入力            ">
+    </div>
+    <div class="flex_container_word">
+      <p id="ends">目的地</p>
+      <input type="text" id="inputEnd" placeholder="目的地を入力            ">
+    </div>
+    <div class="flex_container_button">
+      <button type="submit" id="searchButton">検索</button>
+      <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>      
+    </div>
+    </div>
+    
+
+    <script type="text/javascript" src="index.js"></script>
+    <div id="arrow_cotainer">
+      <p id="arrow"><span id="begin"></span>  →    <span id="end"></span></p>
+    </div>
+    <div id="map">  <!--追加（12/21）-->>
+      <div id="map_canvas"></div>
+    </div>
+      <div id="directionsPanel"></div>
       </div>
+    
+ 
 
-      <!--検索機能でinputの内容追加-->
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
-
-
-
-      <!--必ず入れる。idの名前は変えない！！！-->
-
-      <div>
-        <p id="start">出発地</p> 
-        <input type="text" id="startword" placeholder="出発地を入力">
-        <button type="submit" id="startconfirm">確定</button>
-        <button type="reset" id="startclear">クリア</button>
-      </div>
-
-      <div>
-        <p id="end">目的地</p> 
-        <input type="text" id="endword" placeholder="目的地を入力">
-        <button type="submit" id="endconfirm">確定</button>
-        <button type="reset" id="endclear">クリア</button>
-      </div>
-
-      <!---------------ここまで--------------->
-      <div>
-        <input type="button" onclick="location.href='../opinion/opinion_phone.html'"
-        value="ご意見はこちらへ">
-      </div>
-
-      <!--以下、一覧表示機能-->
+  <div class="sort_container">
+    <!--以下、一覧表示機能-->
     <table border="2" id="sortTable">
       <tr class="colTitle">
 
@@ -98,7 +110,7 @@
       </tr>
 
       <tr tesuri dansang kuruma>
-        <td><a href="38.235317、140.704529">仙台秋湯温泉　ホテルきよ水</a></td>
+        <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a></td>
         <td>宮城県仙台市太白区秋保町湯元字平倉1</td>
         <td>朝６時からオープン</td>
         <td>手すり付き浴室 入口に段差なし 車いす貸出</td>
@@ -106,7 +118,7 @@
 
       <tr knyutenok>
         <td><a
-            href="https://www.bing.com/maps?osid=c49c1e96-9061-406e-a7c3-1bb15d9bee44&cp=38.314315~140.912237&lvl=16&imgid=6f04539b-17ec-459d-8325-c96ba8910b98&v=2&sV=2&form=S00027">一苺一笑松森農場</a>
+            href='https://ichiichigo.jp/'>一苺一笑松森農場</a>
         </td>
         <td>宮城県仙台市泉区松森字城前157-1</td>
         <td>車椅子の貸出は無し</td>
@@ -115,7 +127,7 @@
 
       <tr>
         <td><a
-            href="https://www.bing.com/maps?osid=7235bdca-d9da-4c8f-8afb-9a60b83b135d&cp=38.338352~140.685913&lvl=15&imgid=40ffecd1-1df0-47be-a1ef-0870324adb1c&v=2&sV=2&form=S00027">大倉ふるさとセンター</a>
+            href='http://www.sendai-astro.jp/'>大倉ふるさとセンター</a>
         </td>
         <td>宮城県仙台市青葉区大倉字若林14-2</td>
         <td>null</td>
@@ -124,7 +136,7 @@
 
       <tr babyroom osuto kyugo>
         <td><a
-            href="https://www.bing.com/maps?osid=943122a4-8f1e-4105-b194-f83396fb142d&cp=38.256878~140.755371&lvl=15&v=2&sV=2&form=S00027">仙台市天文台</a>
+            href='http://www.sendai-astro.jp/'>仙台市天文台</a>
         </td>
         <td>〒989-3123 宮城県仙台市青葉区錦ケ丘9-29-32</td>
         <td><a href="https://www.google.co.jp/">リンク(例)</a></td>
@@ -133,7 +145,7 @@
 
       <tr babyroom kidsroom ksheet>
         <td><a
-            href="https://www.bing.com/maps?osid=cc0b650d-0664-4d67-aaa3-3830e0475468&cp=38.257641~140.902237&lvl=15&v=2&sV=2&form=S00027">楽天生命パーク宮城</a>
+            href='https://www.rakuteneagles.jp/stadium/'>楽天生命パーク宮城</a>
         </td>
         <td>〒983-0045 宮城県仙台市宮城野区宮城野2-11-6</td>
         <td>車椅子席は付き添いの方一名様分も込み</td>
@@ -142,7 +154,7 @@
 
       <tr kbaby omutu>
         <td><a
-            href="https://www.bing.com/maps?osid=ccecf1bf-e9da-45e7-a134-65671dde6f34&cp=38.244984~140.843384&lvl=14&v=2&sV=2&form=S00027">八木山動物公園フジサキの杜</a>
+            href='https://www.city.sendai.jp/zoo/'>八木山動物公園フジサキの杜</a>
         </td>
         <td> 〒982-0108 宮城県仙台市太白区八木山本町1-43</td>
         <td>ベビーカー貸出は150円</td>
@@ -151,7 +163,7 @@
 
       <tr osuto kuruma kbaby babyroom>
         <td><a
-            href="https://www.bing.com/maps?osid=1e22c588-0972-4c0c-a015-10dce1e701b4&cp=38.263905~140.85498&lvl=14&v=2&sV=2&form=S00027">宮城県美術館</a>
+            href='https://www.pref.miyagi.jp/site/mmoa/'>宮城県美術館</a>
         </td>
         <td>〒980-0861 宮城県仙台市青葉区川内元支倉34-1</td>
         <td>null</td>
@@ -160,7 +172,7 @@
 
       <tr kuruma osuto babyroom>
         <td><a
-            href="https://www.bing.com/maps?osid=e33621ac-5d44-4dc3-9e6b-7e26e49a76ee&cp=38.271217~140.980927&lvl=14&v=2&sV=2&form=S00027">仙台うみの杜水族館</a>
+            href='http://www.uminomori.jp/umino/index.html'>仙台うみの杜水族館</a>
         </td>
         <td>〒983-0013 宮城県仙台市宮城野区中野4-6</td>
         <td>null</td>
@@ -169,7 +181,7 @@
 
       <tr osuto kuruma kyukei>
         <td><a
-            href="https://www.bing.com/maps?osid=72965676-2a63-40d4-ba92-5a4ee14ad0f2&cp=38.258992~140.874317&lvl=16&pi=0&imgid=e40011f0-a372-4178-bd1a-18ee61a4d47e&v=2&sV=2&form=S00027">仙台PARCO2</a>
+            href='https://sendai.parco.jp/'>仙台PARCO2</a>
         </td>
         <td>〒980-8450宮城県仙台市青葉区中央3丁目7-5</td>
         <td>null</td>
@@ -178,18 +190,32 @@
 
     </table>
     <!--以上、一覧表示機能-->
-    
+  </div>
+
+
+    <div>
+      <div class="flex_container_opinion">
+      <input type="button" onclick="location.href='../opinion/opinion_pc.html'" value="ご意見はこちらへ">
+      </div>
+    </div>
+
+
+
+
+
+</div>
+
 
   </body>
 
-    <div id="map" ></div>
+<!--
+  <div id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.6442637894493!2d140.8795500512312!3d38.26455579150149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a2821304050b1%3A0x13e04f5de76af222!2z5p2x5YyX6Zu75a2Q5bCC6ZaA5a2m5qCh!5e0!3m2!1sja!2sjp!4v1669859068104!5m2!1sja!2sjp"></iframe>
+  </div>
+-->
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Gakxu8FkBHY5fuXiJWq7smmLFXjUctg&callback=initAutocomplete&libraries=places&v=weekly">
-    </script>
+  <link rel="stylesheet" href="Babycar_phone.css">
 
-      <link rel="stylesheet" href="Babycar_phone.css">
-
-    </form>
+</form>
 
 </html>

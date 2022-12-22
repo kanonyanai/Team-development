@@ -1,5 +1,8 @@
 <!--pc用とスマホ用に切り替えるボタンを付ける！-->
 
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
+</script>
 <script src="jquery-3.6.1.min.js"></script>
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,60 +17,73 @@
     <!--polyfillのインストール-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!--jsファイルの読み込み-->
-    <script src="routemap.js"></script>
-
-
-    <div class="h11">
-      <h1>バリアフリーマップ</h1>
-    </div>
-
-    <div class="h22">
-      <h2>ベビーカー・車いす利用者の不安を解消！</h2>
-    </div>
+    <script src="./index.js"></script>
 
   </head>
 
   <body>
+    <div class="container">
 
-    <div>
-      <button type="button" onclick="location.href='Babycar_pc.html'" class="change_pc">PC用</button>
-    </div>
+    <div class="bun2_container">
+      <div class="flex_container_h1">
+    <div class="h11">
+      <h1>バリアフリーマップ</h1>
+    </div>   
+  </div>
 
-    <div>
-      <button type="button" onclick="location.href='Babycar_phone.html'" class="change_phone">スマホ用</button>
-    </div>
-
-    <!--検索機能でinputの内容追加-->
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
-
+  
+    <div class="flex_container_h2">
+    <div class="h22">
+      <h2>ベビーカー・車いす利用者の不安を解消</h2>
+    </div> 
+    </div>  
+    
 
     <!--必ず入れる。idの名前は変えない！！！-->
 
     <div>
+      <div class="flex_container_word">
       <p id="start">出発地</p>
       <input type="text" id="inputBegin" placeholder="出発地を入力">
-      <button type="submit" id="searchButton">検索</button>
-      <button type="reset" id="startclear">クリア</button>
-    </div>
-
-    <div>
       <p id="ends">目的地</p>
       <input type="text" id="inputEnd" placeholder="目的地を入力">
-      
+      <button type="submit" id="searchButton">検索</button>
+      <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>  
+      </div>
+    </div>
+    
+
+<!--以下、変更部分-->
+  <script type="text/javascript" src="index.js"></script>
+    <div id="arrow_cotainer">
+      <p id="arrow"><span id="begin"></span>  →    <span id="end"></span></p>
     </div>
 
-    <script type="text/javascript" src="routemap.js"></script>
-    <span id="begin"></span> <p id="arrow">→</p><span id="end"></span>
+    <!--検索機能でinputの内容追加-->
+  <input id="pac-input" class="controls" type="text" placeholder="施設名を入力" />
+
+
+
+  <div id="map">  <!--追加（12/21）-->>
     <div id="map_canvas"></div>
+  </div>
     <div id="directionsPanel"></div>
+    
+  
+  
+  </div>
 
-    <!---------------ここまで--------------->
+  <div class="bun1_container">
+    <div class="flex_container_change">
+      <button type="button" onclick="location.href='Babycar_pc.html'" class="change">PC用</button>
+      <button type="button" onclick="location.href='Babycar_phone.html'" class="change">スマホ用</button>
+      </div>
 
-    <div>
-      <input type="button" onclick="location.href='../opinion/opinion_pc.html'" value="ご意見はこちらへ">
-    </div>
+  <!--ここまで-->
+    
+ 
 
-
+  <div class="sort_container">
     <!--以下、一覧表示機能-->
     <table border="2" id="sortTable">
       <tr class="colTitle">
@@ -181,14 +197,32 @@
 
     </table>
     <!--以上、一覧表示機能-->
+  </div>
+
+
+    <div>
+      <div class="flex_container_opinion">
+      <input type="button" onclick="location.href='../opinion/opinion_pc.html'" value="ご意見はこちらへ">
+      </div>
+    </div>
+
+  </div>
+
+<!--コンテナの終わりの部分-->
+</div>
 
   </body>
 
-  <div id="map" ></div>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Gakxu8FkBHY5fuXiJWq7smmLFXjUctg&callback=initAutocomplete&libraries=places&v=weekly">
-  </script>
+<!--
+  <div id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.6442637894493!2d140.8795500512312!3d38.26455579150149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a2821304050b1%3A0x13e04f5de76af222!2z5p2x5YyX6Zu75a2Q5bCC6ZaA5a2m5qCh!5e0!3m2!1sja!2sjp!4v1669859068104!5m2!1sja!2sjp"></iframe>
+  </div>
+-->
 
+
+  <div id="map" ></div>
+
+ 
   <link rel="stylesheet" href="Babycar_pc.css">
 
 </form>
