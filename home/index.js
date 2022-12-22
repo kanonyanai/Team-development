@@ -65,12 +65,6 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
   }
 ];
 
-// 予測変換
-const input_Begin = document.getElementById("inputBegin");
-const input_End = document.getElementById("inputEnd");
-const autocomplete = new google.maps.places.Autocomplete(input_Begin,input_End);
-autocomplete.bindTo("bounds", map);
-
 $(function() {
     $('#searchButton').click(function(e) {
         e.preventDefault();         // hrefが無効になり、画面遷移が行わない
@@ -226,6 +220,15 @@ function initAutocomplete() {
     bounds.extend(marker.position);
     map.fitBounds(bounds);
   });
+
+  // 予測変換
+const input_Begin = document.getElementById("inputBegin");
+const input_End = document.getElementById("inputEnd");
+const autocomplete_Begin = new google.maps.places.Autocomplete(input_Begin);
+const autocomplete_End = new google.maps.places.Autocomplete(input_End);
+autocomplete_Begin.bindTo("bounds", map);
+autocomplete_End.bindTo("bounds", map);
+
 }
 //マーカーのクリックイベントの処理
 function markerEvent(i) {
