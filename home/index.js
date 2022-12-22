@@ -75,11 +75,16 @@ function initAutocomplete() {
     bounds: bounds,
   });
 
+
   // 予測変換
   const input_start = document.getElementById("startword");
-  const autocomplete = new google.maps.places.Autocomplete(input_start);
-  autocomplete.bindTo("bounds", map);
+  const input_end = document.getElementById("endword");
+  const autocomplete_start = new google.maps.places.Autocomplete(input_start,);
+  const autocomplete_end = new google.maps.places.Autocomplete(input_end);
+  autocomplete_start.bindTo("bounds", map);
+  autocomplete_end.bindTo("bounds", map);
 
+  
   //サービス提供施設のマーカー設置処理
   for (var i = 0; i < markerData.length; i++) {
     MyLatLng = new google.maps.LatLng({ lat: markerData[i]['lat'], lng: markerData[i]['lng'] }); // 緯度経度のデータ作成
@@ -166,6 +171,9 @@ function markerEvent(i) {
 document.getElementById('search').addEventListener('click', initAutocomplete(), {
 
 })
+
+
+
 
  //経路のピンの表示機能
  function codeAddress() {
