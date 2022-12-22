@@ -129,6 +129,7 @@
   }
   
   /*h2タグ*/
+<<<<<<< HEAD
   
   .h22{        
         
@@ -276,6 +277,156 @@
     width: 90%;
     height: 80%;
     left: 10%;
+=======
+  
+  .h22{        
+        
+      font-family:'游明朝 Medium', serif;
+      font-weight:bolder;
+      color:#3CB371;
+      font-family: '游明朝 Medium', serif;
+      font-size:large;
+      
+  }
+  
+  
+  
+  
+  /*切り替えボタン*/
+  
+  .change{
+      
+      text-align: center;
+      width: 80px; /*--幅--*/
+      padding: 10px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      background-color:lavender;/*--背景色--*/
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size:small;
+  }
+  
+  
+  
+  /*-----出発地-----*/
+  
+  /*出発地の文字*/
+  
+  #start{
+  
+      display: flex;
+    
+      font-family:'游明朝 Medium', serif;
+      text-align:center;
+      
+      font-size:x-large;
+  
+  }
+  
+  /*出発地の入力するテキストボックス*/
+  
+  #inputBegin{
+     
+      text-align: center;
+      width: 350px; /*--幅--*/
+      padding: 6px; /*--余白--*/
+      border: solid 2px #cccccc; /*--ボーダー線--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size: large;
+  }
+  
+  /*検索ボタン*/
+  
+  #searchButton{
+      
+      width: 70px; /*--幅--*/
+      padding: 7px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size:medium;
+  
+  }
+  
+  /*クリアボタン*/
+  
+  #startclear{
+  
+      width: 70px; /*--幅--*/
+      padding: 7px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size: medium;
+  
+  }
+  
+  /*-----目的地-----*/
+  
+  /*目的地の文字*/
+  
+  #ends{
+  
+      display: flex;
+  
+      font-family:'游明朝 Medium', serif;
+      
+      font-size:x-large;
+  
+  }
+  
+  /*目的地の入力するテキストボックス*/
+  
+  #inputEnd{
+      
+      text-align: center;
+      width: 350px;
+      padding: 6px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      border: solid 2px #cccccc; /*--ボーダー線--*/
+      font-family: '游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size:large;
+  }
+  
+  /*出発地と目的地を結ぶ矢印*/
+  
+  #arrow{
+  
+    font-size:x-large;
+    font-weight: bolder;
+    font-family: '游明朝 Medium', serif;
+  
+  }
+  
+  /*ご意見ボタン*/
+  
+  input[type="button"]{   
+      
+      width: 380px;
+      padding: 10px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      background-color:lightgoldenrodyellow; /*--背景色--*/
+      font-family: '游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size:large;
+  
+  }
+     
+  
+  /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
+  
+  /*変更した（12/21）*/
+  #map{
+  
+    width: 90%;
+    height: 80%;
+    left: 10%;
+    
+    
+>>>>>>> b690a5a2d702f5731bee9587d4bfe7aeb0840a9e
     }
     
   
