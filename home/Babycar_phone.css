@@ -1,256 +1,258 @@
 /*---メモ---*/
-
-/*デスクトップ用をスマホ用の二つの画面を作成する。*/
-/*可変については考えなくてよい！！！！！*/
-
-/*文字、ボタンetcについて：PCは幅を変えたい(width)、高さは変えない(height)*/
-
-/*ディスプレイサイズに合わせて可変にする
-→vw:幅の何％か、vh:高さの何％か*/
-
-/*フォントサイズを可変にする関数
-→clamp関数…font-size: clamp(最小値, 推奨値, 最大値);*/
-
-
-/*h1タグ*/
-
-.h11{
-
-    font-family:'游明朝 Medium', serif;
-    text-align:center;
-    font-weight:bolder;
-    font-size:smaller;
-    /*追加*/
-    margin-top: 3%;
-    
-}
-
-/*h2タグ*/
-
-.h22{   
-    
-    
-    font-family:'游明朝 Medium', serif;
-    text-align:center;
-    font-weight:bolder;
-    
-    color:#3CB371;
-    font-family: '游明朝 Medium', serif;
-    font-size:smaller;
-
-    /*追加*/
-    margin-top: 2%;
-
-}
-
-/*切り替えボタン*/
-
-.change_pc{
-
-    position: absolute;
-    top: 0.5%;
-    right: 1%;
-
-    width: 11%; /*--幅--*/
-    padding: 0.8%; /*--余白--*/
-    border-radius: 5px; /*--角丸--*/  
-    background-color:lavender;/*--背景色--*/
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size:x-small;
-}
-
-.change_phone{
-
-    position: absolute;
-    top: 0.5%;
-    right: 12%;
-
-    width: 11%; /*--幅--*/
-    padding: 0.8%; /*--余白--*/
-    border-radius: 5px; /*--角丸--*/  
-    background-color:lavender;/*--背景色--*/
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size:x-small;
-}
-
-
-
-/*-----出発地-----*/
-
-/*出発地の文字*/
-
-#start{
-
-    position: absolute;
-    top: 8.7%;
-    left: 3%;
-
-    font-size: clamp(10px,4vw,25px);
-
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    
-}
-
-/*出発地の入力するテキストボックス*/
-
-#startword{
-
-    position: absolute;
-    top: 10%;
-    left: 16%;
-
-    text-align: center;
-    width: 55%; /*--幅--*/
-    padding: 0.5%; /*--余白--*/
-    border: solid 2px #cccccc; /*--ボーダー線--*/
-    border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size: medium;
-
-}
-
-/*出発地の確定ボタン*/
-
-#startconfirm{
-
-    position: absolute;
-    top: 10%;
-    right: 15%;
-
-    width: 12%; /*--幅--*/
-    padding: 0.8%; /*--余白--*/
-    border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size:small;
-
-}
-
-/*出発地のクリア*/
-
-#startclear{
-
-    position: absolute;
-    top: 10%;
-    right: 3%;
-
-    width: 12%; /*--幅--*/
-    padding: 0.8%; /*--余白--*/
-    border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size:small;
-
-}
-
-/*-----目的地-----*/
-
-/*目的地の文字*/
-
-#end{
-
-    position: absolute;
-    top: 12.8%;
-    left: 3%;
-
-    font-size: clamp(10px,4vw,25px);
-
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-
-}
-
-/*目的地の入力するテキストボックス*/
-
-#endword{
-
-    position: absolute;
-    top: 14%;
-    left: 16%;
-
-    text-align: center;
-    width: 55%; /*--幅--*/
-    padding: 0.5%; /*--余白--*/
-    border: solid 2px #cccccc; /*--ボーダー線--*/
-    border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size: medium;
-
-}
-
-/*目的地の確定ボタン*/
-
-#endconfirm{
-
-    position: absolute;
-    top: 14%;
-    right: 15%;
-
-    width: 12%; /*--幅--*/
-    padding: 0.8%; /*--余白--*/
-    border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size:small;
-
-}
-
-/*目的地のクリア*/
-
-#endclear{
-
-    position: absolute;
-    top: 14%;
-    right: 3%;
-
-    width: 12%; /*--幅--*/
-    padding: 0.8%; /*--余白--*/
-    border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
-    font-weight:bolder;
-    font-size:small;
-
-}
-
-
-/*ご意見ボタン*/
-
-input[type="button"]{
-
-    position:absolute;
-    bottom: 3%;
-    left: 9%;
-    
-    text-align: center;
-    
-    width: 83%; /*--幅--*/
-    padding: 1%; /*--余白--*/
-    border-radius: 5px; /*--角丸--*/ 
-    background-color:lightgoldenrodyellow; /*--背景色--*/
-    font-family: '游明朝 Medium', serif;
-    font-weight:bolder;
-    font-size:medium;
-
-}
-
-      
-/*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
-
-  #map{
-
-    top: 18%;
-    width: 100%;
-    bottom:42%;
-    /*height: 5%;*/
-   
-    position:absolute;
-
+/*cssの記述を『position:absolute』ではなく、『display:flex』に変更する！*/
+
+
+  /*h1タグのコンテナ*/
+  .flex_container_h1{
+  
+    display: flex;
+    justify-content: center;
+       
   }
+  
+  /*h2タグのコンテナ*/
+  .flex_container_h2{
+  
+    display: flex;
+   justify-content: center;
+  
+  }
+  
+  /*切り替えボタンのコンテナ*/
+  .flex_container_change{
+  
+    display: flex;
+    justify-content: flex-end;
+      
+  }
+  
+  /*入力ボタン諸々のコンテナ*/
+  .flex_container_word{
+  
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    gap: 1%;
+         
+  }
+
+    /*検索・クリアボタンのコンテナ*/
+    .flex_container_button{
+  
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      gap: 50px;
+     
+           
+    }
+  
+  /*出発地と目的地を結ぶ矢印のコンテナ*/
+  
+  #arrow_cotainer{
+  
+    display: flex;
+    align-items:center;
+    justify-content: center;
+      
+  }
+
+  /*.flex_container_seachbox{            mapをflexなしで記述したら反映されなくなったため不要*/
+
+    /*display: flex;
+    justify-content: flex-end;
+
+  }*/
+  
+  /*意見画面に遷移ボタンのコンテナ*/
+  .flex_container_opinion{
+  
+      display: flex;
+      justify-content:center;
+      margin: 5%;
+      
+  }
+  
+  /*一覧表示のコンテナ*/
+  
+  .sort_container{
+  
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+  
+  }
+  
+  /*h1タグ*/
+  
+  .h11{ 
+  
+      font-family:'游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size:medium;
+         
+  }
+  
+  /*h2タグ*/
+  
+  .h22{        
+        
+      font-family:'游明朝 Medium', serif;
+      font-weight:bolder;
+      color:#3CB371;
+      font-family: '游明朝 Medium', serif;
+      font-size:medium;
+      
+  } 
+  
+  
+  /*切り替えボタン*/
+  
+  .change{
+      
+      text-align: center;
+      width: 70px; /*--幅--*/
+      padding: 5px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      background-color:lavender;/*--背景色--*/
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size:small;
+  }
+  
+  
+  
+  /*-----出発地-----*/
+  
+  /*出発地の文字*/
+  
+  #start{
+  
+      display: flex;
+    
+      font-family:'游明朝 Medium', serif;
+      text-align:center;
+      
+      font-size:larger;
+  
+  }
+  
+  /*出発地の入力するテキストボックス*/
+  
+  #inputBegin{
+     
+      text-align: center;
+      width: 600px; /*--幅--*/
+      padding: 5px; /*--余白--*/
+      border: solid 2px #cccccc; /*--ボーダー線--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size: large;
+  }
+  
+  /*検索ボタン*/
+  
+  #searchButton{
+      
+      width: 90px; /*--幅--*/
+      padding: 7px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size:medium;
+  
+  }
+  
+  /*クリアボタン*/
+  
+  #startclear{
+  
+      width: 90px; /*--幅--*/
+      padding: 7px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      font-family: '游明朝 Medium', serif;;
+      font-weight:bolder;
+      font-size: medium;
+  
+  }
+  
+  /*-----目的地-----*/
+  
+  /*目的地の文字*/
+  
+  #ends{
+  
+      display: flex;
+  
+      font-family:'游明朝 Medium', serif;
+      
+      font-size:larger;
+  
+  }
+  
+  /*目的地の入力するテキストボックス*/
+  
+  #inputEnd{
+      
+      text-align: center;
+      width: 600px;
+      padding: 5px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      border: solid 2px #cccccc; /*--ボーダー線--*/
+      font-family: '游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size:large;
+  }
+  
+  /*出発地と目的地を結ぶ矢印*/
+  
+  #arrow{
+  
+    font-size:x-large;
+    font-weight: bolder;
+    font-family: '游明朝 Medium', serif;
+  
+  }
+  
+  /*ご意見ボタン*/
+  
+  input[type="button"]{   
+      
+      width: 68%;
+      padding: 10px; /*--余白--*/
+      border-radius: 5px; /*--角丸--*/ 
+      background-color:lightgoldenrodyellow; /*--背景色--*/
+      font-family: '游明朝 Medium', serif;
+      font-weight:bolder;
+      font-size:medium;
+
+      margin-bottom: 10%;
+  
+  }
+     
+  
+  /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
+  
+  #map{
+  
+    width: 92%;
+    height: 80%;
+    margin-left: 4%;
+    }
+    
+      
+    /*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
+  
+    /*iframe {
+    width: 100%;
+    height: 100%;
+  }
+  */
+  
+   
+  
+  
   /*以下、検索機能とデフォルトマーカー表示機能のcss*/
   html,
   body {
@@ -258,25 +260,25 @@ input[type="button"]{
     margin: 0;
     padding: 0;
   }
-
+  
   #description {
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
   }
-
+  
   #infowindow-content .title {
     font-weight: bold;
   }
-
+  
   #infowindow-content {
     display: none;
   }
-
+  
   #map #infowindow-content {
     display: inline;
   }
-
+  
   .pac-card {
     margin: 10px 10px 0 0;
     border-radius: 2px 0 0 2px;
@@ -287,39 +289,43 @@ input[type="button"]{
     background-color: #fff;
     font-family: Roboto;
   }
-
+  
   #pac-container {
     padding-bottom: 12px;
     margin-right: 12px;
   }
-
+  
   .pac-controls {
     display: inline-block;
     padding: 5px 11px;
   }
-
+  
   .pac-controls label {
     font-family: Roboto;
     font-size: 13px;
     font-weight: 300;
   }
-
+  
   #pac-input {
+  
+    text-align: center;
+    font-family: '游明朝 Medium', serif;
+  
     background-color: #fff;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 200;
+    /*font-family: Roboto;*/
+    font-size: 18px;
+    font-weight: 300;
     margin-left: 12px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 200px;
-    height: 30px;
+    width: 40%;
+    height: 45px;
   }
-
+  
   #pac-input:focus {
     border-color: #4d90fe;
   }
-
+  
   #title {
     color: #fff;
     background-color: #4d90fe;
@@ -327,31 +333,21 @@ input[type="button"]{
     font-weight: 500;
     padding: 6px 12px;
   }
-
+  
   #target {
     width: 345px;
   }
-
+  
   /*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
-
+  
   iframe {
-	width: 100%;
-	height: 100%;
-}
-
-
-/*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
-
-
-  iframe {
-	width: 100%;
-	height: 100%;
-}
-
-
-/*以下、サービス提供施設の一覧表示機能のcss*/
-
-#sampleTable2  th {
+  width: 100%;
+  height: 100%;
+  }
+  
+  /*以下、サービス提供施設の一覧表示機能のcss*/
+  
+  #sampleTable2  th {
     border : 1px solid #666;
   }
   
@@ -421,20 +417,19 @@ input[type="button"]{
     background-color: rgb(239, 255, 238);    
   }
   
+  /*一覧表示のテーブル*/
+  
   #sortTable{
+  
     text-align: left;    /*文字を左詰め*/
     font-size: 10px;    /*文字の大きさを指定*/
-  
-    width: 85%;
-    top: 60%;
-    bottom: 8%; 
-    margin-right: 7.5%;
-    margin-left: 7.5%;
-  
-  
+      
+    width: 75%;
+    
     display: block;
     overflow-y: scroll;
     overflow-x: scroll;
-    position:absolute;
+    /*right: 25%;
+    height: 50%;         /*スクロールバーの表示(いらなければ消していい)*/
+  
   }
-
