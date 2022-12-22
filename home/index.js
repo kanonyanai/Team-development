@@ -75,15 +75,6 @@ function initAutocomplete() {
     bounds: bounds,
   });
 
-
-  // 予測変換
-  /*const input_start = document.getElementById("startword");
-  const input_end = document.getElementById("endword");
-  const autocomplete_start = new google.maps.places.Autocomplete(input_start,);
-  const autocomplete_end = new google.maps.places.Autocomplete(input_end);
-  autocomplete_start.bindTo("bounds", map);
-  autocomplete_end.bindTo("bounds", map);*/
-
   
   //サービス提供施設のマーカー設置処理
   for (var i = 0; i < markerData.length; i++) {
@@ -163,13 +154,20 @@ function initAutocomplete() {
   });
 
 
+  //経路表示のピン
   const input_start = document.getElementById("startword");
+  const input_end = document.getElementById("endword");
   const StartBox = new google.maps.places.SearchBox(input_start);
+  const EndBox = new google.maps.places.SearchBox(input_end);
 
   map.addListener("bounds_changed", () => {
     StartBox.setBounds(map.getBounds());
   });
-  let markers_s = [];
+  map.addListener("bounds_changed", () => {
+    EndBox.setBounds(map.getBounds());
+  });
+  let markers_start = [];
+  let markers_end = [];
 
   // 予測変換を選択したときのイベント
   // 場所の詳細
@@ -181,10 +179,10 @@ function initAutocomplete() {
     }
 
     // 古いマーカーを消去
-    markers_s.forEach((marker) => {
+    markers_start.forEach((marker) => {
       marker.setMap(null);
     });
-    markers_s = [];
+    markers_start = [];
 
     // 場所ごとに、アイコン、名前、および場所を取得
     const bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
@@ -196,7 +194,52 @@ function initAutocomplete() {
       var icon_red = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
 
       // マップ上にマーカーを表示
-      markers_s.push(
+      markers_start.push(
+        new google.maps.Marker({
+          map,
+          icon_red,
+          title: place.name,
+          position: place.geometry.location,
+        })
+      );
+
+      if (place.geometry.viewport) {
+        // ジオコーダーのみが場所の情報を持つ
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    bounds.extend(marker.position);
+    map.fitBounds(bounds);
+  });
+
+  // 予測変換を選択したときのイベント
+  // 場所の詳細
+  EndBox.addListener("places_changed", () => {
+    const places = EndBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // 古いマーカーを消去
+    markers_end.forEach((marker) => {
+      marker.setMap(null);
+    });
+    markers_end = [];
+
+    // 場所ごとに、アイコン、名前、および場所を取得
+    const bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
+    places.forEach((place) => {
+      if (!place.geometry || !place.geometry.location) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon_red = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+
+      // マップ上にマーカーを表示
+      markers_end.push(
         new google.maps.Marker({
           map,
           icon_red,
@@ -226,66 +269,6 @@ document.getElementById('search').addEventListener('click', initAutocomplete(), 
 
 })
 
-
-
-
- //経路のピンの表示機能
- function codeAddress() {
-
-  // 検索ボックスを作成し、UIとのリンク
-  const input_start = document.getElementById("startword");
-  const StartBox = new google.maps.places.SearchBox(input_start);
-
-  map.addListener("bounds_changed", () => {
-    StartBox.setBounds(map.getBounds());
-  });
-  let markers_s = [];
-
-  // 予測変換を選択したときのイベント
-  // 場所の詳細
-  StartBox.addListener("places_changed", () => {
-    const places = StartBox.getPlaces();
-
-    if (places.length == 0) {
-      return;
-    }
-
-    // 古いマーカーを消去
-    markers_s.forEach((marker) => {
-      marker.setMap(null);
-    });
-    markers_s = [];
-
-    // 場所ごとに、アイコン、名前、および場所を取得
-    const bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
-    places.forEach((place) => {
-      if (!place.geometry || !place.geometry.location) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      var icon_red = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
-
-      // マップ上にマーカーを表示
-      markers_s.push(
-        new google.maps.Marker({
-          map,
-          icon_red,
-          title: place.name,
-          position: place.geometry.location,
-        })
-      );
-
-      if (place.geometry.viewport) {
-        // ジオコーダーのみが場所の情報を持つ
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    bounds.extend(marker.position);
-    map.fitBounds(bounds);
-  });
-}
 
 function goFilter2(){
   var wTable = document.getElementById("sortTable");
