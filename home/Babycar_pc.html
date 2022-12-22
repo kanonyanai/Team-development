@@ -1,6 +1,6 @@
 <!--pc用とスマホ用に切り替えるボタンを付ける！-->
 
-
+<script src="jquery-3.6.1.min.js"></script>
 <!DOCTYPE html>
 <html lang="ja">
 <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
@@ -14,7 +14,7 @@
     <!--polyfillのインストール-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!--jsファイルの読み込み-->
-    <script src="./index.js"></script>
+    <script src="routemap.js"></script>
 
 
     <div class="h11">
@@ -45,17 +45,21 @@
 
     <div>
       <p id="start">出発地</p>
-      <input type="text" id="startword" placeholder="出発地を入力">
-      <button type="submit" id="startconfirm">確定</button>
+      <input type="text" id="inputBegin" placeholder="出発地を入力">
+      <button type="submit" id="searchButton">検索</button>
       <button type="reset" id="startclear">クリア</button>
     </div>
 
     <div>
-      <p id="end">目的地</p>
-      <input type="text" id="endword" placeholder="目的地を入力">
-      <button type="submit" id="endconfirm">確定</button>
-      <button type="reset" id="endclear">クリア</button>
+      <p id="ends">目的地</p>
+      <input type="text" id="inputEnd" placeholder="目的地を入力">
+      
     </div>
+
+    <script type="text/javascript" src="routemap.js"></script>
+    <span id="begin"></span> <p id="arrow">→</p><span id="end"></span>
+    <div id="map_canvas"></div>
+    <div id="directionsPanel"></div>
 
     <!---------------ここまで--------------->
 
