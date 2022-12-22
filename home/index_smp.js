@@ -155,34 +155,34 @@ function initAutocomplete() {
 
 
   //経路表示のピン
-  const input_start = document.getElementById("startword");
-  const input_end = document.getElementById("endword");
-  const StartBox = new google.maps.places.SearchBox(input_start);
+  const input_Begin = document.getElementById("inputBegin");
+  const input_end = document.getElementById("inputEnd");
+  const BeginBox = new google.maps.places.SearchBox(input_Begin);
   const EndBox = new google.maps.places.SearchBox(input_end);
 
   map.addListener("bounds_changed", () => {
-    StartBox.setBounds(map.getBounds());
+    BeginBox.setBounds(map.getBounds());
   });
   map.addListener("bounds_changed", () => {
     EndBox.setBounds(map.getBounds());
   });
-  let markers_start = [];
+  let markers_Begin = [];
   let markers_end = [];
 
   // 予測変換を選択したときのイベント
   // 場所の詳細
-  StartBox.addListener("places_changed", () => {
-    const places = StartBox.getPlaces();
+  BeginBox.addListener("places_changed", () => {
+    const places = BeginBox.getPlaces();
 
     if (places.length == 0) {
       return;
     }
 
     // 古いマーカーを消去
-    markers_start.forEach((marker) => {
+    markers_Begin.forEach((marker) => {
       marker.setMap(null);
     });
-    markers_start = [];
+    markers_Begin = [];
 
     // 場所ごとに、アイコン、名前、および場所を取得
     const bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
@@ -194,7 +194,7 @@ function initAutocomplete() {
       var icon_red = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
 
       // マップ上にマーカーを表示
-      markers_start.push(
+      markers_Begin.push(
         new google.maps.Marker({
           map,
           icon_red,
