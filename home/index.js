@@ -65,6 +65,11 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
   }
 ];
 
+// 予測変換
+const input_Begin = document.getElementById("inputBegin");
+const input_End = document.getElementById("inputEnd");
+const autocomplete = new google.maps.places.Autocomplete(input_Begin,input_End);
+autocomplete.bindTo("bounds", map);
 
 $(function() {
     $('#searchButton').click(function(e) {
