@@ -115,7 +115,6 @@
     margin-top: 20%;
   
   }
-
  
   
   /*h1タグ*/
@@ -138,9 +137,7 @@
       font-family: '游明朝 Medium', serif;
       font-size:large;
       
-  }
-  
-  
+  }   
   
   
   /*切り替えボタン*/
@@ -157,8 +154,7 @@
       font-size:small;
   }
   
-  
-  
+    
   /*-----出発地-----*/
   
   /*出発地の文字*/
@@ -166,10 +162,8 @@
   #start{
   
       display: flex;
-    
       font-family:'游明朝 Medium', serif;
       text-align:center;
-      
       font-size:x-large;
   
   }
@@ -221,9 +215,7 @@
   #ends{
   
       display: flex;
-  
       font-family:'游明朝 Medium', serif;
-      
       font-size:x-large;
   
   }
@@ -318,7 +310,7 @@
   
   .pac-card {
     margin: 10px 10px 0 0;
-    border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;/*--角を丸める--*/
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     outline: none;
@@ -395,7 +387,13 @@
   .allNoDisplay2 tr:not(.colTitle) {
     display: none;
   }
+
+  /*チェックボックスの部分*/  /*12/23更新*/
+  input[type="checkbox"] {
+    transform: scale(1.5); /*--チェックボックスの大きさ変更--*/
+  }
   
+/*↓tableのrow(横並び)のような要素を形成する*/
   .kbaby2    tr[kbaby]{
     display: table-row;
   }
@@ -459,10 +457,10 @@
   #sortTable{
   
     text-align: left;    /*文字を左詰め*/
-    font-size: 10px;    /*文字の大きさを指定*/
+    font-size: 12px;    /*文字の大きさを指定*/  /*12/23更新*/
   
     
-    width: 68%;
+    width: 77%;          /*12/23更新*/
     
     display: block;
     overflow-y: scroll;
