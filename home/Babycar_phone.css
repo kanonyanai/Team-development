@@ -359,6 +359,12 @@
     display: none;
   }
   
+ /*チェックボックスの部分*/  /*12/23更新*/
+ input[type="checkbox"] {
+  transform: scale(1.9); /*--チェックボックスの大きさ変更--*/
+}
+
+/*↓tableのrow(横並び)のような要素を形成する*/
   .kbaby2    tr[kbaby]{
     display: table-row;
   }
@@ -422,7 +428,7 @@
   #sortTable{
   
     text-align: left;    /*文字を左詰め*/
-    font-size: 10px;    /*文字の大きさを指定*/
+    font-size: 18px;    /*文字の大きさを指定*/  /*12/23更新*/
       
     width: 75%;
     
