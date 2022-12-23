@@ -1,0 +1,66 @@
+<!DOCTYPE >
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="sort.css">
+        <script src="sort.js"></script>
+
+    </head>
+    <body>
+        <script>
+            // 絞り込みに使うタグ（class）を記述してください。数の上限下限はありません。
+            var $chkbxFilter_tags =['kuruma','baby','sonota','sonota2']; 
+        
+            // 絞り込み対象の要素のHTMLタグを指定してください。（div、section、tr など）
+            var $chkbxFilter_blocks = ['section']   
+        </script>
+        <!-- JS設定ここまで -->
+        
+        <h1>クリックで要素の絞り込み</h1>
+        
+        <!-- 絞込み要素選択ここから -->
+        <div id="select">
+            
+            <!-- 絞り込まない（全表示）ボタン -->
+            <label class="selected"><input type="radio" id="all" checked="checked">絞り込まない</label>
+        
+            <!-- 絞込みに使うタグをidとして指定します -->
+            <label><input type="checkbox" id="kuruma" class="sort">車いす貸出(kuruma)</label>
+            <label><input type="checkbox" id="baby" class="sort">車いす用座席(baby)</label>
+            <label><input type="checkbox" id="sonota" class="sort">車椅子入店可(sonota)</label>
+            <label><input type="checkbox" id="sonota2" class="sort">入口に段差がない(sonota2)</label>
+
+            
+        
+        </div>
+        <!-- 絞込み要素選択ここまで -->
+        
+        
+        <!-- 絞込まれる要素ここから -->
+        <div id="result">
+            
+            <!-- 絞込みに使うタグをclassとして指定します -->
+        
+            <section class="kuruma baby sonota2">
+                <p>施設1 class="kuruma baby sonota2"</p>
+            </section>
+        
+            <section class="baby">
+                <p>施設2 class="baby"</p>
+            </section>
+        
+            <section class="sonota">
+                <p>施設3 class="sonota"</p>
+            </section>
+
+            <section class="sonota2">
+                <p>施設4 class="sonota2"</p>
+            </section>
+        
+           
+        
+        </div>
+
+    </body>
+</html>
+
