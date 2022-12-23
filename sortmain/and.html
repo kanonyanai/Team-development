@@ -1,0 +1,93 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="and.css">
+    <script src="and.js"></script>
+
+</head>
+
+<body>
+    <script>
+        // 絞り込みに使うタグ（class）を記述してください。数の上限下限はありません。
+        var $chkbxFilter_tags = ['sonota1', 'sonota2', 'sonota3', 'sonota4','sonota5','sonota6','sonota7','sonota8','sonota9','sonota10','sonota11','sonota12'];
+
+        // 絞り込み対象の要素のHTMLタグを指定してください。（div、section、tr など）
+        var $chkbxFilter_blocks = ['section']   
+    </script>
+    <!-- JS設定ここまで -->
+
+
+    <!-- 絞込み要素選択ここから -->
+    <div id="select">
+
+        <!-- 絞り込まない（全表示）ボタン -->
+        <label class="selected"><input type="radio" id="all" checked="checked">絞り込まない</label>
+
+        <!-- 絞込みに使うタグをidとして指定します -->
+        <label><input type="checkbox" id="sonota1" class="sort">車いす貸出(sonota1)</label>
+        <label><input type="checkbox" id="sonota2" class="sort">車いす用座席(sonota2)</label>
+        <label><input type="checkbox" id="sonota3" class="sort">車椅子入店可(sonota3)</label>
+        <label><input type="checkbox" id="sonota4" class="sort">入口に段差がない(sonota4)</label>
+        <label><input type="checkbox" id="sonota5" class="sort">ベビーカー貸出(sonota5)</label>
+        <label><input type="checkbox" id="sonota6" class="sort">授乳室あり(sonota6)</label>
+        <label><input type="checkbox" id="sonota7" class="sort">託児所あり(sonota7)</label>
+        <label><input type="checkbox" id="sonota8" class="sort">おむつ交換台(sonota8)</label>
+        <label><input type="checkbox" id="sonota9" class="sort">ベビーカー休憩室あり(sonota9)</label>
+        <label><input type="checkbox" id="sonota10" class="sort">手すり付き浴室(sonota10)</label>
+        <label><input type="checkbox" id="sonota11" class="sort">オフトメイト対応トイレ(sonota11)</label>
+        <label><input type="checkbox" id="sonota12" class="sort">救護室あり(sonota12)</label>
+
+
+
+    </div>
+    <!-- 絞込み要素選択ここまで -->
+
+
+    <!-- 絞込まれる要素ここから -->
+    <div id="result">
+
+        <!-- 絞込みに使うタグをclassとして指定します -->
+
+        <section class="sonota1 sonota2">
+            <p>施設1 class="sonota1 sonota2"</p>
+        </section>
+
+        <section class="sonota2 sonota3 sonota4">
+            <p>施設2 class="sonota2 sonota3 sonota4"</p>
+        </section>
+
+        <section class="sonota3 sonota4">
+            <p>施設3 class="sonota3 sonota4"</p>
+        </section>
+
+        <section class="sonota4">
+            <p>施設4 class="sonota4"</p>
+        </section>
+
+        <section class="sonota5">
+            <p>施設 class="sonota5"</p>
+        </section>
+
+        <section class="sonota6 sonota3">
+            <p>施設 class="sonota6 sonota3"</p>
+        </section>
+
+        <section class="sonota7">
+            <p>施設 class="sonota7"</p>
+        </section>
+
+        <section class="sonota8 sonota10">
+            <p>施設 class="sonota8 sonota10"</p>
+        </section>
+
+        <section class="sonota9 sonota11">
+            <p>施設 class="sonota9 sonota11 sonota12"</p>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
