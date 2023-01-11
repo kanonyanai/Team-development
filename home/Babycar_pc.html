@@ -3,10 +3,13 @@
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
 </script>
-<script src="jquery-3.6.1.min.js"></script>
 
 <!--追加部分-->
 <script src="and.js"></script>
+
+<script src="jquery-3.6.1.min.js"></script>
+
+
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -86,7 +89,16 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
   <!--ここまで-->
     
 
-  <!--追加部分-->
+  
+
+  <div class="sort_container">
+
+
+
+    <!--以下、一覧表示機能-->
+    <table border="2" id="sortTable">
+
+      <!--追加部分-->
   <script>
     // 絞り込みに使うタグ（class）を記述してください。数の上限下限はありません。
     //                        車いす貸出,車いす用座席,車いす入店可,入口に段差なし
@@ -101,13 +113,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 </script>
  
 
-  <div class="sort_container">
-
-
-
-    <!--以下、一覧表示機能-->
-    <table border="2" id="sortTable">
-
 <!--追加部分-->
 <div id="select">
 
@@ -115,10 +120,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
         <th colspan="4" id="ue">
           <a class="categori">車椅子関連</a><br>
-          <input type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出
-          <input type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席
-          <input type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可
-          <input type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br>
+          <label><input type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出</label>
+          <label><input type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席</label>
+          <label><input type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可</label>
+          <label><input type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br></label>
 
           <a class="categori">ベビーカー関連</a><br>
           <input type="checkbox" onChange="goFilter2()" id="chkbaby">ベビーカー貸出

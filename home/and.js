@@ -1,14 +1,9 @@
 $(function (){
     var $chkbxFilter_all = $('#all');
 
-    //絞り込まないボタンをクリック時にチェックボックスをオフにする
-    $chkbxFilter_all.click(function() {
-		  $(".sort").prop('checked',false);
-		  $chkbxFilter_all.prop('checked',true);
-    });
     
     //チェックボックスがクリックされた時の動作
-    $("#select label input").click(function() {
+    $("#select colTitle label input").click(function() {
         
         $(this).parent().toggleClass("selected");
         
