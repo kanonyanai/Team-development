@@ -142,6 +142,17 @@ function initAutocomplete() {
     center: { lat: 38.260260, lng: 140.879823 },
     zoom: 15,
     bounds: bounds,
+    styles: [
+      //全てのラベルを非表示
+      {
+        featureType: 'poi',
+        elementType: 'labels',
+        stylers: [
+          {visibility: 'off'},
+        ],
+      },
+    ]
+    
   });
 
   //サービス提供施設のマーカー設置処理
