@@ -4,6 +4,10 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
 </script>
 <script src="jquery-3.6.1.min.js"></script>
+
+<!--追加部分-->
+<script src="and.js"></script>
+
 <!DOCTYPE html>
 <html lang="ja">
 <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
@@ -81,11 +85,32 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
   <!--ここまで-->
     
+
+  <!--追加部分-->
+  <script>
+    // 絞り込みに使うタグ（class）を記述してください。数の上限下限はありません。
+    //                        車いす貸出,車いす用座席,車いす入店可,入口に段差なし
+    //                        ベビーカー貸出,授乳室,託児所,おむつ,ベビーカー休憩室
+    //                        手すり付き,オストメイト対応トイレ,救護室あり
+    var $chkbxFilter_tags = ['chkkuruma', 'chkksheet', 'chkknyutenok', 'chkdansang'
+                            ,'chkbaby','chkbabyroom','chkkidsroom','chkomutu','chkkyukei'
+                            ,'chktesuri','chkosuto','chkkyugo'];
+
+    // 絞り込み対象の要素のHTMLタグを指定してください。（div、section、tr など）
+    var $chkbxFilter_blocks = ['tr']   
+</script>
  
 
   <div class="sort_container">
+
+
+
     <!--以下、一覧表示機能-->
     <table border="2" id="sortTable">
+
+<!--追加部分-->
+<div id="select">
+
       <tr class="colTitle">
 
         <th colspan="4" id="ue">
@@ -109,12 +134,19 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         </th>
 
       </tr>
+
+  <!--追加部分-->
+</div>
+
       <tr class="colTitle">
         <th>施設名</th>
         <th>住所</th>
         <th>説明</th>
         <th>タグ</th>
       </tr>
+
+      <!--追加部分-->
+      <div id="result">
 
       <tr tesuri dansang kuruma>
         <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a></td>
@@ -195,8 +227,14 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>多目的トイレ　車いす貸出　ベビーカー貸出　ベビーカー休憩室</td>
       </tr>
 
+      <!--追加部分-->
+      </div>
+
     </table>
     <!--以上、一覧表示機能-->
+
+
+
   </div>
 
 
