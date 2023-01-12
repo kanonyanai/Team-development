@@ -138,11 +138,71 @@ function initAutocomplete() {
   var LatLngTo = new google.maps.LatLng(38.158939, 141.028747);
   var bounds = new google.maps.LatLngBounds(LatLngFrom, LatLngTo);
 
+  jQuery(function($) {
+ 
+    // gps に対応しているかチェック
+  if (! navigator.geolocation) {
+       $('#map').text('GPSに対応したブラウザでお試しください');
+         return false;
+    }
+  
+    $('#map').text('GPSデータを取得します...');
+  
+  // gps取得開始
+   navigator.geolocation.getCurrentPosition(function(pos) {
+         // gps 取得成功
+      // google map 初期化
+         const map = new google.maps.Map($('#map').get(0), {
+         center: { lat: 38.260260, lng: 140.879823 },
+         zoom: 15,
+         bounds: bounds,
+         //↓地図の表示を変更
+         styles: [
+           //全てのラベルを非表示
+           {
+             featureType: 'poi',
+             elementType: 'labels',
+             stylers: [
+               {visibility: 'off'},
+             ],
+           },
+         ]
+         });
+  
+      // 現在位置にピンをたてる
+       var currentPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+      var currentMarker = new google.maps.Marker({
+             position: currentPos
+         });
+      currentMarker.setMap(map);
+  
+      // 誤差を円で描く
+       new google.maps.Circle({
+             map: map,
+           center: currentPos,
+          radius: pos.coords.accuracy, // 単位はメートル
+          strokeColor: '#0088ff',
+            strokeOpacity: 0.8,
+          strokeWeight: 1,
+             fillColor: '#0088ff',
+          fillOpacity: 0.2
+         });
+  
+      // 現在地にスクロールさせる
+      map.panTo(currentPos);
+  
+  }, function() {
+      // gps 取得失敗
+      $('#map').text('GPSデータを取得できませんでした');
+        return false;
+    });
+ });
+ /*
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 38.260260, lng: 140.879823 },
     zoom: 15,
     bounds: bounds,
-  });
+  });*/
 
   //サービス提供施設のマーカー設置処理
   for (var i = 0; i < markerData.length; i++) {
