@@ -98,41 +98,27 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     <!--以下、一覧表示機能-->
     <table border="2" id="sortTable">
 
-      <!--追加部分-->
-  <script>
-    // 絞り込みに使うタグ（class）を記述してください。数の上限下限はありません。
-    //                        車いす貸出,車いす用座席,車いす入店可,入口に段差なし
-    //                        ベビーカー貸出,授乳室,託児所,おむつ,ベビーカー休憩室
-    //                        手すり付き,オストメイト対応トイレ,救護室あり
-    var $chkbxFilter_tags = ['chkkuruma', 'chkksheet', 'chkknyutenok', 'chkdansang'
-                            ,'chkbaby','chkbabyroom','chkkidsroom','chkomutu','chkkyukei'
-                            ,'chktesuri','chkosuto','chkkyugo'];
-
-    // 絞り込み対象の要素のHTMLタグを指定してください。（div、section、tr など）
-    var $chkbxFilter_blocks = ['tr']   
-</script>
- 
-
+    
 <!--追加部分-->
 <div id="select">
-
+    
       <tr class="colTitle">
 
         <th colspan="4" id="ue">
-          <a class="categori">車椅子関連</a><br>
-          <label><input type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出</label>
-          <label><input type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席</label>
-          <label><input type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可</label>
-          <label><input type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br></label>
+          <a class="categori" name="car">車椅子関連</a><br>
+          <input type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出
+          <input type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席
+          <input type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可
+          <input type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br>
 
-          <a class="categori">ベビーカー関連</a><br>
+          <a class="categori" name="baby">ベビーカー関連</a><br>
           <input type="checkbox" onChange="goFilter2()" id="chkbaby">ベビーカー貸出
           <input type="checkbox" onChange="goFilter2()" id="chkbabyroom">授乳室あり
           <input type="checkbox" onChange="goFilter2()" id="chkkidsroom">託児所あり
           <input type="checkbox" onChange="goFilter2()" id="chkomutu">おむつ交換台
           <input type="checkbox" onChange="goFilter2()" id="chkkyukei">ベビーカー休憩室あり<br>
 
-          <a class="categori">その他</a><br>
+          <a class="categori" name="other">その他</a><br>
           <input type="checkbox" onChange="goFilter2()" id="chktesuri">手すり付き浴室
           <input type="checkbox" onChange="goFilter2()" id="chkosuto">オストメイト対応トイレ
           <input type="checkbox" onChange="goFilter2()" id="chkkyugo">救護室あり
@@ -143,16 +129,16 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
   <!--追加部分-->
 </div>
 
+<!--追加部分-->
+<div id="result">
+    
       <tr class="colTitle">
         <th>施設名</th>
         <th>住所</th>
         <th>説明</th>
         <th>タグ</th>
       </tr>
-
-      <!--追加部分-->
-      <div id="result">
-
+     
       <tr tesuri dansang kuruma>
         <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a></td>
         <td>宮城県仙台市太白区秋保町湯元字平倉1</td>
@@ -238,10 +224,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     </table>
     <!--以上、一覧表示機能-->
 
-
-
   </div>
-
 
     <div>
       <div class="flex_container_opinion">
