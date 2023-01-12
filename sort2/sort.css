@@ -6,7 +6,8 @@
 /* ここから下は見た目の調整 */
 #select {
     margin-bottom: 1em;
-   
+    background-color: rgb(219, 248, 230);
+   /* width: 100px;*/
 
 }
 
@@ -19,4 +20,8 @@
 }
 
 #select label.selected {background-color: #fcc;} /* 選択中のラベルのスタイルを変更 */
+
+.categori{
+    color: rgb(14, 83, 40);
+}
 
