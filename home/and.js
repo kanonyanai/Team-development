@@ -1,21 +1,29 @@
-$(function() {
-    var lists = $('.result tr');
-    $(document).on('change', '.select colTitle th categori', function() {
-        lists.show();
-        for (var i = 0; i < $('.select colTitle th categori').length; i++) {
-            // 絞り込みの項目を取得
-            var item = $('.select colTitle th categori').eq(i).attr('name');
-            // 絞り込みの対象を取得
-            var target = $('.select colTitle th categori').eq(i).val();
- 
-            if(target != '') {
-                for (var j = 0; j < lists.length; j++) {
-                    // 絞り込み対象でない場合は非表示
-                    if(!lists.eq(j).find('.' + item).find('tr').hasClass(target)) {
-                        lists.eq(j).hide();
-                    }
-                };
-            }
-        };
+$(function(){
+    $('[name=area],[name=city],[name=brand]').on('change',function(){
+      var area=$('[name=area]').val()==""?"":'.'+$('[name=area]').val();
+      var city=[];
+      $('[name=city]:checked').each(function(){city.push('.'+$(this).val())});
+      var brand=$('[name=brand]:checked').length>0?'.'+$('[name=brand]:checked').val():"";
+      $('#err').remove();
+      if(area=="" && city.length==0 && brand==""){
+        $('#store-data table tbody tr').show();
+      }else{
+        var tr=$('#store-data table tbody tr').hide().filter(function(){
+          return area==""?true:$(this).has(area).length>0;
+        }).filter(function(){
+          return (brand==""||brand==".all")?true:$(this).has(brand).length>0;
+        }).filter(function(){
+          return city.length==0?true:$(this).has(city.join(",")).length>0;
+        }).show();
+        if(tr.length==0){
+          $("#store-data table").after($('<div>').attr('id','err').text("該当なし"));
+        }
+      }
+    }).eq(0).trigger('change');
+    $('#reset').on('click',function(e){
+      $('[name=area]').prop('selectedIndex',0);
+      $('[name=city]').prop('checked',false);
+      $('[name=brand]').prop('checked',false).trigger('change');
     });
-});
+  });
+  
