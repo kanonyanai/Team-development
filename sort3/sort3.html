@@ -3,8 +3,8 @@
 
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="sort.css">
-        <script src="sort.js"></script>
+        <link rel="stylesheet" href="sort3.css">
+        <script src="sort3.js"></script>
 
     </head>
 
@@ -13,26 +13,37 @@
             <tr class="colTitle">
       
               <th colspan="4" id="ue">
+
+                <!--ボタンを1回しか押せないようにする-->
+
                 <a class="categori">車椅子関連</a><br>
-                <input type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出
-                <input type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席
-                <input type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可
-                <input type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br>
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkuruma" onclick="disabled =true">車いす貸出
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkksheet" onclick="disabled =true">車いす用座席
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkknyutenok" onclick="disabled =true">車椅子入店可
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkdansang" onclick="disabled =true">入口に段差がない<br>
       
                 <a class="categori">ベビーカー関連</a><br>
-                <input type="checkbox" onChange="goFilter2()" id="chkbaby">ベビーカー貸出
-                <input type="checkbox" onChange="goFilter2()" id="chkbabyroom">授乳室あり
-                <input type="checkbox" onChange="goFilter2()" id="chkkidsroom">託児所あり
-                <input type="checkbox" onChange="goFilter2()" id="chkomutu">おむつ交換台
-                <input type="checkbox" onChange="goFilter2()" id="chkkyukei">ベビーカー休憩室あり<br>
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkbaby" onclick="disabled =true">ベビーカー貸出
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkbabyroom" onclick="disabled =true">授乳室あり
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkidsroom" onclick="disabled =true">託児所あり
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkomutu" onclick="disabled =true">おむつ交換台
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkyukei" onclick="disabled =true">ベビーカー休憩室あり<br>
       
                 <a class="categori">その他</a><br>
-                <input type="checkbox" onChange="goFilter2()" id="chktesuri">手すり付き浴室
-                <input type="checkbox" onChange="goFilter2()" id="chkosuto">オストメイト対応トイレ
-                <input type="checkbox" onChange="goFilter2()" id="chkkyugo">救護室あり
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chktesuri" onclick="disabled =true">手すり付き浴室
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkosuto" onclick="disabled =true">オストメイト対応トイレ
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkyugo" onclick="disabled =true">救護室あり
+
+               
+                <input type="button" value="制限を解除" onclick="getElementById('chkkuruma').disabled = false">
+                
+                
               </th>
+
+             
       
             </tr>
+            
             <tr class="colTitle">
               <th>施設名</th>
               <th>住所</th>
