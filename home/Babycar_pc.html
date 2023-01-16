@@ -1,4 +1,4 @@
-<!--pc用とスマホ用に切り替えるボタンを付ける！-->
+<!--現段階だと出発地と目的地の空白が経由地分空いてしまっている(1/16)-->
 
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
@@ -8,7 +8,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 <script src="and.js"></script>
 
 <script src="jquery-3.6.1.min.js"></script>
-
 
 
 <!DOCTYPE html>
@@ -45,22 +44,30 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     </div> 
     </div>  
     
-
-    <!--必ず入れる。idの名前は変えない！！！-->
-
+    <!--以下変更部分(1/16)-->
+    <!--入力ボタン諸々のコンテナの追加と経由地の追加-->
     <div>
-      <div class="flex_container_word">
-      <p id="start">出発地</p>
-      <input type="text" id="inputBegin" placeholder="出発地を入力">
-      <p id="ends">目的地</p>
-      <input type="text" id="inputEnd" placeholder="目的地を入力">
-      <button type="submit" id="searchButton">検索</button>
-      <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>  
-      </div>
-    </div>
-    
 
-<!--以下、変更部分-->
+        <div class="flex_container_word1">
+          <p id="start">出発地</p>
+          <input type="text" id="inputBegin" placeholder="出発地を入力">
+        </div>
+        <div class="flex_container_word2">
+          <p id="stop">経由地</p>
+          <input type="text" id="inputStop" placeholder="経由地を入力">
+          <button type="submit" id="searchButton">検索</button>
+        <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>
+        </div>
+        <div class="flex_container_word3">
+          <p id="ends">目的地</p>
+          <input type="text" id="inputEnd" placeholder="目的地を入力">
+        </div>
+
+      </div>
+   
+
+    <!--ここまで-->
+    
   <script type="text/javascript" src="index.js"></script>
   <!--矢印を消した(1/16変更)-->
     <!--検索機能でinputの内容追加-->
@@ -68,14 +75,14 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
 
 
-  <div id="map"> <!--不要な<を消した（12/23）-->
+  <div id="map">
     <div id="map_canvas"></div>
   </div>
     <div id="directionsPanel"></div>
     
-  
-  
   </div>
+  
+  
 
   <div class="bun1_container">
     <div class="flex_container_change">
@@ -84,20 +91,13 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
       </div>
 
   <!--ここまで-->
-    
-
-  
+     
 
   <div class="sort_container">
 
-
-
     <!--以下、一覧表示機能-->
     <table border="2" id="sortTable">
-
-    
-<!--追加部分-->
-<div id="select">
+   
     
       <tr class="colTitle">
 
@@ -123,8 +123,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
       </tr>
 
-  <!--追加部分-->
-</div>
+
 
 <!--追加部分-->
 <div id="result">
@@ -232,6 +231,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
   </div>
 
 <!--コンテナの終わりの部分-->
+  </div>
 </div>
 
   </body>

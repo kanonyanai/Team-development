@@ -1,11 +1,6 @@
 /*---メモ---*/
-/*cssの記述を『position:absolute』ではなく、『display:flex』に変更する！*/
 
 /*mapはflexを使わずに位置調整をする*/
-/*mapの上に謎の空白が出来てしまうため、その調節をする必要がある*/
-
-/*--追加部分--*/
-#result [class*="hidden-"] {display: none;}
 
 /*全体の画面大きさの分割*/
 
@@ -60,13 +55,35 @@
       
   }
   
-  /*入力ボタン諸々のコンテナ*/
-  .flex_container_word{
+
+
+  /*出発地のコンテナ*/  /*1/16に変更した*/
+  .flex_container_word1{
+  
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;/*1/16の変更部分*/
+    gap: 1.5%;/*←gap：幅の調整*/
+         
+  }
+
+  /*経由地と検索・クリアのコンテナ*/  /*1/16に変更した*/
+  .flex_container_word2{
   
     display: flex;
     align-items:center;
     justify-content: flex-end;
-    gap: 1.5%;
+    gap: 1.5%;/*←gap：幅の調整*/
+         
+  }
+
+  /*目的地のコンテナ*/  /*1/16に変更した*/
+  .flex_container_word3{
+  
+    display: flex;
+    align-items:center; 
+    justify-content: flex-start;/*1/16に変更部分*/
+    gap: 1.5%;/*←gap：幅の調整*/
          
   }
   
@@ -166,13 +183,40 @@
   #inputBegin{
      
       text-align: center;
-      width: 350px; /*--幅--*/
+      width: 320px; /*--幅--*/
       padding: 6px; /*--余白--*/
       border: solid 2px #cccccc; /*--ボーダー線--*/
       border-radius: 5px; /*--角丸--*/ 
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
+  }
+
+  /*経由地の文字*/  /*1/16に追加*/
+
+  #stop{
+
+    display: flex;
+    font-family:'游明朝 Medium', serif;
+    text-align:center;
+    font-size:x-large;
+
+
+  }
+
+/*経由地を入力するテキストボックス*/  /*1/16に追加*/
+
+  #inputStop{
+ 
+    text-align: center;
+    width: 320px; /*--幅--*/
+    padding: 6px; /*--余白--*/
+    border: solid 2px #cccccc; /*--ボーダー線--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: large;
+
   }
   
   /*検索ボタン*/
@@ -216,15 +260,15 @@
   /*目的地の入力するテキストボックス*/
   
   #inputEnd{
-      
-      text-align: center;
-      width: 350px;
-      padding: 6px; /*--余白--*/
-      border-radius: 5px; /*--角丸--*/ 
-      border: solid 2px #cccccc; /*--ボーダー線--*/
-      font-family: '游明朝 Medium', serif;
-      font-weight:bolder;
-      font-size:large;
+            
+    text-align: center;
+    width: 320px; /*--幅--*/
+    padding: 6px; /*--余白--*/
+    border: solid 2px #cccccc; /*--ボーダー線--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: large;
   }
   
  /*矢印を消した(1/16変更)*/
