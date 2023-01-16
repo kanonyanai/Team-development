@@ -71,16 +71,7 @@
   }
   
 /*以下、変更部分*/
-
-  /*出発地と目的地を結ぶ矢印のコンテナ*/
-  
-  #arrow_cotainer{
-  
-    display: flex;
-    align-items:center;
-    justify-content: center;
-      
-  }
+/*矢印を消した(1/16変更)*/
 
   /*.flex_container_seachbox{            mapをflexなしで記述したら反映されなくなったため不要*/
 
@@ -236,15 +227,7 @@
       font-size:large;
   }
   
-  /*出発地と目的地を結ぶ矢印*/
-  
-  #arrow{
-  
-    font-size:x-large;
-    font-weight: bolder;
-    font-family: '游明朝 Medium', serif;
-  
-  }
+ /*矢印を消した(1/16変更)*/
   
   /*ご意見ボタン*/
   
