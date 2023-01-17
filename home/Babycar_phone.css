@@ -132,7 +132,7 @@
      
       text-align: center;
       width: 600px; /*--幅--*/
-      padding: 20px; /*--余白--*/
+      padding: 15px; /*--余白--*/
       border: solid 2px #cccccc; /*--ボーダー線--*/
       border-radius: 5px; /*--角丸--*/ 
       font-family: '游明朝 Medium', serif;;
@@ -219,6 +219,13 @@
 }
   
 /*矢印を消した(1/16変更)*/
+
+#comment{
+  text-align: center;
+  font-family: '游明朝 Medium', serif;
+    font-weight:bolder;
+    font-size:xx-large;
+}
 
   /*ご意見ボタン*/
   
