@@ -16,7 +16,6 @@
   .bun1_container{
   
     width: calc(100% * 3/8);
-    /*width: calc(100% / 3);*/
   
   }
   
@@ -27,8 +26,31 @@
     width: calc(100% * 5/8);
   
   }
+
+  /*以下1/17更新*/
+
+  .container_group{
+    display: flex;
+    justify-content:flex-end;
+
+  }
+  /*文字入力の左側の分割サイズ指定*/
   
+  .container_left{
   
+    width: calc(100% * 1/2);
+  
+  }
+
+  /*文字入力の左側の分割サイズ指定*/
+  
+  .container_right{
+  
+    width: calc(100% * 1/2);
+  
+  }
+  /*ここまで*/
+
   /*h1タグのコンテナ*/
   .flex_container_h1{
   
@@ -57,36 +79,43 @@
   
 
 
-  /*出発地のコンテナ*/  /*1/16に変更した*/
+  /*出発地のコンテナ*/  /*1/17に変更した*/
   .flex_container_word1{
   
     display: flex;
     align-items:center;
-    justify-content: flex-start;/*1/16の変更部分*/
+    justify-content: flex-end;/*1/17の変更部分*/
+    gap: 1.5%;/*←gap：幅の調整*/
+         
+  } 
+
+  /*目的地のコンテナ*/  /*1/17に変更した*/
+  .flex_container_word2{
+  
+    display: flex;
+    align-items:center; 
+    justify-content: flex-end;/*1/16に変更部分*/
     gap: 1.5%;/*←gap：幅の調整*/
          
   }
-
-  /*経由地と検索・クリアのコンテナ*/  /*1/16に変更した*/
-  .flex_container_word2{
+  
+  /*経由地と検索・クリアのコンテナ*/  /*1/17に変更した*/
+  .flex_container_word3{
   
     display: flex;
     align-items:center;
     justify-content: flex-end;
+    margin-top: 5%;                     /*中央寄せが出来なかったため、とりあえずmarginで調整(1/17)*/
     gap: 1.5%;/*←gap：幅の調整*/
          
   }
 
-  /*目的地のコンテナ*/  /*1/16に変更した*/
-  .flex_container_word3{
-  
+  .group{
     display: flex;
-    align-items:center; 
-    justify-content: flex-start;/*1/16に変更部分*/
-    gap: 1.5%;/*←gap：幅の調整*/
-         
+    justify-content: center;
+
   }
-  
+
 /*以下、変更部分*/
 /*矢印を消した(1/16変更)*/
 

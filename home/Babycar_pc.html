@@ -1,4 +1,4 @@
-<!--現段階だと出発地と目的地の空白が経由地分空いてしまっている(1/16)-->
+<!--経由地のところが中央寄せが出来ていないため、とりあえずmarginで調整した(1/17)-->
 
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
@@ -44,26 +44,32 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     </div> 
     </div>  
     
-    <!--以下変更部分(1/16)-->
+    <!--以下変更部分(1/17)-->
     <!--入力ボタン諸々のコンテナの追加と経由地の追加-->
     <div>
-
-        <div class="flex_container_word1">
-          <p id="start">出発地</p>
-          <input type="text" id="inputBegin" placeholder="出発地を入力">
-        </div>
-        <div class="flex_container_word2">
+        <!--出発地と目的地、経由地部分を縦に分割する-->
+      <div class="container_group">
+        <div class="container_left">
+          <div class="flex_container_word1">
+            <p id="start">出発地</p>
+            <input type="text" id="inputBegin" placeholder="出発地を入力">
+          </div>
+          <div class="flex_container_word2">
+            <p id="ends">目的地</p>
+            <input type="text" id="inputEnd" placeholder="目的地を入力">
+          </div>
+      </div>
+      <div class="container_right">
+        <div class="flex_container_word3">
           <p id="stop">経由地</p>
           <input type="text" id="inputStop" placeholder="経由地を入力">
           <button type="submit" id="searchButton">検索</button>
-        <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>
-        </div>
-        <div class="flex_container_word3">
-          <p id="ends">目的地</p>
-          <input type="text" id="inputEnd" placeholder="目的地を入力">
-        </div>
-
+          <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>
+        </div>      
       </div>
+        
+      </div>
+    </div>
    
 
     <!--ここまで-->
