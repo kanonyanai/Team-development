@@ -50,23 +50,28 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
     <div>
       <div class="flex_container_word">
-      <p id="start">出発地</p>
-      <input type="text" id="inputBegin" placeholder="出発地を入力            ">
-    </div>
-    <div class="flex_container_word">
-      <p id="ends">目的地</p>
-      <input type="text" id="inputEnd" placeholder="目的地を入力            ">
+        <p id="start">出発地</p>
+        <input type="text" id="inputBegin" placeholder="出発地を入力            ">
+      </div>
+      <div class="flex_container_word">
+        <p id="ends">目的地</p>
+        <input type="text" id="inputEnd" placeholder="目的地を入力            ">
+      </div>
+      <div class="flex_container_word">
+        <p id="stop">経由地</p>
+        <input type="text" id="inputStop" placeholder="経由地を入力            ">
     </div>
     <div class="flex_container_button">
       <button type="submit" id="searchButton">検索</button>
       <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>      
     </div>
+    <h1></h1>
     </div>
     
 
     <script type="text/javascript" src="index.js"></script>
     <!--矢印を消した(1/16変更)-->
-    <div id="map">  <!--不要な<を消した（12/23）-->
+    <div id="map">
       <div id="map_canvas"></div>
     </div>
       <div id="directionsPanel"></div>

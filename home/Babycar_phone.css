@@ -81,7 +81,7 @@
   
       font-family:'游明朝 Medium', serif;
       font-weight:bolder;
-      font-size:medium;
+      font-size:xx-large;
          
   }
   
@@ -93,7 +93,7 @@
       font-weight:bolder;
       color:#3CB371;
       font-family: '游明朝 Medium', serif;
-      font-size:medium;
+      font-size:x-large;
       
   } 
   
@@ -103,13 +103,13 @@
   .change{
       
       text-align: center;
-      width: 70px; /*--幅--*/
-      padding: 5px; /*--余白--*/
+      width: 100px; /*--幅--*/
+      padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       background-color:lavender;/*--背景色--*/
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
-      font-size:small;
+      font-size:large;
   }
   
   
@@ -120,12 +120,9 @@
   
   #start{
   
-      display: flex;
-    
       font-family:'游明朝 Medium', serif;
       text-align:center;
-      
-      font-size:larger;
+      font-size:xx-large;
   
   }
   
@@ -135,24 +132,24 @@
      
       text-align: center;
       width: 600px; /*--幅--*/
-      padding: 5px; /*--余白--*/
+      padding: 20px; /*--余白--*/
       border: solid 2px #cccccc; /*--ボーダー線--*/
       border-radius: 5px; /*--角丸--*/ 
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
-      font-size: large;
+      font-size: x-large;
   }
   
   /*検索ボタン*/
   
   #searchButton{
       
-      width: 90px; /*--幅--*/
-      padding: 7px; /*--余白--*/
+      width: 140px; /*--幅--*/
+      padding: 2px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
-      font-size:medium;
+      font-size:xx-large;
   
   }
   
@@ -160,12 +157,12 @@
   
   #startclear{
   
-      width: 90px; /*--幅--*/
-      padding: 7px; /*--余白--*/
+      width: 140px; /*--幅--*/
+      padding: 2px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
-      font-size: medium;
+      font-size:xx-large;
   
   }
   
@@ -175,11 +172,10 @@
   
   #ends{
   
-      display: flex;
-  
-      font-family:'游明朝 Medium', serif;
-      
-      font-size:larger;
+
+    font-family:'游明朝 Medium', serif;
+    text-align:center;
+    font-size:xx-large;
   
   }
   
@@ -189,13 +185,38 @@
       
       text-align: center;
       width: 600px;
-      padding: 5px; /*--余白--*/
+      padding: 15px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       border: solid 2px #cccccc; /*--ボーダー線--*/
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
-      font-size:large;
+      font-size:x-large;
   }
+
+  /*-----経由地-----*/
+  
+  /*経由地の文字*/
+  
+  #stop{
+  
+    font-family:'游明朝 Medium', serif; 
+    font-size:xx-large;
+
+}
+
+/*経由地の入力するテキストボックス*/
+
+#inputStop{
+    
+    text-align: center;
+    width: 600px;
+    padding: 15px; /*--余白--*/
+    border-radius: 5px; /*--角丸--*/ 
+    border: solid 2px #cccccc; /*--ボーダー線--*/
+    font-family: '游明朝 Medium', serif;
+    font-weight:bolder;
+    font-size:x-large;
+}
   
 /*矢印を消した(1/16変更)*/
 
@@ -204,12 +225,12 @@
   input[type="button"]{   
       
       width: 68%;
-      padding: 10px; /*--余白--*/
+      padding: 20px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       background-color:lightgoldenrodyellow; /*--背景色--*/
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
-      font-size:medium;
+      font-size:x-large;
 
       margin-bottom: 10%;
   
