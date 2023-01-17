@@ -1,7 +1,5 @@
 /*---メモ---*/
 
-/*mapはflexを使わずに位置調整をする*/
-
 /*全体の画面大きさの分割*/
 
 .container{
@@ -56,8 +54,7 @@
   
     display: flex;
     margin-left: 65%;
-   
-    
+       
   }
   
   /*h2タグのコンテナ*/
@@ -75,8 +72,7 @@
     display: flex;
     justify-content: flex-end;
       
-  }
-  
+  } 
 
 
   /*出発地のコンテナ*/  /*1/17に変更した*/
@@ -298,6 +294,13 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
+  }
+
+  .point{
+    text-align: center;
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: larger;
   }
   
  /*矢印を消した(1/16変更)*/
