@@ -1,9 +1,6 @@
 <!--pc用とスマホ用に切り替えるボタンを付ける！-->
 <!--jsファイルの読み込み-->
 <script src="./index_phone.js"></script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
-</script>
 <script src="jquery-3.6.1.min.js"></script>
 <!DOCTYPE html>
 <html lang="ja">
@@ -22,6 +19,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
   <body>
 
+    <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
+</script>
     <div class="flex_container_change">
       <button type="button" onclick="location.href='Babycar_pc.html'" class="change">PC用</button>
       <button type="button" onclick="location.href='Babycar_phone.html'" class="change">スマホ用</button>
