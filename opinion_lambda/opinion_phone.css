@@ -1,0 +1,104 @@
+/*1/19更新（flex(コンテナ使用)に変更）*/
+/*flexはpxで記述する（%だとサイズを変えた際に伸び縮みしてしまう）*/
+
+/*htmlとbody全体に色付け*/
+html,body{
+
+	background-color:rgb(253, 253, 211); /*--背景色--*/
+
+}
+
+/*戻るボタンとご意見・ご要望の間を調節するスペース*/
+.space_container{
+
+	height: 60px;
+}
+
+/*テキストエリアと送信ボタンの間を調節するスペース*/
+.space_container2{
+
+	height: 40px;
+}
+
+/*ホームに戻るボタンのコンテナ*/
+.back_container{
+	display: flex;
+	justify-items: flex-start;
+}
+
+/*ご意見のh1タグのコンテナ*/
+.op_container{
+	display: flex;
+	justify-content: center;
+}
+
+/*テキストエリアのコンテナ*/
+.text_container{
+	display: flex;
+	justify-content: center;
+}
+
+/*送信ボタンのコンテナ*/
+.sub_container{
+	display: flex;
+	justify-content: center;
+
+}
+/*ご意見・ご要望フォームの文字*/
+.opinion{
+    
+	font-size:large;
+	font-weight: bolder;
+	text-align:center;
+	font-family:'游明朝 Medium', serif;
+	height: 100px;
+}
+
+/*metaタグの中*/
+#name {
+	margin-left: 230px;
+	margin-bottom: 10px;
+}
+
+
+/*意見内容のテキストエリアの調整*/
+.textarea-con {
+    
+    text-align: center;
+	width: 320px; /*--幅--*/
+    height: 350px;/*--高さ--*/
+    padding: 5px; /*--余白--*/
+	border-radius: 5px; /*--角丸--*/  
+    resize: none;
+    font-size:large;
+    font-family:'游明朝 Medium', serif;
+}
+
+
+
+/*ホームに戻る*/
+.back{
+		
+	width: 75px; /*--幅--*/
+    padding: 3px; /*--余白--*/
+	border-radius: 5px; /*--角丸--*/  
+	background-color:rgb(253, 191, 133);
+	font-size:large;
+	font-weight: bolder;
+	font-family:'游明朝 Medium', serif;
+}
+
+
+/*送信ボタン*/
+.submit{
+	
+	text-align: center;
+	width: 250px;/*--幅--*/
+	padding: 6px; /*--余白--*/
+	border-radius: 5px; /*--角丸--*/  
+	background-color:rgb(253, 191, 133);
+	font-weight: bolder;
+	font-size:x-large;
+	font-family:'游明朝 Medium', serif;
+}
+
