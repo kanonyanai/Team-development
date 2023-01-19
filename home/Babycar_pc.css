@@ -1,9 +1,4 @@
 /*---メモ---*/
-/*cssの記述を『position:absolute』ではなく、『display:flex』に変更する！*/
-
-/*mapはflexを使わずに位置調整をする*/
-/*mapの上に謎の空白が出来てしまうため、その調節をする必要がある*/
-
 
 /*全体の画面大きさの分割*/
 
@@ -19,7 +14,6 @@
   .bun1_container{
   
     width: calc(100% * 3/8);
-    /*width: calc(100% / 3);*/
   
   }
   
@@ -30,15 +24,37 @@
     width: calc(100% * 5/8);
   
   }
+
+  /*以下1/17更新*/
+
+  .container_group{
+    display: flex;
+    justify-content:flex-end;
+
+  }
+  /*文字入力の左側の分割サイズ指定*/
   
+  .container_left{
   
+    width: calc(100% * 1/2);
+  
+  }
+
+  /*文字入力の左側の分割サイズ指定*/
+  
+  .container_right{
+  
+    width: calc(100% * 1/2);
+  
+  }
+  /*ここまで*/
+
   /*h1タグのコンテナ*/
   .flex_container_h1{
   
     display: flex;
     margin-left: 65%;
-   
-    
+       
   }
   
   /*h2タグのコンテナ*/
@@ -56,29 +72,48 @@
     display: flex;
     justify-content: flex-end;
       
+  } 
+
+
+  /*出発地のコンテナ*/  /*1/17に変更した*/
+  .flex_container_word1{
+  
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;/*1/17の変更部分*/
+    gap: 1.5%;/*←gap：幅の調整*/
+         
+  } 
+
+  /*目的地のコンテナ*/  /*1/17に変更した*/
+  .flex_container_word2{
+  
+    display: flex;
+    align-items:center; 
+    justify-content: flex-end;/*1/16に変更部分*/
+    gap: 1.5%;/*←gap：幅の調整*/
+         
   }
   
-  /*入力ボタン諸々のコンテナ*/
-  .flex_container_word{
+  /*経由地と検索・クリアのコンテナ*/  /*1/17に変更した*/
+  .flex_container_word3{
   
     display: flex;
     align-items:center;
     justify-content: flex-end;
-    gap: 1.5%;
+    margin-top: 5%;                     /*中央寄せが出来なかったため、とりあえずmarginで調整(1/17)*/
+    gap: 1.5%;/*←gap：幅の調整*/
          
   }
-  
-/*以下、変更部分*/
 
-  /*出発地と目的地を結ぶ矢印のコンテナ*/
-  
-  #arrow_cotainer{
-  
+  .group{
     display: flex;
-    align-items:center;
     justify-content: center;
-      
+
   }
+
+/*以下、変更部分*/
+/*矢印を消した(1/16変更)*/
 
   /*.flex_container_seachbox{            mapをflexなしで記述したら反映されなくなったため不要*/
 
@@ -115,7 +150,6 @@
     margin-top: 20%;
   
   }
-
  
   
   /*h1タグ*/
@@ -138,9 +172,7 @@
       font-family: '游明朝 Medium', serif;
       font-size:large;
       
-  }
-  
-  
+  }   
   
   
   /*切り替えボタン*/
@@ -157,8 +189,7 @@
       font-size:small;
   }
   
-  
-  
+    
   /*-----出発地-----*/
   
   /*出発地の文字*/
@@ -166,10 +197,8 @@
   #start{
   
       display: flex;
-    
       font-family:'游明朝 Medium', serif;
       text-align:center;
-      
       font-size:x-large;
   
   }
@@ -179,13 +208,40 @@
   #inputBegin{
      
       text-align: center;
-      width: 350px; /*--幅--*/
+      width: 320px; /*--幅--*/
       padding: 6px; /*--余白--*/
       border: solid 2px #cccccc; /*--ボーダー線--*/
       border-radius: 5px; /*--角丸--*/ 
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
+  }
+
+  /*経由地の文字*/  /*1/16に追加*/
+
+  #stop{
+
+    display: flex;
+    font-family:'游明朝 Medium', serif;
+    text-align:center;
+    font-size:x-large;
+
+
+  }
+
+/*経由地を入力するテキストボックス*/  /*1/16に追加*/
+
+  #inputStop{
+ 
+    text-align: center;
+    width: 320px; /*--幅--*/
+    padding: 6px; /*--余白--*/
+    border: solid 2px #cccccc; /*--ボーダー線--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: large;
+
   }
   
   /*検索ボタン*/
@@ -221,9 +277,7 @@
   #ends{
   
       display: flex;
-  
       font-family:'游明朝 Medium', serif;
-      
       font-size:x-large;
   
   }
@@ -231,26 +285,25 @@
   /*目的地の入力するテキストボックス*/
   
   #inputEnd{
-      
-      text-align: center;
-      width: 350px;
-      padding: 6px; /*--余白--*/
-      border-radius: 5px; /*--角丸--*/ 
-      border: solid 2px #cccccc; /*--ボーダー線--*/
-      font-family: '游明朝 Medium', serif;
-      font-weight:bolder;
-      font-size:large;
+            
+    text-align: center;
+    width: 320px; /*--幅--*/
+    padding: 6px; /*--余白--*/
+    border: solid 2px #cccccc; /*--ボーダー線--*/
+    border-radius: 5px; /*--角丸--*/ 
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: large;
+  }
+
+  .point{
+    text-align: center;
+    font-family: '游明朝 Medium', serif;;
+    font-weight:bolder;
+    font-size: larger;
   }
   
-  /*出発地と目的地を結ぶ矢印*/
-  
-  #arrow{
-  
-    font-size:x-large;
-    font-weight: bolder;
-    font-family: '游明朝 Medium', serif;
-  
-  }
+ /*矢印を消した(1/16変更)*/
   
   /*ご意見ボタン*/
   
@@ -318,7 +371,7 @@
   
   .pac-card {
     margin: 10px 10px 0 0;
-    border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;/*--角を丸める--*/
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     outline: none;
@@ -395,7 +448,13 @@
   .allNoDisplay2 tr:not(.colTitle) {
     display: none;
   }
+
+  /*チェックボックスの部分*/  /*12/23更新*/
+  input[type="checkbox"] {
+    transform: scale(1.5); /*--チェックボックスの大きさ変更--*/
+  }
   
+/*↓tableのrow(横並び)のような要素を形成する*/
   .kbaby2    tr[kbaby]{
     display: table-row;
   }
@@ -459,10 +518,10 @@
   #sortTable{
   
     text-align: left;    /*文字を左詰め*/
-    font-size: 10px;    /*文字の大きさを指定*/
+    font-size: 12px;    /*文字の大きさを指定*/  /*12/23更新*/
   
     
-    width: 68%;
+    width: 77%;          /*12/23更新*/
     
     display: block;
     overflow-y: scroll;

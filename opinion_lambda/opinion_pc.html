@@ -1,44 +1,57 @@
+<!--コンテナ部分は1/19に追加-->
 <!DOCTYPE html>
 <html lang="ja">
 
-<link rel="stylesheet" href="./opinion.css">
+<link rel="stylesheet" href="./opinion_pc.css">
 
 	<head>
-	
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-		<!--これはjsの適応リンク-->
-		<script src="script.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+	<!--これはjsの適応リンク-->	<!--1/19更新-->
+	<script src="script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
 
 		<title>ご意見フォーム</title>
 	
 	</head>
 	
 	<body>
-		
-		<!--ここからフォーム-->
+
 		<!--actionが""はセキュリティの問題らしい、methodがgetでないのは送信内容が見えてしまうため-->
 		<form id="contact-form" method="post">
 			
-			<!--ここは関係ないのでいじらない-->
 			<div>
-			<button type="button" onclick="location.href='../home/Babycar_pc.html'" class="back">ホームに戻る</button>
+				<div class="back_container"><!--1/19更新-->
+					<button type="button" onclick="location.href='../home/Babycar_phone.html'" class="back">戻る</button>
+				</div>
 			</div>
 			
-			
-			
-			<div class="opinion"><h1>ご意見・ご要望</h1></div>				
+			<div class="space_container"></div><!--1/19更新-->
+
+			<div class="op_container"><!--1/19更新-->
+			<div class="opinion">
+				<h1>ご意見・ご要望</h1></div>
+			</div>				
 				
-					<label for="content" class="op"></label>
-							
-			<textarea class="textarea-con" name="content" placeholder="ここに入力してください"></textarea>
+			<!--labelタグを消した（1/19更新）-->
 			
-							<button type="submit" class="submit" onClick="submitToAPI(event)" >送信</button>
-				</div>
+			<div class="space_container1"></div><!--1/19更新-->
+
+			<!--テキストエリアに書く内容-->
+			<div class="text_container"><!--1/19更新-->
+				<textarea class="textarea-con" name="content" placeholder="ここに入力してください"></textarea>
+			</div>
+			
+			<div class="space_container2"></div><!--1/19更新-->
+
+			<div class="sub_container"><!--1/19更新-->
+				<button type="submit" class="submit" onClick="submitToAPI(event)">送信</button>
+			</div>
+
+			</form>
 		</form>
 	</body>
-
 
 </html>
