@@ -1,6 +1,6 @@
 /*オートコンプリート機能を利用した予測変換と地図情報の取得*/
 //デフォルトで表示するピンの情報
-var map, begin, end;
+var map, begin, end, waypoint;
 var directionsDisplay;
 var directionsService;
 var marker_d = [];
@@ -236,12 +236,12 @@ $(function() {
  
         begin = $('#inputBegin').val();
         end   = $('#inputEnd').val();
- 
+        waypoint  = $('#inputStop').val();
         // ルート説明をクリア
         $('#directionsPanel').text(' ');
- 
-        google.maps.event.addDomListener(window, 'load', initialize(begin, end));
-        google.maps.event.addDomListener(window, 'load', calcRoute(begin, end));
+    
+        google.maps.event.addDomListener(window, 'load', initialize(begin, end, waypoint));
+        google.maps.event.addDomListener(window, 'load', calcRoute(begin, end ,waypoint));
     });
 });
  
@@ -308,6 +308,7 @@ function initialize(begin, end) {
             // 場所
             $('#begin').text(begin);
             $('#end').text(end);
+            $('#stop').val(waypoint);
  
         } else {
             alert('取得できませんでした…');
@@ -316,24 +317,32 @@ function initialize(begin, end) {
 }
  
 // ルート取得
-function calcRoute(begin, end) {
- 
-    var request = {
-        origin: begin,         // 開始地点
-        destination: end,      // 終了地点
-        travelMode: google.maps.TravelMode.WALKING,     // [歩き]でのルート
-    };
- 
-    // インスタンス作成
-    directionsService = new google.maps.DirectionsService();
- 
-    directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-        } else {
-            alert('ルートが見つかりませんでした…');
-        }
-    });
+function calcRoute(begin, end, waypoint) {
+  if(waypoint !== ""){
+  var request = {
+      origin: begin,         // 開始地点
+      destination: end,      // 終了地点
+      waypoints: [{location: waypoint}], // 経由地
+      travelMode: google.maps.TravelMode.WALKING,     // [歩き]でのルート
+  };
+}
+else{
+  var request = {
+    origin: begin,         // 開始地点
+    destination: end,      // 終了地点
+    travelMode: google.maps.TravelMode.WALKING,     // [歩き]でのルート
+};
+}
+  // インスタンス作成
+  directionsService = new google.maps.DirectionsService();
+
+  directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+      } else {
+          alert('ルートが見つかりませんでした…');
+      }
+  });
 }
 
 function initAutocomplete() {
@@ -461,12 +470,15 @@ function initAutocomplete() {
   });
 
   // 予測変換
-const input_Begin = document.getElementById("inputBegin");
-const input_End = document.getElementById("inputEnd");
-const autocomplete_Begin = new google.maps.places.Autocomplete(input_Begin);
-const autocomplete_End = new google.maps.places.Autocomplete(input_End);
-autocomplete_Begin.bindTo("bounds", map);
-autocomplete_End.bindTo("bounds", map);
+  const input_Begin = document.getElementById("inputBegin");
+  const input_End = document.getElementById("inputEnd");
+  const input_Stop = document.getElementById("inputStop");
+  const autocomplete_Begin = new google.maps.places.Autocomplete(input_Begin);
+  const autocomplete_End = new google.maps.places.Autocomplete(input_End);
+  const autocomplete_Stop = new google.maps.places.Autocomplete(input_Stop);
+  autocomplete_Begin.bindTo("bounds", map);
+  autocomplete_End.bindTo("bounds", map);
+  autocomplete_Stop.bindTo("bounds", map);
 
 }
 //マーカーのクリックイベントの処理
