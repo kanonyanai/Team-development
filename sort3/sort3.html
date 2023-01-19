@@ -14,30 +14,26 @@
       
               <th colspan="4" id="ue">
 
-                <!--ボタンを1回しか押せないようにする-->
+               
 
                 <a class="categori">車椅子関連</a><br>
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkuruma" onclick="disabled =true">車いす貸出
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkksheet" onclick="disabled =true">車いす用座席
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkknyutenok" onclick="disabled =true">車椅子入店可
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkdansang" onclick="disabled =true">入口に段差がない<br>
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkuruma" >車いす貸出
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkksheet" >車いす用座席
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br>
       
                 <a class="categori">ベビーカー関連</a><br>
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkbaby" onclick="disabled =true">ベビーカー貸出
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkbabyroom" onclick="disabled =true">授乳室あり
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkidsroom" onclick="disabled =true">託児所あり
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkomutu" onclick="disabled =true">おむつ交換台
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkyukei" onclick="disabled =true">ベビーカー休憩室あり<br>
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkbaby">ベビーカー貸出
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkbabyroom">授乳室あり
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkidsroom">託児所あり
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkomutu">おむつ交換台
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkyukei">ベビーカー休憩室あり<br>
       
                 <a class="categori">その他</a><br>
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chktesuri" onclick="disabled =true">手すり付き浴室
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkosuto" onclick="disabled =true">オストメイト対応トイレ
-                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkyugo" onclick="disabled =true">救護室あり
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chktesuri">手すり付き浴室
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkosuto">オストメイト対応トイレ
+                <input name ="box" type="checkbox" onChange="goFilter2()" id="chkkyugo">救護室あり
 
-               
-                <input type="button" value="制限を解除" onclick="getElementById('chkkuruma').disabled = false">
-                
-                
               </th>
 
              
@@ -56,6 +52,11 @@
               <td>宮城県仙台市太白区秋保町湯元字平倉1</td>
               <td>朝６時からオープン</td>
               <td>手すり付き浴室 入口に段差なし 車いす貸出</td>
+             
+              <div class="nasi">
+                <div id = "id1">tesuri dansang kuruma</div>
+             </div>
+            
             </tr>
       
             <tr knyutenok>
@@ -65,6 +66,11 @@
               <td>宮城県仙台市泉区松森字城前157-1</td>
               <td>車椅子の貸出は無し</td>
               <td>ベビーカー入店可 車椅子入店可</td>
+
+              <div class="nasi">
+               <div id = "id2">knyutenok</div>
+              </div>
+
             </tr>
       
             <tr>
@@ -74,15 +80,24 @@
               <td>宮城県仙台市青葉区大倉字若林14-2</td>
               <td>null</td>
               <td>null</td>
+
+              <div class="nasi">
+               <div id = "id3">tesuri dansang kuruma</div>
+              </div>
+            
+
             </tr>
       
             <tr babyroom osuto kyugo>
-              <td><a
-                  href='http://www.sendai-astro.jp/'>仙台市天文台</a>
-              </td>
+              <td><a href='http://www.sendai-astro.jp/'>仙台市天文台</a></td>
               <td>〒989-3123 宮城県仙台市青葉区錦ケ丘9-29-32</td>
               <td><a href="https://www.google.co.jp/">リンク(例)</a></td>
               <td>授乳室　オストメイト対応トイレ　エレベーター　救護室</td>
+
+              <div class="nasi">
+              <div id = "id4">babyroom osuto kyugo</div>
+              </div>
+
             </tr>
       
             <tr babyroom kidsroom ksheet>
@@ -92,6 +107,11 @@
               <td>〒983-0045 宮城県仙台市宮城野区宮城野2-11-6</td>
               <td>車椅子席は付き添いの方一名様分も込み</td>
               <td>託児所　授乳室　車椅子席</td>
+
+              <div class="nasi">
+              <div id = "id5">babyroom kidsroom ksheet</div>
+              </div>
+
             </tr>
       
             <tr kbaby omutu>
@@ -101,24 +121,35 @@
               <td> 〒982-0108 宮城県仙台市太白区八木山本町1-43</td>
               <td>ベビーカー貸出は150円</td>
               <td>ベビーカー貸出　おむつ交換台</td>
+
+              <div class="nasi">
+              <div id = "id6">kbaby omutu</div>
+              </div>
+
             </tr>
       
             <tr osuto kuruma kbaby babyroom>
-              <td><a
-                  href='https://www.pref.miyagi.jp/site/mmoa/'>宮城県美術館</a>
-              </td>
+              <td><a href='https://www.pref.miyagi.jp/site/mmoa/'>宮城県美術館</a></td>
               <td>〒980-0861 宮城県仙台市青葉区川内元支倉34-1</td>
               <td>null</td>
               <td>オストメイト対応トイレ　車いす貸出　エレベーター　自動ドア　スロープ　授乳室　おむつ交換台</td>
+
+              <div class="nasi">
+              <div id = "id7">osuto kuruma kbaby babyroom</div>
+              </div>
+
             </tr>
       
             <tr kuruma osuto babyroom>
-              <td><a
-                  href='http://www.uminomori.jp/umino/index.html'>仙台うみの杜水族館</a>
-              </td>
+              <td><a href='http://www.uminomori.jp/umino/index.html'>仙台うみの杜水族館</a></td>
               <td>〒983-0013 宮城県仙台市宮城野区中野4-6</td>
               <td>null</td>
               <td>車いす貸出　車いす利用可能トイレ　オストメイト対応トイレ　介護用ベッド　授乳室</td>
+
+              <div class="nasi">
+              <div id = "id8">kuruma osuto babyroom</div>
+              </div>
+
             </tr>
       
             <tr osuto kuruma kyukei>
@@ -128,6 +159,11 @@
               <td>〒980-8450宮城県仙台市青葉区中央3丁目7-5</td>
               <td>null</td>
               <td>多目的トイレ　車いす貸出　ベビーカー貸出　ベビーカー休憩室</td>
+
+              <div class="nasi">
+              <div id = "id9">osuto kuruma kyukei</div>
+              </div>
+
             </tr>
       
           </table>

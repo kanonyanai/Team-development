@@ -6,11 +6,11 @@
     border : 1px solid #666;
   }
   
-  .allNoDisplay2 tr:not(.colTitle) {
+  .allNoDisplay2 tr:not(.colTitle) {  /*消す*/
     display: none;
   }
   
-  .kbaby2    tr[kbaby]{
+  .k1    tr[kbaby]{
     display: table-row;
   }
   
@@ -85,3 +85,7 @@
     height: 50%;         /*スクロールバーの表示(いらなければ消していい)*/
   
   }
+
+.nasi{
+  display: none;  /*並び替えに必要な要素を画面に表示させないようにするやつ*/
+}
