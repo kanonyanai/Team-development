@@ -151,6 +151,10 @@
   
   }
  
+
+  html{
+    background-color:rgba(250, 250, 210,0.1);
+  }
   
   /*h1タグ*/
   
@@ -256,6 +260,15 @@
       font-size:medium;
   
   }
+
+  /*ボタンを押したとき*/
+  #seachButton:active{
+
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  
+    }
   
   /*クリアボタン*/
   
@@ -269,6 +282,15 @@
       font-size: medium;
   
   }
+
+  /*ボタンを押したとき*/
+  #startclear:active{
+
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  
+    }
   
   /*-----目的地-----*/
   
@@ -312,12 +334,20 @@
       width: 380px;
       padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      background-color:lightgoldenrodyellow; /*--背景色--*/
+      /*background-color:lightgoldenrodyellow; /*--背景色--*/
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
   
   }
+
+  /*ボタンを押したとき*/
+  input[type="button"]:active{
+ 
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+    }
      
   
   /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/

@@ -88,6 +88,14 @@ html,body{
 	font-family:'游明朝 Medium', serif;
 }
 
+.back:active{
+
+	-webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+
+}
+
 
 /*送信ボタン*/
 .submit{
@@ -101,4 +109,10 @@ html,body{
 	font-size:x-large;
 	font-family:'游明朝 Medium', serif;
 }
+.submit:active{
+	
+	-webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
 
+}
