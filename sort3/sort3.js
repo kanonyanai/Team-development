@@ -1,5 +1,4 @@
 
-    //var Array = [];//リストを作成
     
     function goFilter2(){
         
@@ -31,46 +30,54 @@
             
             else{
             // --- タイトル以外のTRを非表示＋指定属性を持つTRのみ表示 ---
-            wTable.className = 'allNoDisplay2 ' + value1;
+            wTable.className = 'allNoDisplay2 ' + value1; //wTable.classNameに入ったら表示
 
             var name2 = value1;
             var str1 = String(name2);  //valueの中の要素を文字列でもつ
-            var result = str1.split(' ');//その文字列を１単語ずつに分ける
-
-            //Array.push(str1);
-
-
-            console.log(result);
             
+            var result = str1.split(' ');//その文字列を１単語ずつに分けてresultリストに追加
+
+           console.log('aa' + result[1]);//確認
+
            
-           
-           
-            var mydiv1 = document.getElementById("id1")
-            console.log(mydiv1.innerHTML);  //文字を取得
+            var mydiv1 = document.getElementById("id1")//それぞれのタグを一つずつリストに追加
+            var result1 = (mydiv1.innerHTML).split(' ');
+            console.log(result1);
 
-            var mydiv2 = document.getElementById("id2")
-            console.log(mydiv2.innerHTML);  //文字数を取得 文字そのものも
+            var mydiv2 = document.getElementById("id2")//それぞれのタグを一つずつリストに追加
+            var result2 = (mydiv2.innerHTML).split(' ');
+            console.log(result2);
 
-            var mydiv3 = document.getElementById("id3")
-            console.log(mydiv3.innerHTML);  //文字数を取得
+            var mydiv3 = document.getElementById("id3")//それぞれのタグを一つずつリストに追加
+            var result3 = (mydiv3.innerHTML).split(' ');
+            console.log(result3);
 
-            var mydiv4 = document.getElementById("id4")
-            console.log(mydiv4.innerHTML);  //文字数を取得
+            var mydiv4 = document.getElementById("id4")//それぞれのタグを一つずつリストに追加
+            var result4 = (mydiv1.innerHTML).split(' ');
+            console.log(result4);
 
-            var mydiv5 = document.getElementById("id5")
-            console.log(mydiv5.innerHTML);  //文字数を取得
+            var mydiv5 = document.getElementById("id5")//それぞれのタグを一つずつリストに追加
+            var result5 = (mydiv5.innerHTML).split(' ');
+            console.log(result5);
 
-            var mydiv6 = document.getElementById("id6")
-            console.log(mydiv6.innerHTML);  //文字数を取得
+            var mydiv6 = document.getElementById("id6")//それぞれのタグを一つずつリストに追加
+            var result6 = (mydiv6.innerHTML).split(' ');
+            console.log(result6);
 
-            var mydiv7 = document.getElementById("id7")
-            console.log(mydiv7.innerHTML);  //文字数を取得
+            var mydiv7 = document.getElementById("id7")//それぞれのタグを一つずつリストに追加
+            var result7 = (mydiv7.innerHTML).split(' ');
+            console.log(result7);
 
-            var mydiv8 = document.getElementById("id8")
-            console.log(mydiv8.innerHTML);  //文字数を取得
+            var mydiv8 = document.getElementById("id8")//それぞれのタグを一つずつリストに追加
+            var result8 = (mydiv8.innerHTML).split(' ');
+            console.log(result8);
 
-            var mydiv9 = document.getElementById("id9")
-            console.log(mydiv9.innerHTML);  //文字数を取得
+            var mydiv9 = document.getElementById("id9")//それぞれのタグを一つずつリストに追加
+            var result9 = (mydiv9.innerHTML).split(' ');
+            console.log(result9);
+
+            
+
 
             //あてはまる文字列が多いほど上に
         }
