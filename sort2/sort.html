@@ -1,105 +1,108 @@
 <!DOCTYPE>
 <html>
-
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="sort.css">
         <script src="sort.js"></script>
 
     </head>
-
     <body>
-        <script>
-            // 絞り込みに使うタグ（class）を記述してください。数の上限下限はありません。
-            //                        車いす貸出,車いす用座席,車いす入店可,入口に段差なし
-            //                        ベビーカー貸出,授乳室,託児所,おむつ,ベビーカー休憩室
-            //                        手すり付き,オストメイト対応トイレ,救護室あり
-            var $chkbxFilter_tags = ['kurumaLend', 'kurumaChair', 'kurumaCap', 'dansaNg'
-                                    ,'babyLend','milk','childStock','omutu','babyLest'
-                                    ,'tesuri','specialWash','lestRoom'];
-
-            // 絞り込み対象の要素のHTMLタグを指定してください。（div、section、tr など）
-            var $chkbxFilter_blocks = ['section']   
-        </script>
-        <!-- JS設定ここまで -->
-
-
-        <!-- 絞込み要素選択ここから -->
-       
-            <div id="select">
-                    <!-- 絞り込まない（全表示）ボタン -->
-                    <label class="selected"><input type="radio" id="all" checked="checked">全表示</label><br>
-
-                    <!-- 絞込みに使うタグをidとして指定します -->
-                    
-                    <a class="categori">車椅子関連</a><br>
-                    <label><input type="checkbox" id="kurumaLend"   class="sort">車いす貸出(kurumaLend)</label>
-                    <label><input type="checkbox" id="kurumaChair"  class="sort">車いす用座席(kurumaChair)</label>
-                    <label><input type="checkbox" id="kurumaCap"    class="sort">車椅子入店可(kurumaCap)</label>
-                    <label><input type="checkbox" id="dansaNg"      class="sort">入口に段差がない(dansaNg)</label><br>
-                    
-                    <a class="categori">ベビーカー関連</a><br>
-                    <label><input type="checkbox" id="babyLend"     class="sort">ベビーカー貸出(babyLend)</label>
-                    <label><input type="checkbox" id="milk"         class="sort">授乳室あり(milk)</label>
-                    <label><input type="checkbox" id="childStock"   class="sort">託児所あり(childStock)</label>
-                    <label><input type="checkbox" id="omutu"        class="sort">おむつ交換台(omutu)</label>
-                    <label><input type="checkbox" id="babyLest"     class="sort">ベビーカー休憩室あり(babyLest)</label><br>
-                    
-                    <a class="categori">その他</a><br>
-                    <label><input type="checkbox" id="tesuri"       class="sort">手すり付き浴室(tesuri)</label>
-                    <label><input type="checkbox" id="specialWash"  class="sort">オストメイト対応トイレ(specialWash)</label>
-                    <label><input type="checkbox" id="lestRoom"     class="sort">救護室あり(lestRoom)</label><br>
-            </div>
-                
+        <table class="table" border="1">
             
-
-            <!-- 絞込み要素選択ここまで -->
-
-
-            <!-- 絞込まれる要素ここから -->
-            <div id="result">
-
-                <!-- 絞込みに使うタグをclassとして指定します -->
-                <section class="tesuri dansaNg kurumaLend">
-                    <a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a>
-                </section>
+            <tr>
+                <div class="search-box mb">
+                    <span class="search-box_title">あ～わ行：</span>
+                    <label><input type="checkbox" name="kind" value="kind01">車椅子貸出</label>
+                    
+                    <!--<label><input type="checkbox" name="kind2" value="kind02">車いす用座席</label>
+                    
+                    <label><input type="checkbox" name="kind" value="kind03">車椅子入店可</label>-->
+                    
+                </div>
+               
+                <div class="search-box">
+                    <!--<span class="search-box_title">カテゴリ：</span>-->
+                    <label><input type="checkbox" name="cat" value="cat01">車いす用座席</label>
+                 <label><input type="checkbox" name="cat" value="cat02">車椅子入店可</label>
                 
+                </div>
+                
+                    
+                
+                    <!--<label><input type="checkbox" name="cat" value="cat03">車椅子入店可</label>
+                    <label><input type="checkbox" name="cat" value="cat04">入口に段差がない</label>
+                    
+                    <label><input type="checkbox" name="cat" value="cat05">ベビーカー貸出</label>
+                    <label><input type="checkbox" name="cat" value="cat06">授乳室あり</label>
+                    <label><input type="checkbox" name="cat" value="cat07">託児所あり</label>
+                    <label><input type="checkbox" name="cat" value="cat08">おむつ交換台あり</label>
+                    <label><input type="checkbox" name="cat" value="cat09">ベビーカー休憩室あり</label>
 
-                <section class="kurumaCap">
-                    <a href='https://ichiichigo.jp/'>一苺一笑松森農場</a>
-                </section>
+                    <label><input type="checkbox" name="cat" value="cat10">手すり付き浴室</label>
+                    <label><input type="checkbox" name="cat" value="cat11">オストメイト対応トイレ</label>
+                    <label><input type="checkbox" name="cat" value="cat12">救護室あり</label>-->
 
-                <section class="null">
-                    <a href='http://www.sendai-astro.jp/'>大倉ふるさとセンター</a>
-                </section>
+                </div>
+            </tr>
 
-                <section class="milk specialWash lestRoom">
-                    <a href='http://www.sendai-astro.jp/'>仙台市天文台</a>
-                </section>
+            <tr class="colTitle">
+                <th>施設名</th>
+                <th>住所</th>
+                <th>説明</th>
+                <th>タグ</th>
+            </tr>
 
-                <section class="childStock milk kurumaChair">
-                    <a href='https://www.rakuteneagles.jp/stadium/'>楽天生命パーク宮城</a>
-                </section>
 
-                <section class="babyLend omutu">
-                    <a href='https://www.city.sendai.jp/zoo/'>八木山動物公園フジサキの杜</a>
-                </section>
 
-                <section class="specialWash kurumaLend milk omutu">
-                    <a href='https://www.pref.miyagi.jp/site/mmoa/'>宮城県美術館</a>
-                </section>
+           
+            
+            <div class="cat_image_all">
+                
+                    <tr class="cat_image" data-kind="kind01" data-cat="cat01">
+                        <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a></td>
+                        <td>手すり付き浴室 入口に段差なし 車いす貸出</td>
+                        <td>demo</td>
+                        </a>
+                    </tr>
 
-                <section class="kurumaLend specialWash milk">
-                    <a href='http://www.uminomori.jp/umino/index.html'>仙台うみの杜水族館</a>
-                </section>
+                    <tr class="cat_image" data-kind="kind01" data-cat="cat02">
+                        <td><a href='https://ichiichigo.jp/'>一苺一笑松森農場</a></td>
+                        <td>フェーダー</td>
+                        <td>demo</td>
+                        </a>
+                    </tr>
 
-                <section class="specialWash kurumaLend babyLest">
-                    <a href='https://sendai.parco.jp/'>仙台PARCO2</a>
-                </section>
+                    <tr class="cat_image" data-cat="cat01" data-cat="cat02">
+                        <td><a href='http://www.sendai-astro.jp/'>大倉ふるさとセンター</a></td>
+                        <td>フェーダー</td>
+                        <td>demo</td>
+                        </a>
+                    </tr>
 
+                    <!--<tr class="cat_image" data-kind="kind04" data-cat="cat05">
+                        <td><a href='https://ichiichigo.jp/'>一苺一笑松森農場</a></td>
+                        <td>フェーダー</td>
+                        <td>demo</td>
+                        </a>
+                    </tr>
+
+                    <tr class="cat_image" data-kind="kind05" data-cat="cat05">
+                        <td><a href='http://www.sendai-astro.jp/'>仙台市天文台</a></td>
+                        <td>フェーダー</td>
+                        <td>demo</td>
+                        </a>
+                    </tr>
+
+                    <tr class="cat_image" data-kind="kind06" data-cat="cat05">
+                        <td><a href='https://www.rakuteneagles.jp/stadium/'>楽天生命パーク宮城</a></td>
+                        <td>フェーダー</td>
+                        <td>demo</td>
+                        </a>
+                    </tr>
+                
+                -->
             </div>
+        </table>
         
-
     </body>
-
 </html>

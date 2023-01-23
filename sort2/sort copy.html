@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="sort copy.css">
+        <script src="sort2.js"></script>
+
+    </head>
+
+    <body>
+        <script>
+            // 絞り込みに使うタグ（class）を記述してください。数の上限下限はありません。
+            var $chkbxFilter_tags =['living','legs','black']; 
+        
+            // 絞り込み対象の要素のHTMLタグを指定してください。（div、section、tr など）
+            var $chkbxFilter_blocks = ['section']   
+        </script>
+        <!-- JS設定ここまで -->
+        
+        <h1>クリックで要素の絞り込み</h1>
+        
+        <!-- 絞込み要素選択ここから -->
+        <div id="select">
+            <table class="table" border="1">
+                <tr>
+            
+                    <!-- 絞り込まない（全表示）ボタン -->
+                    <label class="selected"><input type="radio" id="all" checked="checked">絞り込まない</label>
+                
+                    <!-- 絞込みに使うタグをidとして指定します -->
+                    <label><input type="checkbox" id="living" class="sort">生物(living)</label>
+                    <label><input type="checkbox" id="legs" class="sort">足がある(legs)</label>
+                    <label><input type="checkbox" id="black" class="sort">黒い(black)</label>
+                </tr>
+                
+        </div>
+                <!-- 絞込み要素選択ここまで -->
+
+                <tr class="colTitle">
+                    <th>施設名</th>
+                    <th>住所</th>
+                    <th>説明</th>
+                    <th>タグ</th>
+                </tr>
+                
+                
+                <!-- 絞込まれる要素ここから -->
+                <div id="result">
+                    
+                    <!-- 絞込みに使うタグをclassとして指定します -->
+            
+                    <tr class="living">
+                        <td><p>ヘビ　class="living"</p></td>
+                    </tr>
+                
+                
+                    <section class="legs">
+                        <p>椅子　class="legs"</p>
+                    </section>
+                
+                    <section class="black">
+                        <p>炭　class="black"</p>
+                    </section>
+                
+                    <section class="living legs">
+                        <p>りす　class="living bird"</p>
+                    </section>
+                
+                    <section class="living black">
+                        <p>ウニ　class="living black"</p>
+                    </section>
+                
+                    <section class="legs black">
+                        <p>ピアノ　class="legs black"</p>
+                    </section>
+                
+                    <section class="living legs black">
+                        <p>ヌー　class="living legs black"</p>
+                    </section>
+                
+                    <section class="white">
+                        <p>紙　class="white"</p>
+                    </section>
+                
+                </div>
+            </table>
+    </body>
+
+</html>

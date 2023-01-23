@@ -1,0 +1,13 @@
+/* ---------- 必須CSS ここから ------------ */
+
+#result [class*="hidden-"] {display: none;}
+
+/* ---------- 必須CSS ここまで ------------ */
+
+
+/* ここから下は見た目の調整 */
+#select {margin-bottom: 1em;}
+#result section{border: 1px solid #888; padding: 5px;}
+#result section p{margin: 0px;}
+
+#select label.selected {background-color: #fcc;} /* 選択中のラベルのスタイルを変更 */

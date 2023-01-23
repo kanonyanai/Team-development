@@ -1,27 +1,48 @@
-#result [class*="hidden-"] {display: none;}
-
-/* ---------- 必須CSS ここまで ------------ */
-
-
-/* ここから下は見た目の調整 */
-#select {
-    margin-bottom: 1em;
-    background-color: rgb(219, 248, 230);
-   /* width: 100px;*/
-
+.search-box_title{
+	font-weight: bold;
 }
-
-#result section{
-    border: 1px solid #888; padding: 5px;
+.search-box label {
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 10px;
+	line-height: 16px;
 }
-
-#result section th{
-    margin: 0px;
+.search-box input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	margin: -2px 5px 0 0;
+	padding: 0;
+	box-sizing: border-box;
+	vertical-align: middle;
 }
-
-#select label.selected {background-color: #fcc;} /* 選択中のラベルのスタイルを変更 */
-
-.categori{
-    color: rgb(14, 83, 40);
+.search-box input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	margin: -2px 5px 0 0;
+	padding: 0;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+.cat_image_all {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 680px;
+	margin: 3em auto 0;
+}
+.cat_image {
+	width: 48%;
+	max-width: 320px;
+	margin: 0 0 2em;
+}
+.cat_image.is-hide {
+	display: none;
+}
+.cat_image a {
+	display: block;
+	color: #444;
+}
+.cat_image a:hover {
+	text-decoration: underline;
 }
 
