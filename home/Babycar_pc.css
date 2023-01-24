@@ -515,18 +515,80 @@
   
   /*一覧表示のテーブル*/
   
-  #sortTable{
+  input[type="checkbox"] {
+    transform: scale(1.5); /*--チェックボックスの大きさ変更--*/
+  }
   
-    text-align: left;    /*文字を左詰め*/
-    font-size: 12px;    /*文字の大きさを指定*/  /*12/23更新*/
+  /*↓tableのrow(横並び)のような要素を形成する*/
+  /* .kbaby2    tr[kbaby]{
+      display: table-row;
+    }
+    
+    .kuruma2  tr[kuruma]{
+      display: table-row;
+    }
+    
+    .knyutenok2   tr[knyutenok]{
+      display: table-row;
+    }
+    
+    .ksheet2   tr[ksheet]{
+      display: table-row;
+    }
+    
+    .dansang2   tr[dansang]{
+      display: table-row;
+    }
+    
+    .babyroom2   tr[babyroom]{
+      display: table-row;
+    }
+    
+    .kidsroom2   tr[kidsroom]{
+      display: table-row;
+    }
+    
+    .omutu2   tr[omutu]{
+      display: table-row;
+    }
+    
+    .kyukei2   tr[kyukei]{
+      display: table-row;
+    }
+    
+    .tesuri2   tr[tesuri]{
+      display: table-row;
+    }
+    
+    .osuto2   tr[osuto]{
+      display: table-row;
+    }
+    
+    .kyugo2   tr[kyugo]{
+      display: table-row;
+    } */
+  /* 変更 */
   
-    
-    width: 77%;          /*12/23更新*/
-    
+  .categori {
+    color: rgb(1, 145, 49); /*カテゴリーの文字の色を変更*/
+  }
+  
+  #ue {
+    border-style: none; /*一番上のセルの背景色を変更*/
+    background-color: rgb(239, 255, 238);
+  }
+  
+  /*一覧表示のテーブル*/
+  
+  #sortTable {
+    text-align: left; /*文字を左詰め*/
+    font-size: 12px; /*文字の大きさを指定*/ /*12/23更新*/
+  
+    width: 77%; /*12/23更新*/
+  
     display: block;
     overflow-y: scroll;
     overflow-x: scroll;
     /*right: 25%;
-    height: 50%;         /*スクロールバーの表示(いらなければ消していい)*/
-  
+      height: 50%; /* スクロールバー表示*/
   }
