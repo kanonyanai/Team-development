@@ -1,10 +1,9 @@
-<!--経由地のところが中央寄せが出来ていないため、とりあえずmarginで調整した(1/17)-->
-<!--jsファイルの読み込み-->
-<script src="./index_pc.js"></script>
-<!--追加部分-->
+<!--pc用とスマホ用に切り替えるボタンを付ける！-->
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
+</script>
 <script src="jquery-3.6.1.min.js"></script>
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
@@ -17,13 +16,12 @@
 
     <!--polyfillのインストール-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!--jsファイルの読み込み-->
+    <script src="./index.js"></script>
 
   </head>
 
   <body>
-    <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
-</script>
     <div class="container">
 
     <div class="bun2_container">
@@ -40,53 +38,42 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     </div> 
     </div>  
     
-    <!--以下変更部分(1/17)-->
-    <!--入力ボタン諸々のコンテナの追加と経由地の追加-->
-    <div>
-        <!--出発地と目的地、経由地部分を縦に分割する-->
-      <div class="container_group">
-        <div class="container_left">
-          <div class="flex_container_word1">
-            <p id="start">出発地</p>
-            <input type="text" id="inputBegin" placeholder="出発地を入力">
-          </div>
-          <div class="flex_container_word2">
-            <p id="ends">目的地</p>
-            <input type="text" id="inputEnd" placeholder="目的地を入力">
-          </div>
-      </div>
-      <div class="container_right">
-        <div class="flex_container_word3">
-          <p id="stop">経由地</p>
-          <input type="text" id="inputStop" placeholder="経由地を入力">
-          <button type="submit" id="searchButton">検索</button>
-          <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>
-        </div>      
-      </div>
-       
-      </div>
-      <p class="point">※経路上に危険地帯がある場合は
-        周辺のエレベーターピンを参照してください</p>
-    </div>
-   
 
-    <!--ここまで-->
+    <!--必ず入れる。idの名前は変えない！！！-->
+
+    <div>
+      <div class="flex_container_word">
+      <p id="start">出発地</p>
+      <input type="text" id="inputBegin" placeholder="出発地を入力">
+      <p id="ends">目的地</p>
+      <input type="text" id="inputEnd" placeholder="目的地を入力">
+      <p id="stop">経由地</p>
+      <input type="text" id="inputStop" placeholder="経由地を入力">
+      <button type="submit" id="searchButton">検索</button>
+      <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>  
+      </div>
+    </div>
     
-  <script type="text/javascript" src="index_pc.js"></script>
-  <!--矢印を消した(1/16変更)-->
+
+<!--以下、変更部分-->
+  <script type="text/javascript" src="index.js"></script>
+    <div id="arrow_cotainer">
+      <p id="arrow"><span id="begin"></span>  →    <span id="end"></span></p>
+    </div>
+
     <!--検索機能でinputの内容追加-->
   <input id="pac-input" class="controls" type="text" placeholder="施設名を入力" />
 
 
 
-  <div id="map">
+  <div id="map">  <!--追加（12/21）-->>
     <div id="map_canvas"></div>
   </div>
     <div id="directionsPanel"></div>
     
+  
+  
   </div>
-  
-  
 
   <div class="bun1_container">
     <div class="flex_container_change">
@@ -95,10 +82,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
       </div>
 
   <!--ここまで-->
-     
+    
+ 
 
   <div class="sort_container">
-
     <!--以下、一覧表示機能-->
     <table border="2" id="sortTable">
    
@@ -107,22 +94,22 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
         <th colspan="4" id="ue">
           <a class="categori" name="car">車椅子関連</a><br>
-          <input type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出
-          <input type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席
-          <input type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可
-          <input type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br>
+          <input class="filter-input" value = "kuruma" type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出
+          <input class="filter-input" value = "ksheet" type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席
+          <input class="filter-input" value = "knyutenok" type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可
+          <input class="filter-input" value = "dansang" type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br>
 
           <a class="categori" name="baby">ベビーカー関連</a><br>
-          <input type="checkbox" onChange="goFilter2()" id="chkbaby">ベビーカー貸出
-          <input type="checkbox" onChange="goFilter2()" id="chkbabyroom">授乳室あり
-          <input type="checkbox" onChange="goFilter2()" id="chkkidsroom">託児所あり
-          <input type="checkbox" onChange="goFilter2()" id="chkomutu">おむつ交換台
-          <input type="checkbox" onChange="goFilter2()" id="chkkyukei">ベビーカー休憩室あり<br>
+          <input class="filter-input" value="kbaby" type="checkbox" onChange="goFilter2()" id="chkbaby">ベビーカー貸出
+          <input class="filter-input" value="babyroom" type="checkbox" onChange="goFilter2()" id="chkbabyroom">授乳室あり
+          <input class="filter-input" value="kidsroom" type="checkbox" onChange="goFilter2()" id="chkkidsroom">託児所あり
+          <input class="filter-input" value="omutu" type="checkbox" onChange="goFilter2()" id="chkomutu">おむつ交換台
+          <input class="filter-input" value="kyukei" type="checkbox" onChange="goFilter2()" id="chkkyukei">ベビーカー休憩室あり<br>
 
           <a class="categori" name="other">その他</a><br>
-          <input type="checkbox" onChange="goFilter2()" id="chktesuri">手すり付き浴室
-          <input type="checkbox" onChange="goFilter2()" id="chkosuto">オストメイト対応トイレ
-          <input type="checkbox" onChange="goFilter2()" id="chkkyugo">救護室あり
+          <input class="filter-input" value="tesuri" type="checkbox" onChange="goFilter2()" id="chktesuri">手すり付き浴室
+          <input class="filter-input" value="osuto" type="checkbox" onChange="goFilter2()" id="chkosuto">オストメイト対応トイレ
+          <input class="filter-input" value="kyugo" type="checkbox" onChange="goFilter2()" id="chkkyugo">救護室あり
         </th>
 
       </tr>
@@ -139,14 +126,14 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <th>タグ</th>
       </tr>
      
-      <tr tesuri dansang kuruma>
+      <tr class="table-data" data-tags="tesuri,dansang,kuruma" tesuri dansang kuruma>
         <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a></td>
         <td>宮城県仙台市太白区秋保町湯元字平倉1</td>
         <td>朝６時からオープン</td>
         <td>手すり付き浴室 入口に段差なし 車いす貸出</td>
       </tr>
 
-      <tr knyutenok>
+      <tr class="table-data" data-tags="knyutenok" knyutenok>
         <td><a
             href='https://ichiichigo.jp/'>一苺一笑松森農場</a>
         </td>
@@ -155,7 +142,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>ベビーカー入店可 車椅子入店可</td>
       </tr>
 
-      <tr>
+      <tr class="table-data" data-tags="">
         <td><a
             href='http://www.sendai-astro.jp/'>大倉ふるさとセンター</a>
         </td>
@@ -164,7 +151,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>null</td>
       </tr>
 
-      <tr babyroom osuto kyugo>
+      <tr class="table-data" data-tags="babyroom,osuto,kyugo" >
         <td><a
             href='http://www.sendai-astro.jp/'>仙台市天文台</a>
         </td>
@@ -173,7 +160,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>授乳室　オストメイト対応トイレ　エレベーター　救護室</td>
       </tr>
 
-      <tr babyroom kidsroom ksheet>
+      <tr class="table-data" data-tags="babyroom,kidsroom,ksheet" >
         <td><a
             href='https://www.rakuteneagles.jp/stadium/'>楽天生命パーク宮城</a>
         </td>
@@ -182,7 +169,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>託児所　授乳室　車椅子席</td>
       </tr>
 
-      <tr kbaby omutu>
+      <tr class="table-data" data-tags="kbaby,omutu">
         <td><a
             href='https://www.city.sendai.jp/zoo/'>八木山動物公園フジサキの杜</a>
         </td>
@@ -191,7 +178,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>ベビーカー貸出　おむつ交換台</td>
       </tr>
 
-      <tr osuto kuruma kbaby babyroom>
+      <tr class="table-data" data-tags="osuto,kuruma,kbaby,babyroom">
         <td><a
             href='https://www.pref.miyagi.jp/site/mmoa/'>宮城県美術館</a>
         </td>
@@ -200,7 +187,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>オストメイト対応トイレ　車いす貸出　エレベーター　自動ドア　スロープ　授乳室　おむつ交換台</td>
       </tr>
 
-      <tr kuruma osuto babyroom>
+      <tr class="table-data" data-tags="kuruma,osuto,babyroom" >
         <td><a
             href='http://www.uminomori.jp/umino/index.html'>仙台うみの杜水族館</a>
         </td>
@@ -209,7 +196,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>車いす貸出　車いす利用可能トイレ　オストメイト対応トイレ　介護用ベッド　授乳室</td>
       </tr>
 
-      <tr osuto kuruma kyukei>
+      <tr class="table-data" data-tags="osuto,kuruma,kyukei" >
         <td><a
             href='https://sendai.parco.jp/'>仙台PARCO2</a>
         </td>
@@ -223,8 +210,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 
     </table>
     <!--以上、一覧表示機能-->
-
   </div>
+
 
     <div>
       <div class="flex_container_opinion">
@@ -235,7 +222,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
   </div>
 
 <!--コンテナの終わりの部分-->
-  </div>
 </div>
 
   </body>
