@@ -1,0 +1,46 @@
+#header {
+    font-family: Meriyo UI;
+    font-size: 14px;
+      color: white;
+    font-weight: bold;
+      background-color: darkblue;
+      padding: 3px;
+            width: 1750px;
+    border: 1px outset gray;
+  }
+  #target {
+    border: 1px outset gray;
+    width: 1400px;
+    height: 900px;
+  }
+  #sidebar {
+    border: 1px solid #666;
+    padding: 6px;
+    background-color: white;
+    font-family: Meriyo UI;
+    font-size: 12px;
+    overflow: auto;
+    width: 337px;
+    height: 888px;
+  }
+  #tag {
+    font-size: 16px;
+    height: 30px;
+  }
+  #getTag {
+    font-size: 16px;
+    width: 200px;
+    color: #fff;
+    background: green;
+    border-radius: 5px;
+    height: 30px;
+  }
+
+
+  #map{
+  
+    width: 90%;
+    height: 80%;
+    left: 10%;
+    
+    }
