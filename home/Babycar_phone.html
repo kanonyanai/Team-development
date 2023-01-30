@@ -1,6 +1,8 @@
 <!--pc用とスマホ用に切り替えるボタンを付ける！-->
-<!--jsファイルの読み込み-->
-<script src="./index_phone.js"></script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
+</script>
 <script src="jquery-3.6.1.min.js"></script>
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,32 +16,22 @@
 
     <!--polyfillのインストール-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!--jsファイルの読み込み-->
+    <script src="./index_phone.js"></script>
 
   </head>
 
   <body>
 
-    <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7Gt0Ohzlxo&callback=initAutocomplete&libraries=places&v=weekly">
-</script>
     <div class="flex_container_change">
       <button type="button" onclick="location.href='Babycar_pc.html'" class="change">PC用</button>
       <button type="button" onclick="location.href='Babycar_phone.html'" class="change">スマホ用</button>
       </div>
-
-    
-      <div class="flex_container_h1">
-    <div class="h11">
+   
       <h1>バリアフリーマップ</h1>
-    </div>   
-  </div>
-
   
-    <div class="flex_container_h2">
-    <div class="h22">
       <h2>ベビーカー・車いす利用者の不安を解消</h2>
-    </div> 
-    </div>  
+     
       
     <!--検索機能でinputの内容追加-->
     <input id="pac-input" class="controls" type="text" placeholder="施設名を入力" />
@@ -69,9 +61,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     </div>
     
 
-    <script type="text/javascript" src="index_phone.js"></script>
-    <!--矢印を消した(1/16変更)-->
-    <div id="map">
+    <script type="text/javascript" src="index.js"></script>
+    
+    <div id="map">  <!--追加（12/21）-->
       <div id="map_canvas"></div>
     </div>
       <div id="directionsPanel"></div>
@@ -206,19 +198,14 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     <!--以上、一覧表示機能-->
   </div>
 
-
     <div>
       <div class="flex_container_opinion">
       <input type="button" onclick="location.href='../opinion_lambda/opinion_phone.html'" value="ご意見はこちらへ">
       </div>
     </div>
 
-
-
-
-
 </div>
-
+</div>
 
   </body>
 

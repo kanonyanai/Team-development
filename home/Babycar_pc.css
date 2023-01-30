@@ -3,20 +3,26 @@
 /*全体の画面大きさの分割*/
 
 .container{
+
   display: flex;
   justify-content:flex-end;
+  
   }
   
   /*画面右側の分割サイズ指定*/
   
   .bun1_container{
+  
     width: calc(100% * 3/8);
+  
   }
   
   /*画面左側の分割サイズ指定*/
   
   .bun2_container{
+  
     width: calc(100% * 5/8);
+  
   }
 
   /*以下1/17更新*/
@@ -24,67 +30,86 @@
   .container_group{
     display: flex;
     justify-content:flex-end;
+
   }
   /*文字入力の左側の分割サイズ指定*/
   
   .container_left{
+  
     width: calc(100% * 1/2);
+  
   }
 
   /*文字入力の左側の分割サイズ指定*/
   
   .container_right{
+  
     width: calc(100% * 1/2);
+  
   }
   /*ここまで*/
 
   /*h1タグのコンテナ*/
   .flex_container_h1{
+  
     display: flex;
     margin-left: 65%;
+       
   }
   
   /*h2タグのコンテナ*/
   .flex_container_h2{
+  
     display: flex;
     flex-wrap: nowrap;
     margin-left: 58%;
+  
   }
   
   /*切り替えボタンのコンテナ*/
   .flex_container_change{
+  
     display: flex;
     justify-content: flex-end;
+      
   } 
+
 
   /*出発地のコンテナ*/  /*1/17に変更した*/
   .flex_container_word1{
+  
     display: flex;
     align-items:center;
     justify-content: flex-end;/*1/17の変更部分*/
-    gap: 1.5%;/*←gap：幅の調整*/  
+    gap: 1.5%;/*←gap：幅の調整*/
+         
   } 
 
   /*目的地のコンテナ*/  /*1/17に変更した*/
   .flex_container_word2{
+  
     display: flex;
     align-items:center; 
     justify-content: flex-end;/*1/16に変更部分*/
-    gap: 1.5%;/*←gap：幅の調整*/   
+    gap: 1.5%;/*←gap：幅の調整*/
+         
   }
   
   /*経由地と検索・クリアのコンテナ*/  /*1/17に変更した*/
   .flex_container_word3{
+  
     display: flex;
     align-items:center;
     justify-content: flex-end;
     margin-top: 5%;                     /*中央寄せが出来なかったため、とりあえずmarginで調整(1/17)*/
-    gap: 1.5%;/*←gap：幅の調整*/   
+    gap: 1.5%;/*←gap：幅の調整*/
+         
   }
 
   .group{
     display: flex;
     justify-content: center;
+
   }
 
 /*以下、変更部分*/
@@ -94,6 +119,7 @@
 
     /*display: flex;
     justify-content: flex-end;
+
   }*/
 
 /*ここまで*/
@@ -109,6 +135,7 @@
   
   /*意見画面に遷移ボタンのコンテナ*/
   .flex_container_opinion{
+  
       display: flex;
       justify-content:center;
       margin: 10%;
@@ -117,32 +144,45 @@
   /*一覧表示のコンテナ*/
   
   .sort_container{
+  
     display: flex;
     justify-content: center;
     margin-top: 20%;
+  
   }
- 
+
+  html{
+    background-color:rgba(255, 255, 0, 0.08);
+  }
+   
+  
   /*h1タグ*/
   
   .h11{ 
+  
       font-family:'游明朝 Medium', serif;
       font-weight:bolder;
       font-size: large;
+         
   }
   
   /*h2タグ*/
   
   .h22{        
+        
       font-family:'游明朝 Medium', serif;
       font-weight:bolder;
-      color:#3CB371;
+      color:#339900;
       font-family: '游明朝 Medium', serif;
       font-size:large;
+      
   }   
+  
   
   /*切り替えボタン*/
   
   .change{
+      
       text-align: center;
       width: 80px; /*--幅--*/
       padding: 10px; /*--余白--*/
@@ -220,6 +260,15 @@
       font-size:medium;
   
   }
+
+  /*ボタンを押したとき*/
+  #seachButton:active{
+
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  
+    }
   
   /*クリアボタン*/
   
@@ -234,6 +283,15 @@
   
   }
   
+  /*ボタンを押したとき*/
+  #startclear:active{
+
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  
+    }
+    
   /*-----目的地-----*/
   
   /*目的地の文字*/
@@ -276,12 +334,20 @@
       width: 380px;
       padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      background-color:lightgoldenrodyellow; /*--背景色--*/
+      /*background-color:lightgoldenrodyellow; /*--背景色--*/
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
   
   }
+
+  /*ボタンを押したとき*/
+  input[type="button"]:active{
+ 
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+    }
      
   
   /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
@@ -304,7 +370,9 @@
   }
   */
   
-   
+    table{
+    background-color:white;
+  }
   
   
   /*以下、検索機能とデフォルトマーカー表示機能のcss*/
