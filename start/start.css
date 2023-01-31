@@ -13,6 +13,7 @@ html,body{
 
 .con{
     
+  margin-block-start: 0px;
     background-color:lightyellow;
     width: 88%;
 
@@ -22,8 +23,12 @@ html,body{
     min-height: 100%;
 
     margin: 0 auto;
-
     
+}
+
+.space{
+  background-color: lightyellow;
+
 }
 
 
@@ -33,6 +38,7 @@ h1{
     font-family :'游明朝 Medium', serif;
     font-weight:bolder;
     font-size: xxx-large;
+    margin-block-start: 20px;
     
     
 }
@@ -50,3 +56,98 @@ p{
     font-weight:bolder;
     font-size: x-large;
 }
+
+/*スクショの部分*/
+img{
+    width: 85%;
+    height: auto;
+
+    background: #ffffff; 
+    border:5px solid #ffcf56;/* 写真と背景の境目 */ 
+    
+}
+
+.hukidasi {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 15px 1.5em 0;
+    padding: 0 5px;
+    
+    width: 300px;
+    height: 150px;
+    line-height: 150px;
+    
+    text-align: center;
+    
+    color: #FFF; /*文字の色*/
+    
+    font-size: 20px;
+    font-weight: bold;
+   
+    background: #e4bae2;/*吹き出しの色*/
+   
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    top: 10px; /*吹き出しの位置*/
+   left: 30px;
+
+
+  }
+  
+  .hukidasi:before {  /*吹き出しのとんがり部分*/
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    margin-top: -30px;
+    
+    border: 30px solid transparent;
+    border-left: 30px solid #e4bae2;
+    
+    z-index: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+  .hukidasi2 {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 15px 1.5em 0;
+    padding: 0 5px;
+    
+    width: 300px;
+    height: 150px;
+    line-height: 150px;
+    
+    text-align: center;
+    
+    color: #FFF; /*文字の色*/
+    
+    font-size: 20px;
+    font-weight: bold;
+   
+    background: #e4bae2;/*吹き出しの色*/
+   
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    float: right;
+
+  }
+  
+  .hukidasi2:before {  /*吹き出しのとんがり部分*/
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    margin-top: -30px;
+    
+    border: 30px solid transparent;
+    border-left: 30px solid #e4bae2;
+    
+    z-index: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
