@@ -2,9 +2,9 @@
 /*flexはpxで記述する（%だとサイズを変えた際に伸び縮みしてしまう）*/
 
 /*htmlとbody全体に色付け*/
-html,body{
+html{
 
-	background-color:rgb(253, 253, 211); /*--背景色--*/
+	background-color:rgba(255, 255, 0, 0.08); /*--背景色--*/
 
 }
 
@@ -94,6 +94,13 @@ html,body{
 	font-family:'游明朝 Medium', serif;
 }
 
+.back:active{
+
+	-webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+
+}
 
 /*送信ボタン*/
 .submit{
@@ -108,3 +115,10 @@ html,body{
 	font-family:'游明朝 Medium', serif;
 }
 
+.submit:active{
+	
+	-webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+
+}
