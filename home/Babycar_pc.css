@@ -63,6 +63,7 @@
     align-items:center;
     justify-content: flex-end;/*1/17の変更部分*/
     gap: 1.5%;/*←gap：幅の調整*/  
+
   } 
 
   /*目的地のコンテナ*/  /*1/17に変更した*/
@@ -123,16 +124,39 @@
   }
 
   html{
-    background-color:rgba(255, 255, 0, 0.08);
+    /*background-color:rgba(255, 255, 0, 0.08);*/
+    background-image: url("kohacu.com_001967_20181119.png");
+    height: 100%;
+    width: 100%;
+    background-color:rgba(204,255,255,0.6);
+background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
    
+
+/*仮*/
+  /*p{
+    font-weight:bolder;
+    text-shadow    : 
+    8px  8px 10px white,
+   -8px  8px 10px white,
+    8px -8px 10px white,
+   -8px -5px 10px white,
+    8px  0px 10px white,
+    0px  8px 10px white,
+   -8px  0px 10px white,
+    0px -8px 10px white;        /* 文字の影 */
+/*}
  
   /*h1タグ*/
   
   .h11{ 
       font-family:'游明朝 Medium', serif;
       font-weight:bolder;
-      font-size: large;
+      font-size: 20px;
+      text-shadow: #fff 1px 0 20px;
   }
   
   /*h2タグ*/
@@ -171,6 +195,8 @@
       font-family:'游明朝 Medium', serif;
       text-align:center;
       font-size:x-large;
+
+  
   
   }
   
@@ -186,6 +212,8 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
+      box-shadow: 20px 15px 20px -10px #4C4C4C;
+   
   }
 
   /*経由地の文字*/  /*1/16に追加*/
@@ -212,6 +240,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
+    box-shadow: 20px 15px 20px -10px #4C4C4C;
 
   }
   
@@ -225,6 +254,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:medium;
+      box-shadow: 20px 15px 20px -10px #4C4C4C;
   
   }
 
@@ -247,6 +277,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: medium;
+      box-shadow: 20px 15px 20px -10px #4C4C4C;
   
   }
     
@@ -283,6 +314,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
+    box-shadow: 20px 15px 20px -10px #4C4C4C;
   }
 
   .point{
@@ -305,6 +337,7 @@
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
+      box-shadow: 20px 15px 20px -10px #4C4C4C;
   
   }
      
