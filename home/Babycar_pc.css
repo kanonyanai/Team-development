@@ -121,6 +121,11 @@
     justify-content: center;
     margin-top: 20%;
   }
+
+  html{
+    background-color:rgba(255, 255, 0, 0.08);
+  }
+   
  
   /*h1タグ*/
   
@@ -131,14 +136,16 @@
   }
   
   /*h2タグ*/
-  
+
   .h22{        
-      font-family:'游明朝 Medium', serif;
-      font-weight:bolder;
-      color:#3CB371;
-      font-family: '游明朝 Medium', serif;
-      font-size:large;
-  }   
+        
+    font-family:'游明朝 Medium', serif;
+    font-weight:bolder;
+    color:#339900;
+    font-family: '游明朝 Medium', serif;
+    font-size:large;
+    
+}   
   
   /*切り替えボタン*/
   
@@ -220,6 +227,15 @@
       font-size:medium;
   
   }
+
+   /*ボタンを押したとき*/
+   #seachButton:active{
+
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  
+    }
   
   /*クリアボタン*/
   
@@ -233,7 +249,16 @@
       font-size: medium;
   
   }
+    
+  /*ボタンを押したとき*/
+  #startclear:active{
+
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
   
+    }
+
   /*-----目的地-----*/
   
   /*目的地の文字*/
@@ -283,6 +308,13 @@
   
   }
      
+    /*ボタンを押したとき*/
+    input[type="button"]:active{
+ 
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+      }
   
   /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
   
@@ -305,6 +337,9 @@
   */
   
    
+  table{
+    background-color:white;
+  }
   
   
   /*以下、検索機能とデフォルトマーカー表示機能のcss*/

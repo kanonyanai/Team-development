@@ -1,22 +1,14 @@
 /*---メモ---*/
 /*cssの記述を『position:absolute』ではなく、『display:flex』に変更する！*/
 
+html{
+  background-color:rgba(255, 255, 0, 0.08);
+}
 
-  /*h1タグのコンテナ*/
-  .flex_container_h1{
-  
-    display: flex;
-    justify-content: center;
-       
-  }
-  
-  /*h2タグのコンテナ*/
-  .flex_container_h2{
-  
-    display: flex;
-   justify-content: center;
-  
-  }
+table{
+  background-color: white;
+}
+
   
   /*切り替えボタンのコンテナ*/
   .flex_container_change{
@@ -75,28 +67,34 @@
   
   }
   
-  /*h1タグ*/
+  /*h1タグ*/  /*h11クラス削除と編集*/
   
-  .h11{ 
-  
-      font-family:'游明朝 Medium', serif;
-      font-weight:bolder;
-      font-size:xx-large;
-         
-  }
+  h1{ 
+
+    text-align: center;
+    font-family:'游明朝 Medium', serif;
+    font-weight:bolder;
+    font-size:65px;
+    margin-block-end: 0px;
+    padding: 0px;   
+       
+}
   
   /*h2タグ*/
   
-  .h22{        
-        
-      font-family:'游明朝 Medium', serif;
-      font-weight:bolder;
-      color:#3CB371;
-      font-family: '游明朝 Medium', serif;
-      font-size:x-large;
+  h2{        
       
-  } 
-  
+    margin-top: 20px;
+    margin-block-end: 50px;
+    padding: 0px;
+    text-align: center;
+    font-family:'游明朝 Medium', serif;
+    font-weight:bolder;
+    color:#339900;
+    font-family: '游明朝 Medium', serif;
+    font-size:40px;
+    
+} 
   
   /*切り替えボタン*/
   
@@ -154,6 +152,15 @@
   
   }
   
+  /*ボタンを押したとき*/
+  #seachButton:active{
+
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+    
+  }
+
   /*クリアボタン*/
   
   #startclear{
@@ -165,6 +172,15 @@
       font-weight:bolder;
       font-size:xx-large;
   
+  }
+
+  /*ボタンを押したとき*/
+  #startclear:active{
+
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+    
   }
   
   /*-----目的地-----*/
@@ -247,6 +263,13 @@
   
   }
      
+  /*ボタンを押したとき*/
+  input[type="button"]:active{
+ 
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
   
   /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
   
