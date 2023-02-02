@@ -8,6 +8,10 @@
     justify-content: center;
 }
 
+.a_container{
+    display: flex;
+    justify-content: center;
+}
 .space{
     display: flex;
     height: 30px;
@@ -96,14 +100,22 @@ p{
 
 }
 
-.li{
-    
-    font-size: 35px !important;
-    color:orangered;
+a{
+
+    text-align: center;
+    font-family:'游明朝 Medium', serif;
+    font-weight:bolder;
+    font-size: 40px !important;
+    color:	#660099;
     text-decoration-line: underline;
     text-underline-offset: 5px; /*位置*/
     text-decoration-thickness: 2px; /*太さ*/
    
+}
+
+a:active{
+    
+    color:orangered;
 }
 
 
