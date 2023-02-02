@@ -1,4 +1,4 @@
-/*1/24更新ボタンなどの位置調整*/
+/*1/19更新（flex(コンテナ使用)に変更）*/
 /*flexはpxで記述する（%だとサイズを変えた際に伸び縮みしてしまう）*/
 
 /*htmlとbody全体に色付け*/
@@ -11,13 +11,13 @@ html{
 /*戻るボタンとご意見・ご要望の間を調節するスペース*/
 .space_container{
 
-	height: 15px;/*1/24更新*/
+	height: 15px;
 }
 
 /*テキストエリアと送信ボタンの間を調節するスペース*/
 .space_container2{
 
-	height: 30px;/*1/24更新*/
+	height: 30px;
 }
 
 /*ホームに戻るボタンのコンテナ*/
@@ -96,7 +96,6 @@ html{
 
 }
 
-
 /*送信ボタン*/
 .submit{
 	
@@ -109,6 +108,7 @@ html{
 	font-size:x-large;
 	font-family:'游明朝 Medium', serif;
 }
+
 .submit:active{
 	
 	-webkit-transform: translateY(4px);

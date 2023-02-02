@@ -4,7 +4,172 @@ var map, begin, end, waypoint;
 var directionsDisplay;
 var directionsService;
 var marker_d = [];
+var marker_a = [];
+var marker_e = [];
 var infoWindow_d = [];
+var dagerDate = [
+  {
+    lat: 38.259296,  lng: 140.880101
+  },
+  {
+    lat: 38.259232, lng: 140.880762
+  },
+  {
+    lat: 38.25941,	lng: 140.881189
+  },
+  {
+    lat: 38.259266,	lng: 140.881311
+  },
+  {
+    lat: 38.259631,	lng: 140.881012
+  },
+  {
+    lat: 38.259266,	lng: 140.881311
+  },
+  {
+    lat: 38.259631,	lng: 140.881012
+  },
+  {
+    lat: 38.259537,	lng: 140.880497 
+
+  },
+  {
+    lat: 38.259732,	lng: 140.880844 
+
+  },
+  {
+    lat: 38.259992,	lng: 140.880723 
+
+  },
+  {
+    lat: 38.259886,	lng: 140.880116 
+
+  },
+  {
+    lat: 38.26003,	lng: 140.880789 
+
+  },
+  {
+    lat: 38.260506,	lng: 140.881002 
+
+  },
+  {
+    lat: 38.260489,	lng: 140.881794 
+
+  },
+  {
+    lat: 38.260502,	lng: 140.881301 
+
+  },
+  {
+    lat: 38.260261,	lng: 140.879488 
+
+  },
+  {
+    lat: 38.261081,	lng: 140.880741 
+
+  },
+  {
+    lat: 38.2614,	lng: 140.881849 
+
+  },
+  {
+    lat: 38.261524,	lng: 140.880824 
+
+  },
+  {
+    lat: 38.261672,	lng: 140.881636 
+
+  },
+  {
+    lat: 38.261802,	lng: 140.881916 
+
+  },
+  {
+    lat: 38.261796,	lng: 140.880774 
+
+  },
+  {
+    lat: 38.261965,	lng: 140.880714 
+
+  },
+  {
+    lat: 38.262465,	lng: 140.880878 
+
+  },
+  {
+    lat: 38.263412,	lng: 140.880602 
+
+  },
+  {
+    lat: 38.262939,	lng: 140.880979 
+
+  },
+  {
+    lat: 38.263347,	lng: 140.881204 
+
+  },
+  {
+    lat: 38.262941,	lng: 140.880981 
+
+  },
+  {
+    lat: 38.259362,	lng: 140.883941 
+
+  },
+  {
+    lat: 38.259528,	lng: 140.883989 
+
+  },
+  {
+    lat: 38.259669,	lng: 140.884013 
+
+  },
+  {
+    lat: 38.259262,	lng: 140.884332 
+
+  },
+  {
+    lat: 38.25946,	lng: 140.883578 
+
+  },
+  {
+    lat: 38.26072,	lng: 140.879917 
+
+  },
+  {
+    lat: 38.260158,	lng: 140.879917 
+
+  },
+  {
+    lat: 38.259458,	lng: 140.880597 
+
+  },
+  {
+    lat: 38.260045,	lng: 140.875544 
+
+  }
+];
+var elevatorDate = [
+  {
+    lat: 38.260137, lng: 140.879528
+  },
+  {
+    lat: 38.259779, lng: 140.881742
+  },
+  {
+    lat: 38.260334, lng: 140.879889
+  },
+  {
+    lat: 38.260916, lng: 140.881815
+  },
+  {
+    lat: 38.259826, lng: 140.881049
+  },
+  {
+    lat: 38.259136, lng: 140.880721
+  }
+];
 var markerData = [ // マーカーを立てる場所名・緯度・経度
   {
     name: '秋保温泉　ホテルきよ水',
@@ -74,7 +239,7 @@ $(function() {
         waypoint  = $('#inputStop').val();
         // ルート説明をクリア
         $('#directionsPanel').text(' ');
- 
+    
         google.maps.event.addDomListener(window, 'load', initialize(begin, end, waypoint));
         google.maps.event.addDomListener(window, 'load', calcRoute(begin, end ,waypoint));
     });
@@ -95,13 +260,51 @@ function initialize(begin, end) {
             var latlng = result[0].geometry.location;
  
             // #map_canvasを取得し、[mapOptions]の内容の、地図のインスタンス([map])を作成する
-            map = new google.maps.Map(document.getElementById("map"));
+            const map = new google.maps.Map(document.getElementById("map"),{
+              //↓地図の表示を変更
+              styles: [
+                //全てのラベルを非表示
+                {
+                  featureType: 'poi',
+                  elementType: 'labels',
+                  stylers: [
+                    { visibility: 'off' },
+                  ],
+                },
+              ]
+            }
+            );
  
             // 経路を取得
             directionsDisplay = new google.maps.DirectionsRenderer();
             directionsDisplay.setMap(map);
             directionsDisplay.setPanel(document.getElementById('directionsPanel'));     // 経路詳細
  
+            //経路表示の際にピンの表示
+            for (var i = 0; i < dagerDate.length; i++) {
+              MyLatLng = new google.maps.LatLng({ lat: dagerDate[i]['lat'], lng: dagerDate[i]['lng'] }); // 緯度経度のデータ作成
+              marker_a[i] = new google.maps.Marker({ // マーカーの追加
+                position: MyLatLng, // マーカーを立てる位置を指定
+                map: map, // マーカーを立てる地図を指定
+                icon: {
+                  url: './kikenpoint.png',
+                  scaledSize: new google.maps.Size(50, 50), //マーカーのサイズを縮小
+                }
+              });
+            };
+
+            for (var i = 0; i < elevatorDate.length; i++) {
+              MyLatLng = new google.maps.LatLng({ lat: elevatorDate[i]['lat'], lng: elevatorDate[i]['lng'] }); // 緯度経度のデータ作成
+              marker_e[i] = new google.maps.Marker({ // マーカーの追加
+                position: MyLatLng, // マーカーを立てる位置を指定
+                map: map, // マーカーを立てる地図を指定
+                icon: {
+                  url: './tyui.png',
+                  scaledSize: new google.maps.Size(25, 25), //マーカーのサイズを縮小
+                }
+              });
+            };
+
             // 場所
             $('#begin').text(begin);
             $('#end').text(end);
@@ -115,31 +318,31 @@ function initialize(begin, end) {
  
 // ルート取得
 function calcRoute(begin, end, waypoint) {
-    if(waypoint !== ""){
-    var request = {
-        origin: begin,         // 開始地点
-        destination: end,      // 終了地点
-        waypoints: [{location: waypoint}], // 経由地
-        travelMode: google.maps.TravelMode.WALKING,     // [歩き]でのルート
-    };
-  }
-else{
-    var request = {
+  if(waypoint !== ""){
+  var request = {
       origin: begin,         // 開始地点
       destination: end,      // 終了地点
+      waypoints: [{location: waypoint}], // 経由地
       travelMode: google.maps.TravelMode.WALKING,     // [歩き]でのルート
   };
 }
-    // インスタンス作成
-    directionsService = new google.maps.DirectionsService();
- 
-    directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-        } else {
-            alert('ルートが見つかりませんでした…');
-        }
-    });
+else{
+  var request = {
+    origin: begin,         // 開始地点
+    destination: end,      // 終了地点
+    travelMode: google.maps.TravelMode.WALKING,     // [歩き]でのルート
+};
+}
+  // インスタンス作成
+  directionsService = new google.maps.DirectionsService();
+
+  directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+      } else {
+          alert('ルートが見つかりませんでした…');
+      }
+  });
 }
 
 function initAutocomplete() {
@@ -151,6 +354,16 @@ function initAutocomplete() {
     center: { lat: 38.260260, lng: 140.879823 },
     zoom: 15,
     bounds: bounds,
+    styles: [
+      //全てのラベルを非表示
+      {
+        featureType: 'poi',
+        elementType: 'labels',
+        stylers: [
+          { visibility: 'off' },
+        ],
+      },
+    ]
   });
 
   //サービス提供施設のマーカー設置処理
@@ -172,8 +385,34 @@ function initAutocomplete() {
     });
 
     markerEvent(i); //マーカーにクリックイベントを追加
+  };
 
-  }
+    
+    //危険地点のピン
+    for (var i = 0; i < dagerDate.length; i++) {
+      MyLatLng = new google.maps.LatLng({ lat: dagerDate[i]['lat'], lng: dagerDate[i]['lng'] }); // 緯度経度のデータ作成
+      marker_a[i] = new google.maps.Marker({ // マーカーの追加
+        position: MyLatLng, // マーカーを立てる位置を指定
+        map: map, // マーカーを立てる地図を指定
+        icon: {
+          url: './kikenpoint.png',
+          scaledSize: new google.maps.Size(50, 50), //マーカーのサイズを縮小
+        }
+      });
+    };
+
+    //エレベーターのピン
+    for (var i = 0; i < elevatorDate.length; i++) {
+      MyLatLng = new google.maps.LatLng({ lat: elevatorDate[i]['lat'], lng: elevatorDate[i]['lng'] }); // 緯度経度のデータ作成
+      marker_e[i] = new google.maps.Marker({ // マーカーの追加
+        position: MyLatLng, // マーカーを立てる位置を指定
+        map: map, // マーカーを立てる地図を指定
+        icon: {
+          url: './tyui.png',
+          scaledSize: new google.maps.Size(25, 25), //マーカーのサイズを縮小
+        }
+      });
+    };
 
   // 検索ボックスを作成し、UIとのリンク
   const input = document.getElementById("pac-input");
@@ -231,15 +470,15 @@ function initAutocomplete() {
   });
 
   // 予測変換
-const input_Begin = document.getElementById("inputBegin");
-const input_End = document.getElementById("inputEnd");
-const input_Stop = document.getElementById("inputStop");
-const autocomplete_Begin = new google.maps.places.Autocomplete(input_Begin);
-const autocomplete_End = new google.maps.places.Autocomplete(input_End);
-const autocomplete_Stop = new google.maps.places.Autocomplete(input_Stop);
-autocomplete_Begin.bindTo("bounds", map);
-autocomplete_End.bindTo("bounds", map);
-autocomplete_Stop.bindTo("bounds", map);
+  const input_Begin = document.getElementById("inputBegin");
+  const input_End = document.getElementById("inputEnd");
+  const input_Stop = document.getElementById("inputStop");
+  const autocomplete_Begin = new google.maps.places.Autocomplete(input_Begin);
+  const autocomplete_End = new google.maps.places.Autocomplete(input_End);
+  const autocomplete_Stop = new google.maps.places.Autocomplete(input_Stop);
+  autocomplete_Begin.bindTo("bounds", map);
+  autocomplete_End.bindTo("bounds", map);
+  autocomplete_Stop.bindTo("bounds", map);
 
 }
 //マーカーのクリックイベントの処理
@@ -253,31 +492,34 @@ document.getElementById('search').addEventListener('click', initAutocomplete(), 
 
 })
 
-function goFilter2(){
-  var wTable = document.getElementById("sortTable");
-  var value  = '';
+//ソート機能
+function goFilter2() {
+  //　チェックされているチェックボックスの値を取得する
+  let checkedValues = [];
+  const inputs = document.querySelectorAll(".filter-input");
+  for (let input of inputs) {
+    if (input.checked) {
+      checkedValues.push(input.value);
+    }
+  }
 
-  // --- 選択されている商品のクラスを割り当てる ---
-  if(document.getElementById("chkbaby").checked)    {value += ' kbaby2';}
-  if(document.getElementById("chkkuruma").checked){value += ' kuruma2';}
-  if(document.getElementById("chkknyutenok").checked)     {value += ' knyutenok2';}
-  if(document.getElementById("chkksheet").checked)    {value += ' ksheet2';}
-  if(document.getElementById("chkdansang").checked)    {value += ' dansang2';}
-  if(document.getElementById("chkbabyroom").checked)    {value += ' babyroom2';}
-  if(document.getElementById("chkkidsroom").checked)    {value += ' kidsroom2';}
-  if(document.getElementById("chkomutu").checked)    {value += ' omutu2';}
-  if(document.getElementById("chkkyukei").checked)    {value += ' kyukei2';}
-  if(document.getElementById("chktesuri").checked)    {value += ' tesuri2';}
-  if(document.getElementById("chkosuto").checked)    {value += ' osuto2';}
-  if(document.getElementById("chkkyugo").checked)    {value += ' kyugo2';}
-  
+  // テーブルの行を取得する
+  const list = document.querySelectorAll(".table-data");
+  for (let row of list) {
+    // 行のタグを配列として取得
+    const rowTags = row.dataset.tags.split(",");
 
+    let matchTags = [];
+    for (let tag of rowTags) {
+      // チェックされているタグに含まれていれば
+      if (checkedValues.includes(tag)) {
+        matchTags.push(tag);
+      }
+    }
 
-  if(value == ''){
-    // --- 未選択はクラスをクリア ---
-    wTable.className = '';
-  }else{
-    // --- タイトル以外のTRを非表示＋指定属性を持つTRのみ表示 ---
-    wTable.className = 'allNoDisplay2 ' + value;
+    row.style = "";
+    if (checkedValues.length !== matchTags.length) {
+      row.style = "display: none;";
+    }
   }
 }

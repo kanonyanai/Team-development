@@ -1,40 +1,20 @@
 /*---メモ---*/
-/*1/24に更新*/
 /*cssの記述を『position:absolute』ではなく、『display:flex』に変更する！*/
-
-
-  /*h1タグのコンテナ*/
-  /*.flex_container_h1{
-  
-    display: flex;
-    justify-content: center;
-       
-  }
-  
-  /*h2タグのコンテナ*/
-  /*.flex_container_h2{
-  
-    display: flex;
-   justify-content: center;
-  
-  }
-*/
 
 html{
   background-color:rgba(255, 255, 0, 0.08);
 }
 
-/*1/23に追記*/
 table{
   background-color: white;
 }
 
+  
   /*切り替えボタンのコンテナ*/
   .flex_container_change{
   
     display: flex;
     justify-content: flex-end;
-    
       
   }
   
@@ -59,6 +39,7 @@ table{
            
     }
   
+  /*矢印を消した(1/16変更)*/
 
   /*.flex_container_seachbox{            mapをflexなしで記述したら反映されなくなったため不要*/
 
@@ -82,39 +63,38 @@ table{
   
     display: flex;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 20%;
   
   }
   
-  /*h1タグ*/  /*h11クラス削除と編集（1/19）*/
+  /*h1タグ*/  /*h11クラス削除と編集*/
   
   h1{ 
 
-      text-align: center;
-      font-family:'游明朝 Medium', serif;
-      font-weight:bolder;
-      font-size:65px;
-      margin-block-end: 0px;
-      padding: 0px;   
-         
-  }
+    text-align: center;
+    font-family:'游明朝 Medium', serif;
+    font-weight:bolder;
+    font-size:65px;
+    margin-block-end: 0px;
+    padding: 0px;   
+       
+}
   
-  /*h2タグ*/  /*h22クラス削除と編集（1/19）*/
+  /*h2タグ*/
   
   h2{        
       
-      margin-top: 20px;
-      margin-block-end: 50px;
-      padding: 0px;
-      text-align: center;
-      font-family:'游明朝 Medium', serif;
-      font-weight:bolder;
-      color:#339900;
-      font-family: '游明朝 Medium', serif;
-      font-size:40px;
-      
-  } 
-  
+    margin-top: 20px;
+    margin-block-end: 50px;
+    padding: 0px;
+    text-align: center;
+    font-family:'游明朝 Medium', serif;
+    font-weight:bolder;
+    color:#339900;
+    font-family: '游明朝 Medium', serif;
+    font-size:40px;
+    
+} 
   
   /*切り替えボタン*/
   
@@ -171,14 +151,14 @@ table{
       font-size:xx-large;
   
   }
-
+  
   /*ボタンを押したとき*/
   #seachButton:active{
 
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
-
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+    
   }
 
   /*クリアボタン*/
@@ -193,13 +173,14 @@ table{
       font-size:xx-large;
   
   }
-/*ボタンを押したとき*/
+
+  /*ボタンを押したとき*/
   #startclear:active{
 
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
-
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);/*下に動く*/
+      border-bottom: none;/*線を消す*/
+    
   }
   
   /*-----目的地-----*/
@@ -273,7 +254,7 @@ table{
       width: 68%;
       padding: 20px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      /*background-color:rgb(250, 250, 210); /*--背景色--*/
+      background-color:lightgoldenrodyellow; /*--背景色--*/
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:xx-large;
@@ -281,15 +262,14 @@ table{
       margin-bottom: 10%;
   
   }
-
+     
   /*ボタンを押したとき*/
   input[type="button"]:active{
  
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
   }
-     
   
   /*mapのサイズを変更することは不可能であったため、ページのサイズから％で指定して調節した*/
   
