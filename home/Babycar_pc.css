@@ -79,7 +79,7 @@
     display: flex;
     align-items:center;
     justify-content: flex-end;
-    margin-top: 5%;                     /*中央寄せが出来なかったため、とりあえずmarginで調整(1/17)*/
+    margin-top:6%;                     /*中央寄せが出来なかったため、とりあえずmarginで調整(1/17)*/
     gap: 1.5%;/*←gap：幅の調整*/   
   }
 
@@ -128,35 +128,30 @@
     background-image: url("kohacu.com_001967_20181119.png");
     height: 100%;
     width: 100%;
-    background-color:rgba(204,255,255,0.6);
-background-blend-mode:lighten;
+    background-color:rgba(204,255,255,0.8);
+    background-blend-mode:lighten;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }
    
-
-/*仮*/
-  /*p{
-    font-weight:bolder;
-    text-shadow    : 
-    8px  8px 10px white,
-   -8px  8px 10px white,
-    8px -8px 10px white,
-   -8px -5px 10px white,
-    8px  0px 10px white,
-    0px  8px 10px white,
-   -8px  0px 10px white,
-    0px -8px 10px white;        /* 文字の影 */
-/*}
  
   /*h1タグ*/
   
   .h11{ 
       font-family:'游明朝 Medium', serif;
       font-weight:bolder;
-      font-size: 20px;
-      text-shadow: #fff 1px 0 20px;
+      font-size: larger;
+      color: white;
+      /*text-shadow: 3px 3px 15px #323232,
+      -1px 1px 5px #323232,
+      1px -1px 5px #323232,
+      -1px -1px 5px #323232;*/
+      text-shadow: 3px 3px 15px #323232,
+      -1px 1px 5px #323232,
+      1px -1px 5px #323232,
+      -1px -1px 5px #323232;
+     
   }
   
   /*h2タグ*/
@@ -165,9 +160,13 @@ background-blend-mode:lighten;
         
     font-family:'游明朝 Medium', serif;
     font-weight:bolder;
-    color:#339900;
+    color:white;
     font-family: '游明朝 Medium', serif;
-    font-size:large;
+    font-size:larger;
+    text-shadow: 3px 3px 15px #323232,
+      -1px 1px 5px #323232,
+      1px -1px 5px #323232,
+      -1px -1px 5px #323232;
     
 }   
   
@@ -182,6 +181,7 @@ background-blend-mode:lighten;
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:small;
+      box-shadow: 15px 10px 15px -12px #4C4C4C;
   }
   
     
@@ -195,7 +195,11 @@ background-blend-mode:lighten;
       font-family:'游明朝 Medium', serif;
       text-align:center;
       font-size:x-large;
-
+      color: white;
+      text-shadow: 3px 3px 18px #323232,
+      -1px 1px 5px #323232,
+      1px -1px 5px #323232,
+      -1px -1px 5px #323232;
   
   
   }
@@ -212,7 +216,7 @@ background-blend-mode:lighten;
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
-      box-shadow: 20px 15px 20px -10px #4C4C4C;
+      box-shadow: 20px 15px 20px -12px #4C4C4C;
    
   }
 
@@ -224,6 +228,11 @@ background-blend-mode:lighten;
     font-family:'游明朝 Medium', serif;
     text-align:center;
     font-size:x-large;
+    color: white;
+    text-shadow: 3px 3px 18px #323232,
+      -1px 1px 5px #323232,
+      1px -1px 5px #323232,
+      -1px -1px 5px #323232;
 
 
   }
@@ -240,7 +249,7 @@ background-blend-mode:lighten;
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
-    box-shadow: 20px 15px 20px -10px #4C4C4C;
+    box-shadow: 20px 15px 20px -12px #4C4C4C;
 
   }
   
@@ -254,7 +263,7 @@ background-blend-mode:lighten;
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:medium;
-      box-shadow: 20px 15px 20px -10px #4C4C4C;
+      box-shadow: 20px 15px 20px -12px #4C4C4C;
   
   }
 
@@ -277,7 +286,7 @@ background-blend-mode:lighten;
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: medium;
-      box-shadow: 20px 15px 20px -10px #4C4C4C;
+      box-shadow: 20px 15px 20px -12px #4C4C4C;
   
   }
     
@@ -299,6 +308,11 @@ background-blend-mode:lighten;
       display: flex;
       font-family:'游明朝 Medium', serif;
       font-size:x-large;
+      color: white;
+      text-shadow: 3px 3px 18px #323232,
+      -1px 1px 5px #323232,
+      1px -1px 5px #323232,
+      -1px -1px 5px #323232;
   
   }
   
@@ -314,7 +328,7 @@ background-blend-mode:lighten;
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
-    box-shadow: 20px 15px 20px -10px #4C4C4C;
+    box-shadow: 20px 15px 20px -12px #4C4C4C;
   }
 
   .point{
@@ -337,7 +351,7 @@ background-blend-mode:lighten;
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
-      box-shadow: 20px 15px 20px -10px #4C4C4C;
+      box-shadow: 20px 15px 20px -12px #4C4C4C;
   
   }
      
@@ -357,7 +371,14 @@ background-blend-mode:lighten;
     width: 90%;
     height: 80%;
     left: 10%;
-    
+    box-shadow: 20px 15px 20px -12px #4C4C4C;
+    border: solid 2px black; /*--ボーダー線--*/
+
+    }
+
+    #space{
+      width: 90%;
+    height: 80%;
     }
     
   
@@ -372,6 +393,7 @@ background-blend-mode:lighten;
    
   table{
     background-color:white;
+    box-shadow: 20px 15px 20px -12px #4C4C4C;
   }
   
   
@@ -538,12 +560,12 @@ input[type="checkbox"] {
 /* 変更 */
 
 .categori {
-  color: rgb(1, 145, 49); /*カテゴリーの文字の色を変更*/
+  color: navy; /*カテゴリーの文字の色を変更*/
 }
 
 #ue {
   border-style: none; /*一番上のセルの背景色を変更*/
-  background-color: rgb(239, 255, 238);
+  background-color: azure;
 }
 
 /*一覧表示のテーブル*/
