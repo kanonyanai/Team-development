@@ -22,7 +22,7 @@ function submitToAPI(e) {
 
         success: function() {
             // フォームをクリアし、送信成功のメッセージを表示する
-            alert("メッセージが送信されました！");
+            alert("ご意見ありがとうございます！ 頂いたご意見、ご感想は今後の運営の参考とさせていただきます。");
             document.getElementById("contact-form").reset();
             location.reload();
         },
