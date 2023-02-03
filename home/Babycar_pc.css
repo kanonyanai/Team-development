@@ -125,10 +125,10 @@
 
   html{
     /*background-color:rgba(255, 255, 0, 0.08);*/
-    background-image: url("kohacu.com_001967_20181119.png");
+    background-image: url("MicrosoftTeams-img2.png");
     height: 100%;
     width: 100%;
-    background-color:rgba(240, 255, 255, 0.65);
+   
     background-blend-mode:lighten;
     background-repeat: no-repeat;
     background-size: cover;
@@ -148,10 +148,10 @@
       1px -1px 5px #323232,
       -1px -1px 5px #323232;*/
 
-      text-shadow: 3px 3px 3px #000C32	,
-      -1px 1px 3px 	#000C32,
-      1px -1px 3px 	#000C32,
-      -1px -1px 3px #000C32;
+      text-shadow: 3px 3px 3px 		#001965	,
+      -1px 1px 3px 			#001965,
+      1px -1px 3px 			#001965,
+      -1px -1px 3px 		#001965;
      
   }
   
@@ -164,10 +164,10 @@
     color:white;
     font-family: '游明朝 Medium', serif;
     font-size:large;
-    text-shadow: 3px 3px 3px #000C32	,
-    -1px 1px 3px 	#000C32,
-    1px -1px 3px 	#000C32,
-    -1px -1px 3px #000C32;
+    text-shadow: 3px 3px 3px 	#001965	,
+    -1px 1px 3px 		#001965,
+    1px -1px 3px 		#001965,
+    -1px -1px 3px 	#001965;
     
 }   
   
@@ -198,9 +198,9 @@
       font-size:x-large;
       color: white;
       text-shadow: 3px 3px 3px #000C32	,
-      -1px 1px 3px 	#000C32,
-      1px -1px 3px 	#000C32,
-      -1px -1px 3px #000C32;
+      -1px 1px 3px 		#001965,
+      1px -1px 3px 		#001965,
+      -1px -1px 3px 	#001965;
   
   
   }
@@ -231,9 +231,9 @@
     font-size:x-large;
     color: white;
     text-shadow: 3px 3px 3px #000C32	,
-    -1px 1px 3px 	#000C32,
-    1px -1px 3px 	#000C32,
-    -1px -1px 3px #000C32;
+    -1px 1px 3px 		#001965,
+    1px -1px 3px 		#001965,
+    -1px -1px 3px 	#001965;
 
 
   }
@@ -250,7 +250,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
-    box-shadow: 20px 15px 20px -15px #000C32;
+    box-shadow: 20px 15px 20px -15px 	#001965;
 
   }
   
@@ -264,7 +264,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:medium;
-      box-shadow: 20px 15px 20px -15px #000C32;
+      box-shadow: 20px 15px 20px -15px 	#001965;
   
   }
 
@@ -287,7 +287,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: medium;
-      box-shadow: 20px 15px 20px -15px #000C32;
+      box-shadow: 20px 15px 20px -15px 	#001965;
   
   }
     
@@ -310,10 +310,10 @@
       font-family:'游明朝 Medium', serif;
       font-size:x-large;
       color: white;
-      text-shadow: 3px 3px 3px #000C32	,
-      -1px 1px 3px 	#000C32,
-      1px -1px 3px 	#000C32,
-      -1px -1px 3px #000C32;
+      text-shadow: 3px 3px 3px 	#001965	,
+      -1px 1px 3px 		#001965,
+      1px -1px 3px 		#001965,
+      -1px -1px 3px 	#001965;
   
   }
   
@@ -329,7 +329,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
-    box-shadow: 20px 15px 20px -15px #000C32;
+    box-shadow: 20px 15px 20px -15px 	#001965;
   }
 
   .point{
@@ -352,7 +352,7 @@
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
-      box-shadow: 20px 15px 20px -15px #000C32;
+      box-shadow: 20px 15px 20px -15px 	#001965;
   
   }
      
@@ -372,7 +372,7 @@
     width: 90%;
     height: 80%;
     left: 10%;
-    box-shadow: 20px 15px 20px -15px #000C32;
+    box-shadow: 20px 15px 20px -15px 	#4C4C4C;
     border: solid 2px black; /*--ボーダー線--*/
 
     }
@@ -394,7 +394,7 @@
    
   table{
     background-color:white;
-    box-shadow: 20px 15px 20px -15px #000C32;
+    box-shadow: 20px 15px 20px -15px 	#4C4C4C;
   }
   
   
@@ -566,22 +566,22 @@ input[type="checkbox"] {
 
 #ue {
   border-style: none; /*一番上のセルの背景色を変更*/
-  background-color: azure;
+  background-color: rgb(224, 241, 252);
 }
 
 
 /*--colTitle部分の色指定--*/
 .color1{
-  background-color: lightyellow;
+  background-color: #fdfdb2;
 }
 .color2{
-  background-color: papayawhip;
+  background-color: #ffebae;
 }
 .color3{
-  background-color: honeydew;
+  background-color: #E5FFCC;
 }
 .color4{
-  background-color: aliceblue;
+  background-color: #d5f3fd;
 }
 
 /*一覧表示のテーブル*/
