@@ -128,7 +128,7 @@
     background-image: url("kohacu.com_001967_20181119.png");
     height: 100%;
     width: 100%;
-    background-color:rgba(204,255,255,0.8);
+    background-color:rgba(240, 255, 255, 0.65);
     background-blend-mode:lighten;
     background-repeat: no-repeat;
     background-size: cover;
@@ -147,10 +147,11 @@
       -1px 1px 5px #323232,
       1px -1px 5px #323232,
       -1px -1px 5px #323232;*/
-      text-shadow: 3px 3px 15px #323232,
-      -1px 1px 5px #323232,
-      1px -1px 5px #323232,
-      -1px -1px 5px #323232;
+
+      text-shadow: 3px 3px 3px #000C32	,
+      -1px 1px 3px 	#000C32,
+      1px -1px 3px 	#000C32,
+      -1px -1px 3px #000C32;
      
   }
   
@@ -162,11 +163,11 @@
     font-weight:bolder;
     color:white;
     font-family: '游明朝 Medium', serif;
-    font-size:larger;
-    text-shadow: 3px 3px 15px #323232,
-      -1px 1px 5px #323232,
-      1px -1px 5px #323232,
-      -1px -1px 5px #323232;
+    font-size:large;
+    text-shadow: 3px 3px 3px #000C32	,
+    -1px 1px 3px 	#000C32,
+    1px -1px 3px 	#000C32,
+    -1px -1px 3px #000C32;
     
 }   
   
@@ -196,10 +197,10 @@
       text-align:center;
       font-size:x-large;
       color: white;
-      text-shadow: 3px 3px 18px #323232,
-      -1px 1px 5px #323232,
-      1px -1px 5px #323232,
-      -1px -1px 5px #323232;
+      text-shadow: 3px 3px 3px #000C32	,
+      -1px 1px 3px 	#000C32,
+      1px -1px 3px 	#000C32,
+      -1px -1px 3px #000C32;
   
   
   }
@@ -216,7 +217,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
-      box-shadow: 20px 15px 20px -12px #4C4C4C;
+      box-shadow: 20px 15px 20px -15px #000C32;
    
   }
 
@@ -229,10 +230,10 @@
     text-align:center;
     font-size:x-large;
     color: white;
-    text-shadow: 3px 3px 18px #323232,
-      -1px 1px 5px #323232,
-      1px -1px 5px #323232,
-      -1px -1px 5px #323232;
+    text-shadow: 3px 3px 3px #000C32	,
+    -1px 1px 3px 	#000C32,
+    1px -1px 3px 	#000C32,
+    -1px -1px 3px #000C32;
 
 
   }
@@ -249,7 +250,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
-    box-shadow: 20px 15px 20px -12px #4C4C4C;
+    box-shadow: 20px 15px 20px -15px #000C32;
 
   }
   
@@ -263,7 +264,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:medium;
-      box-shadow: 20px 15px 20px -12px #4C4C4C;
+      box-shadow: 20px 15px 20px -15px #000C32;
   
   }
 
@@ -286,7 +287,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: medium;
-      box-shadow: 20px 15px 20px -12px #4C4C4C;
+      box-shadow: 20px 15px 20px -15px #000C32;
   
   }
     
@@ -309,10 +310,10 @@
       font-family:'游明朝 Medium', serif;
       font-size:x-large;
       color: white;
-      text-shadow: 3px 3px 18px #323232,
-      -1px 1px 5px #323232,
-      1px -1px 5px #323232,
-      -1px -1px 5px #323232;
+      text-shadow: 3px 3px 3px #000C32	,
+      -1px 1px 3px 	#000C32,
+      1px -1px 3px 	#000C32,
+      -1px -1px 3px #000C32;
   
   }
   
@@ -328,7 +329,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
-    box-shadow: 20px 15px 20px -12px #4C4C4C;
+    box-shadow: 20px 15px 20px -15px #000C32;
   }
 
   .point{
@@ -351,7 +352,7 @@
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
-      box-shadow: 20px 15px 20px -12px #4C4C4C;
+      box-shadow: 20px 15px 20px -15px #000C32;
   
   }
      
@@ -371,7 +372,7 @@
     width: 90%;
     height: 80%;
     left: 10%;
-    box-shadow: 20px 15px 20px -12px #4C4C4C;
+    box-shadow: 20px 15px 20px -15px #000C32;
     border: solid 2px black; /*--ボーダー線--*/
 
     }
@@ -393,7 +394,7 @@
    
   table{
     background-color:white;
-    box-shadow: 20px 15px 20px -12px #4C4C4C;
+    box-shadow: 20px 15px 20px -15px #000C32;
   }
   
   
@@ -566,6 +567,21 @@ input[type="checkbox"] {
 #ue {
   border-style: none; /*一番上のセルの背景色を変更*/
   background-color: azure;
+}
+
+
+/*--colTitle部分の色指定--*/
+.color1{
+  background-color: lightyellow;
+}
+.color2{
+  background-color: papayawhip;
+}
+.color3{
+  background-color: honeydew;
+}
+.color4{
+  background-color: aliceblue;
 }
 
 /*一覧表示のテーブル*/
