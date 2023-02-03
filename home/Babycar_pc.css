@@ -139,9 +139,9 @@
   /*h1タグ*/
   
   .h11{ 
-      font-family:'游明朝 Medium', serif;
+      font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
       font-weight:bolder;
-      font-size: larger;
+      font-size: 20px;
       color: white;
       /*text-shadow: 3px 3px 15px #323232,
       -1px 1px 5px #323232,
@@ -159,10 +159,9 @@
 
   .h22{        
         
-    font-family:'游明朝 Medium', serif;
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
     font-weight:bolder;
     color:white;
-    font-family: '游明朝 Medium', serif;
     font-size:large;
     text-shadow: 3px 3px 3px 	#001965	,
     -1px 1px 3px 		#001965,
