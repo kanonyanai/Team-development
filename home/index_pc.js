@@ -7,12 +7,229 @@ var marker_d = [];
 var marker_a = [];
 var marker_e = [];
 var infoWindow_d = [];
-//ペンギンの位置情報のリンク
-var penguin_url = "https://script.google.com/macros/s/AKfycbx04OyjVjQBP292DCLIJWK73Qp8uKNjYxCEOAfZgnjFCgA-1oGcI95I2dpGnTYalV-fyQ/exec";
-//危険地点のリンク
-var danger_url = "https://script.google.com/macros/s/AKfycbznFU8308mD_BFMO_WP_SV7YzTB1qRm1v4TEpTq2Pwz7_DH0b-OnVuYpmdyxHiCV3BW/exec";
-//エレベーターのリンク
-var elevator_url = "https://script.google.com/macros/s/AKfycbwj7NKQahEgpCrLVocHwaw4gl6b8oqqAtWeIWkrdCrYkUiuGezOOvOcu84LZvtCRtHu/exec";
+var dagerDate = [
+  {
+    lat: 38.259296,  lng: 140.880101
+  },
+  {
+    lat: 38.259232, lng: 140.880762
+  },
+  {
+    lat: 38.25941,	lng: 140.881189
+  },
+  {
+    lat: 38.259266,	lng: 140.881311
+  },
+  {
+    lat: 38.259631,	lng: 140.881012
+  },
+  {
+    lat: 38.259266,	lng: 140.881311
+  },
+  {
+    lat: 38.259631,	lng: 140.881012
+  },
+  {
+    lat: 38.259537,	lng: 140.880497 
+
+  },
+  {
+    lat: 38.259732,	lng: 140.880844 
+
+  },
+  {
+    lat: 38.259992,	lng: 140.880723 
+
+  },
+  {
+    lat: 38.259886,	lng: 140.880116 
+
+  },
+  {
+    lat: 38.26003,	lng: 140.880789 
+
+  },
+  {
+    lat: 38.260506,	lng: 140.881002 
+
+  },
+  {
+    lat: 38.260489,	lng: 140.881794 
+
+  },
+  {
+    lat: 38.260502,	lng: 140.881301 
+
+  },
+  {
+    lat: 38.260261,	lng: 140.879488 
+
+  },
+  {
+    lat: 38.261081,	lng: 140.880741 
+
+  },
+  {
+    lat: 38.2614,	lng: 140.881849 
+
+  },
+  {
+    lat: 38.261524,	lng: 140.880824 
+
+  },
+  {
+    lat: 38.261672,	lng: 140.881636 
+
+  },
+  {
+    lat: 38.261802,	lng: 140.881916 
+
+  },
+  {
+    lat: 38.261796,	lng: 140.880774 
+
+  },
+  {
+    lat: 38.261965,	lng: 140.880714 
+
+  },
+  {
+    lat: 38.262465,	lng: 140.880878 
+
+  },
+  {
+    lat: 38.263412,	lng: 140.880602 
+
+  },
+  {
+    lat: 38.262939,	lng: 140.880979 
+
+  },
+  {
+    lat: 38.263347,	lng: 140.881204 
+
+  },
+  {
+    lat: 38.262941,	lng: 140.880981 
+
+  },
+  {
+    lat: 38.259362,	lng: 140.883941 
+
+  },
+  {
+    lat: 38.259528,	lng: 140.883989 
+
+  },
+  {
+    lat: 38.259669,	lng: 140.884013 
+
+  },
+  {
+    lat: 38.259262,	lng: 140.884332 
+
+  },
+  {
+    lat: 38.25946,	lng: 140.883578 
+
+  },
+  {
+    lat: 38.26072,	lng: 140.879917 
+
+  },
+  {
+    lat: 38.260158,	lng: 140.879917 
+
+  },
+  {
+    lat: 38.259458,	lng: 140.880597 
+
+  },
+  {
+    lat: 38.260045,	lng: 140.875544 
+
+  }
+];
+var elevatorDate = [
+  {
+    lat: 38.260137, lng: 140.879528
+  },
+  {
+    lat: 38.259779, lng: 140.881742
+  },
+  {
+    lat: 38.260334, lng: 140.879889
+  },
+  {
+    lat: 38.260916, lng: 140.881815
+  },
+  {
+    lat: 38.259826, lng: 140.881049
+  },
+  {
+    lat: 38.259136, lng: 140.880721
+  }
+];
+var markerData = [ // マーカーを立てる場所名・緯度・経度
+  {
+    name: '秋保温泉　ホテルきよ水',
+    Address: '〒982-0244 宮城県仙台市太白区秋保町湯元字平倉1',
+    detail: 'バリアフリー対応ユニバーサル和洋室自動ドア付トイレ,手すり付浴室,フラットな入口,車いす貸出',
+    official_page: 'https://www.kiyo-mizu.jp/',
+    lat: 38.23543186092411,
+    lng: 140.70456511189812
+  }, {
+    name: '一苺一笑松森農場',
+    Address: '〒981-3111 宮城県仙台市泉区松森字城前157-1',
+    detail: 'ベビーカー入店可、車椅子での入店可能（貸出不可）',
+    official_page: 'https://ichiichigo.jp/',
+    lat: 38.31192992651354,
+    lng: 140.9212697407362
+  }, {
+    name: '仙台市天文台',
+    Address: '〒989-3123 宮城県仙台市青葉区錦ケ丘9-29-32',
+    detail: '授乳室、オストメイト対応ひろびろトイレ、エレベーター、救護室',
+    official_page: 'http://www.sendai-astro.jp/',
+    lat: 38.25701117537709,
+    lng: 140.75536778491642
+  }, {
+    name: '楽天生命パーク宮城',
+    Address: '〒983-0045 宮城県仙台市宮城野区宮城野2-11-6',
+    detail: '託児所、授乳室、車いす席',
+    official_page: 'https://www.rakuteneagles.jp/stadium/',
+    lat: 38.25664117783778,
+    lng: 140.90268345608
+  }, {
+    name: '八木山動物公園フジサキの杜',
+    Address: '〒982-0108 宮城県仙台市太白区八木山本町1-43',
+    detail: 'ベビーカー貸出あり（150円）、おむつ交換シート（ひろびろトイレにあり）',
+    official_page: 'https://www.city.sendai.jp/zoo/',
+    lat: 38.24565631827855,
+    lng: 140.84636141189833
+  }, {
+    name: '宮城県美術館',
+    Address: '〒980-0861 宮城県仙台市青葉区川内元支倉34-1',
+    detail: 'オストメイト対応多目的トイレ、車いす貸出、車いす対応エレベーター、自動ドアスロープ、ベビーカー貸出、授乳室、おむつ交換台',
+    official_page: 'https://www.pref.miyagi.jp/site/mmoa/',
+    lat: 38.2639165710877,
+    lng: 140.85508641189887
+  }, {
+    name: '仙台うみの杜水族館',
+    Address: '〒983-0013 宮城県仙台市宮城野区中野4-6',
+    detail: '車いすの貸出、車いす利用可能トイレ、オストメイト対応トイレ、介護用ベッド、授乳室（ベビーベッド）',
+    official_page: 'http://www.uminomori.jp/umino/index.html',
+    lat: 38.27132056147977,
+    lng: 140.9807388865904
+  }, {
+    name: '仙台PARCO2',
+    Address: '〒980-0021 宮城県仙台市青葉区中央３丁目７−５',
+    detail: '多目的トイレ（オストメイト対応）、車いす貸出し、ベビーカー貸出、ベビーカー休憩室',
+    official_page: 'https://sendai.parco.jp/',
+    lat: 38.259049926615056,
+    lng: 140.8797022984077
+  }
+];
+
 $(function() {
     $('#searchButton').click(function(e) {
         e.preventDefault();         // hrefが無効になり、画面遷移が行わない
