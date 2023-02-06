@@ -4,8 +4,14 @@
 /*htmlとbody全体に色付け*/
 html{
 
-	background-color:rgba(255, 255, 0, 0.08); /*--背景色--*/
-
+	background-image: url("sky2.png");
+	height: 100%;
+	width: 100%;
+   
+	background-blend-mode:lighten;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 /*戻るボタンとご意見・ご要望の間を調節するスペース*/
@@ -52,6 +58,11 @@ html{
 	text-align:center;
 	font-family:'游明朝 Medium', serif;
 	height: 100px;
+	color: white;
+	text-shadow: 3px 3px 3px 	#191919	,
+      -1px 1px 3px 	#191919,
+      1px -1px 3px 	#191919,
+      -1px -1px 3px #191919;
 }
 
 /*metaタグの中*/
@@ -72,6 +83,8 @@ html{
     resize: none;
     font-size:large;
     font-family:'游明朝 Medium', serif;
+	box-shadow: 20px 15px 20px -15px 	#4C4C4C;
+    border: solid 2px black; /*--ボーダー線--*/
 }
 
 
@@ -86,6 +99,7 @@ html{
 	font-size:large;
 	font-weight: bolder;
 	font-family:'游明朝 Medium', serif;
+	box-shadow: 20px 15px 20px -18px 	#191919;
 }
 
 .back:active{
@@ -107,6 +121,7 @@ html{
 	font-weight: bolder;
 	font-size:x-large;
 	font-family:'游明朝 Medium', serif;
+	box-shadow: 20px 15px 20px -18px 	#191919;
 }
 
 .submit:active{
