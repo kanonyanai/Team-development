@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
-
-<form method="get" action="" method="get">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<form method="post" action="" method="get">
 
   <head>
     <meta charset="UTF-8">
@@ -29,7 +29,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
     <div class="bun2_container">
       <div class="flex_container_h1">
     <div class="h11">
-      <h1>バリアフリーマップ</h1>
+      <h1>バリアフリーマップ     </h1>
     </div>   
   </div>
 
@@ -47,8 +47,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
       <div class="container_group">
         <div class="container_left">
           <div class="flex_container_word1">
+       
             <p id="start">出発地</p>
             <input type="text" id="inputBegin" placeholder="出発地を入力">
+         
           </div>
           <div class="flex_container_word2">
             <p id="ends">目的地</p>
@@ -60,7 +62,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
           <p id="stop">経由地</p>
           <input type="text" id="inputStop" placeholder="経由地を入力">
           <button type="submit" id="searchButton">検索</button>
-          <button id="startclear" onclick="window.location.reload();">クリア</button>
+          <button id="startclear" onclick="location.href='Babycar_pc.html'">クリア</button>
         </div>      
       </div>
        
@@ -122,10 +124,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 <!--追加部分-->
 <div id="result">
       <tr class="colTitle">
-        <th>施設名</th>
-        <th>住所</th>
-        <th>説明</th>
-        <th>タグ</th>
+        <th class="color1">施設名</th>
+        <th class="color2">住所</th>
+        <th class="color3">説明</th>
+        <th class="color4">タグ</th>
       </tr>
       <tr class="table-data" data-tags="tesuri,dansang,kuruma" tesuri dansang kuruma>
         <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a></td>
@@ -218,7 +220,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
 -->
 
 
-  <div id="map" ></div>
+  <div id="space" ></div>
 
  
   <link rel="stylesheet" href="Babycar_pc.css">

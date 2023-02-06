@@ -63,6 +63,7 @@
     align-items:center;
     justify-content: flex-end;/*1/17の変更部分*/
     gap: 1.5%;/*←gap：幅の調整*/  
+
   } 
 
   /*目的地のコンテナ*/  /*1/17に変更した*/
@@ -78,7 +79,7 @@
     display: flex;
     align-items:center;
     justify-content: flex-end;
-    margin-top: 5%;                     /*中央寄せが出来なかったため、とりあえずmarginで調整(1/17)*/
+    margin-top:6%;                     /*中央寄せが出来なかったため、とりあえずmarginで調整(1/17)*/
     gap: 1.5%;/*←gap：幅の調整*/   
   }
 
@@ -123,27 +124,49 @@
   }
 
   html{
-    background-color:rgba(255, 255, 0, 0.08);
+    /*background-color:rgba(255, 255, 0, 0.08);*/
+    background-image: url("sky.png");
+    height: 100%;
+    width: 100%;
+   
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
    
  
   /*h1タグ*/
   
   .h11{ 
-      font-family:'游明朝 Medium', serif;
-      font-weight:bolder;
-      font-size: large;
+      font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+      font-weight:50px;
+      font-size: 20px;
+      color: white;
+      /*text-shadow: 3px 3px 15px #323232,
+      -1px 1px 5px #323232,
+      1px -1px 5px #323232,
+      -1px -1px 5px #323232;*/
+
+      text-shadow: 3px 3px 3px 		#001965	,
+      -1px 1px 3px 			#001965,
+      1px -1px 3px 			#001965,
+      -1px -1px 3px 		#001965;
+     
   }
   
   /*h2タグ*/
 
   .h22{        
         
-    font-family:'游明朝 Medium', serif;
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
     font-weight:bolder;
-    color:#339900;
-    font-family: '游明朝 Medium', serif;
+    color:white;
     font-size:large;
+    text-shadow: 3px 3px 3px 	#001965	,
+    -1px 1px 3px 		#001965,
+    1px -1px 3px 		#001965,
+    -1px -1px 3px 	#001965;
     
 }   
   
@@ -158,6 +181,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:small;
+      box-shadow: 15px 10px 15px -12px #4C4C4C;
   }
   
     
@@ -171,6 +195,12 @@
       font-family:'游明朝 Medium', serif;
       text-align:center;
       font-size:x-large;
+      color: white;
+      text-shadow: 3px 3px 3px #000C32	,
+      -1px 1px 3px 		#001965,
+      1px -1px 3px 		#001965,
+      -1px -1px 3px 	#001965;
+  
   
   }
   
@@ -186,6 +216,8 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
+      box-shadow: 20px 15px 20px -15px #000C32;
+   
   }
 
   /*経由地の文字*/  /*1/16に追加*/
@@ -196,6 +228,11 @@
     font-family:'游明朝 Medium', serif;
     text-align:center;
     font-size:x-large;
+    color: white;
+    text-shadow: 3px 3px 3px #000C32	,
+    -1px 1px 3px 		#001965,
+    1px -1px 3px 		#001965,
+    -1px -1px 3px 	#001965;
 
 
   }
@@ -212,6 +249,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
+    box-shadow: 20px 15px 20px -15px 	#001965;
 
   }
   
@@ -225,6 +263,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:medium;
+      box-shadow: 20px 15px 20px -15px 	#001965;
   
   }
 
@@ -247,6 +286,7 @@
       font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: medium;
+      box-shadow: 20px 15px 20px -15px 	#001965;
   
   }
     
@@ -268,6 +308,11 @@
       display: flex;
       font-family:'游明朝 Medium', serif;
       font-size:x-large;
+      color: white;
+      text-shadow: 3px 3px 3px 	#001965	,
+      -1px 1px 3px 		#001965,
+      1px -1px 3px 		#001965,
+      -1px -1px 3px 	#001965;
   
   }
   
@@ -283,6 +328,7 @@
     font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
+    box-shadow: 20px 15px 20px -15px 	#001965;
   }
 
   .point{
@@ -305,6 +351,7 @@
       font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
+      box-shadow: 20px 15px 20px -15px 	#001965;
   
   }
      
@@ -324,7 +371,14 @@
     width: 90%;
     height: 80%;
     left: 10%;
-    
+    box-shadow: 20px 15px 20px -15px 	#4C4C4C;
+    border: solid 2px black; /*--ボーダー線--*/
+
+    }
+
+    #space{
+      width: 90%;
+    height: 80%;
     }
     
   
@@ -339,6 +393,7 @@
    
   table{
     background-color:white;
+    box-shadow: 20px 15px 20px -15px 	#4C4C4C;
   }
   
   
@@ -505,12 +560,27 @@ input[type="checkbox"] {
 /* 変更 */
 
 .categori {
-  color: rgb(1, 145, 49); /*カテゴリーの文字の色を変更*/
+  color: navy; /*カテゴリーの文字の色を変更*/
 }
 
 #ue {
   border-style: none; /*一番上のセルの背景色を変更*/
-  background-color: rgb(239, 255, 238);
+  background-color: rgb(224, 241, 252);
+}
+
+
+/*--colTitle部分の色指定--*/
+.color1{
+  background-color: #fdfdb2;
+}
+.color2{
+  background-color: #ffebae;
+}
+.color3{
+  background-color: #E5FFCC;
+}
+.color4{
+  background-color: #d5f3fd;
 }
 
 /*一覧表示のテーブル*/
