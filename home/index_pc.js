@@ -11,7 +11,7 @@ var penguin_url = "https://script.google.com/macros/s/AKfycbxnjSr42f4_p7CaLamqCk
 //危険地点のリンク
 var danger_url = "https://script.google.com/macros/s/AKfycbznFU8308mD_BFMO_WP_SV7YzTB1qRm1v4TEpTq2Pwz7_DH0b-OnVuYpmdyxHiCV3BW/exec";
 //エレベーターのリンク
-var elevator_url = "https://script.google.com/macros/s/AKfycbwj7NKQahEgpCrLVocHwaw4gl6b8oqqAtWeIWkrdCrYkUiuGezOOvOcu84LZvtCRtHu/exec";
+var elevator_url = "https://script.google.com/macros/s/AKfycbwpBIVc-sRXevSZfHtcKSPpbjNyBo1cxFYcBS5D9WkUqw_IFZCA5MVvPazZTxdRD6lq/exec";
 var infoWindow_d = [];
 
 $(function () {
