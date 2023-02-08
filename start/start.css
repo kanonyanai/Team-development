@@ -148,6 +148,7 @@ button{
 	border-radius: 10px; /*--角丸--*/  
 	background-color:	#e76b5e;
   color: white;
+  box-shadow: 0 0px 15px 0 #60606080
 }
 
 button:hover {
