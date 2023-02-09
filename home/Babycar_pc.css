@@ -589,11 +589,12 @@ input[type="checkbox"] {
   text-align: left; /*文字を左詰め*/
   font-size: 12px; /*文字の大きさを指定*/ /*12/23更新*/
 
-  width: 77%; /*12/23更新*/
 
-  display: block;
+  height: 700px;
+  width: 600px; /*12/23更新*/
   overflow-y: scroll;
-  overflow-x: scroll;
+  overflow-x: hidden;
+  display: block;
   /*right: 25%;
     height: 50%; /* スクロールバー表示*/
 }
