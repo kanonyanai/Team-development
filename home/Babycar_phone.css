@@ -154,44 +154,42 @@ table{
   
   #searchButton{
       
-      width: 140px; /*--幅--*/
-      padding: 2px; /*--余白--*/
-      border-radius: 5px; /*--角丸--*/ 
-      font-weight:bolder;
-      font-size:xx-large;
-      box-shadow: 20px 15px 20px -15px 	#001965;
-  
-  }
-  
-  /*ボタンを押したとき*/
-  #seachButton:active{
+    width: 140px; /*--幅--*/
+    padding: 2px; /*--余白--*/
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+    background: #fff;
+    /*font-family: '游明朝 Medium', serif;;*/
+    font-weight:bolder;
+    font-size:xx-large;
+    border-radius: 20px 20px 20px 20px;
 
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);/*下に動く*/
-      border-bottom: none;/*線を消す*/
-    
+  }
+  #searchButton.btn-border:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(97, 255, 215);
   }
 
   /*クリアボタン*/
   
   #startclear{
   
-      width: 140px; /*--幅--*/
-      padding: 2px; /*--余白--*/
-      border-radius: 5px; /*--角丸--*/ 
-      font-weight:bolder;
-      font-size:xx-large;
-      box-shadow: 20px 15px 20px -15px 	#001965;
+    width: 140px; /*--幅--*/
+    padding: 2px; /*--余白--*/
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+    background: #fff;
+    /*font-family: '游明朝 Medium', serif;;*/
+    font-weight:bolder;
+    font-size:xx-large;
+    border-radius: 20px 20px 20px 20px;
   
   }
 
   /*ボタンを押したとき*/
-  #startclear:active{
-
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);/*下に動く*/
-      border-bottom: none;/*線を消す*/
-    
+  #startclear.btn-border:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(97, 255, 215);
   }
   
   /*-----目的地-----*/
