@@ -42,6 +42,7 @@
   .flex_container_h1{
     display: flex;
     margin-left: 65%;
+    margin-bottom: 0%;
   }
   
   /*h2タグのコンテナ*/
@@ -140,13 +141,8 @@
   
   .h11{ 
       font-weight:50px;
-      font-size: 20px;
+      font-size: 25px;
       color: white;
-      /*text-shadow: 3px 3px 15px #323232,
-      -1px 1px 5px #323232,
-      1px -1px 5px #323232,
-      -1px -1px 5px #323232;*/
-
       text-shadow: 3px 3px 3px 		#001965	,
       -1px 1px 3px 			#001965,
       1px -1px 3px 			#001965,
