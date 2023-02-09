@@ -178,10 +178,7 @@ button:active{
 img{
   width: 690px;
   height: auto;
-
   background: #ffffff; 
-  border:3px solid #ffcf56;/* 写真と背景の境目 */ 
-  
 }
 
 .hukidasi {
