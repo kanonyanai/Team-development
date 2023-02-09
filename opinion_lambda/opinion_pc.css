@@ -7,7 +7,7 @@ html{
 	background-image: url("sky2.png");
 	height: 100%;
 	width: 100%;
-   
+	font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
 	background-blend-mode:lighten;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -62,7 +62,6 @@ html{
 	font-size:x-large;
 	font-weight: bolder;
 	text-align:center;
-	font-family:'游明朝 Medium', serif;
 	height: 100px;
 	color: white;
 	text-shadow: 3px 3px 3px 	#191919	,
@@ -88,7 +87,6 @@ html{
 	border-radius: 5px; /*--角丸--*/  
     resize: none;
     font-size:large;
-    font-family:'游明朝 Medium', serif;
 	box-shadow: 20px 15px 20px -15px 	#4C4C4C;
     border: solid 2px black; /*--ボーダー線--*/
 }
@@ -103,7 +101,6 @@ html{
 	border-radius: 5px; /*--角丸--*/  
 	font-size:x-large;
 	font-weight: bolder;
-	font-family:'游明朝 Medium', serif;
 	box-shadow: 20px 15px 20px -18px 	#191919;
 }
 
@@ -125,7 +122,6 @@ html{
 	background-color:rgb(253, 191, 133);
 	font-weight: bolder;
 	font-size:xx-large;
-	font-family:'游明朝 Medium', serif;
 	box-shadow: 20px 15px 20px -18px 	#191919;
 }
 
@@ -135,4 +131,65 @@ html{
     transform: translateY(4px);/*下に動く*/
     border-bottom: none;/*線を消す*/
 
+}
+.btn,
+#opinion_button.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+#opinion_button.btn-border-shadow--radius {
+  border-radius: 100vh;
+}
+#opinion_button.btn-border-shadow {
+  padding: calc(1.5rem - 12px) 3rem 1.5rem;
+
+  background: #ffc299;
+}
+
+#opinion_button.btn-border-shadow:before {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  border: 3px solid #000;
+  border-radius: 0.5rem;
+}
+
+#opinion_button.btn-border-shadow--radius:before {
+  border-radius: 100vh;
+}
+
+#opinion_button.btn-border-shadow:hover {
+  padding: calc(1.5rem - 6px) 3rem;
+}
+
+#opinion_button.btn-border-shadow:hover:before {
+  top: 0;
+  left: 0;
 }
