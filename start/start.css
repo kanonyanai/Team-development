@@ -6,12 +6,14 @@
 .h2_container{
   display: flex;
   justify-content: center;
+  margin-block-end: 20px;
   
 }
 
 .a_container{
   display: flex;
   justify-content: center;
+  margin-block-end: 40px;
 }
 .space{
   display: flex;
@@ -37,7 +39,7 @@
 .kiken{
   display: flex;
   justify-content: center;
-  margin-block-end: 70px;
+  margin-block-end: 90px;
 }
 
 .pcpage{
@@ -64,7 +66,7 @@ body {
  
 }
 
-.name{
+/*.name{
   background-color:ivory;
 
 }
@@ -81,19 +83,22 @@ h1:after {
 
 h1{
 
-  font-family :'游明朝 Medium', serif;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
   font-weight:bolder;
-  font-size: 50px;
-  margin-block-start: 75px;
+  font-size: 85px;
+  margin-block-start: 90px;
+  letter-spacing: 0.1em; 
   
-  
+  /*color: black;
+  text-shadow: 2px 2px #fff, 5px 5px rgba(139, 0, 0, 0.4);*/
 }
 
 
 h2{
-  font-family:'游明朝 Medium', serif;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
   font-weight:bolder;
-  font-size: 35px;
+  font-size: 40px;
+  margin-block-start: 10px;
   margin-block-end: 80px;
   text-align: center;
   
@@ -102,7 +107,7 @@ h2{
 
 p{
   text-align: center;
-  font-family:'游明朝 Medium', serif;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
   font-weight:bolder;
   font-size: xx-large;
   margin-block-start: 0;
@@ -113,7 +118,7 @@ p{
 a{
 
   text-align: center;
-  font-family:'游明朝 Medium', serif;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
   font-weight:bolder;
   font-size: 35px !important;
   color:	#660099;
@@ -140,17 +145,18 @@ a{
 
 button{
   text-align: center;
-  width: 500px;
-  height: 70px;
-  font-family:'游明朝 Medium', serif;
+  width: 580px;
+  height: 80px;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
   font-size: 30px;
+  font-weight:bold;
   border:5px solid #db5757;
 	border-radius: 10px; /*--角丸--*/  
 	background-color:	#e76b5e;
   color: white;
   box-shadow: 0 0px 15px 0 #60606080;
 
-  border: 6px outset #db5757;
+  border: 7px outset #db5757;
 
 }
 
@@ -170,7 +176,7 @@ button:active{
 
 /*スクショの部分*/
 img{
-  width: 670px;
+  width: 690px;
   height: auto;
 
   background: #ffffff; 
@@ -180,7 +186,7 @@ img{
 
 .hukidasi {
 
-  font-family:'游明朝 Medium', serif;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
 
   position: relative;
   display: inline-block;
@@ -224,7 +230,7 @@ img{
 
 .hukidasi2 {
 
-  font-family:'游明朝 Medium', serif;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
 
   position: relative;
   display: inline-block;
@@ -249,18 +255,6 @@ img{
 }
 
 .hukidasi2:before {  /*吹き出しのとんがり部分*/
-  /*content: "";
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  margin-top: -30px;
-  
-  border: 30px solid transparent;
-  border-left: 30px solid #FFD865;
-  
-  z-index: 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);*/
 
   content: '';
   position: absolute;
