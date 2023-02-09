@@ -412,7 +412,7 @@ table{
   
  /*チェックボックスの部分*/  /*12/23更新*/
  input[type="checkbox"] {
-  transform: scale(1.9); /*--チェックボックスの大きさ変更--*/
+  transform: scale(1.5); /*--チェックボックスの大きさ変更--*/
 }
 
 /*↓tableのrow(横並び)のような要素を形成する*/
