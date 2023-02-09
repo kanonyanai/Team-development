@@ -347,17 +347,17 @@
   #map{
   
     width: 90%;
-    height: 80%;
+    height: 75%;
     left: 10%;
     box-shadow: 20px 15px 20px -15px 	#4C4C4C;
     border: solid 2px black; /*--ボーダー線--*/
 
     }
 
-    #space{
-      width: 90%;
-    height: 80%;
-    }
+  #space{
+    width: 90%;
+    height: 40%;
+  }
     
   
     /*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
