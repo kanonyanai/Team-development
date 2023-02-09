@@ -6,7 +6,7 @@ html{
      background-image: url("sky.png");
      height: 100%;
      width: 100%;
-    
+     font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
      background-blend-mode:lighten;
      background-repeat: no-repeat;
      background-size: cover;
@@ -48,15 +48,6 @@ table{
            
     }
   
-  /*矢印を消した(1/16変更)*/
-
-  /*.flex_container_seachbox{            mapをflexなしで記述したら反映されなくなったため不要*/
-
-    /*display: flex;
-    justify-content: flex-end;
-
-  }*/
-  
   /*意見画面に遷移ボタンのコンテナ*/
   .flex_container_opinion{
   
@@ -81,7 +72,6 @@ table{
   h1{ 
 
     text-align: center;
-    font-family:'游明朝 Medium', serif;
     font-weight:bolder;
     font-size:65px;
     margin-block-end: 0px;
@@ -102,7 +92,6 @@ table{
     margin-block-end: 50px;
     padding: 0px;
     text-align: center;
-    font-family:'游明朝 Medium', serif;
     font-weight:bolder;
     color:white;
     font-size:40px;
@@ -123,7 +112,6 @@ table{
       padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       background-color:lavender;/*--背景色--*/
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:large;
       box-shadow: 15px 10px 15px -12px #4C4C4C;
@@ -137,7 +125,6 @@ table{
   
   #start{
   
-      font-family:'游明朝 Medium', serif;
       text-align:center;
       font-size:xx-large;
       font-weight:bolder;
@@ -158,7 +145,6 @@ table{
       padding: 15px; /*--余白--*/
       border: solid 2px #cccccc; /*--ボーダー線--*/
       border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: x-large;
       box-shadow: 20px 15px 20px -15px #000C32;
@@ -171,7 +157,6 @@ table{
       width: 140px; /*--幅--*/
       padding: 2px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:xx-large;
       box-shadow: 20px 15px 20px -15px 	#001965;
@@ -194,7 +179,6 @@ table{
       width: 140px; /*--幅--*/
       padding: 2px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:xx-large;
       box-shadow: 20px 15px 20px -15px 	#001965;
@@ -216,8 +200,6 @@ table{
   
   #ends{
   
-
-    font-family:'游明朝 Medium', serif;
     text-align:center;
     font-size:xx-large;
     font-weight:bolder;
@@ -238,7 +220,6 @@ table{
       padding: 15px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       border: solid 2px #cccccc; /*--ボーダー線--*/
-      font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:x-large;
       box-shadow: 20px 15px 20px -15px 	#001965;
@@ -250,7 +231,6 @@ table{
   
   #stop{
   
-    font-family:'游明朝 Medium', serif; 
     text-align:center;
     font-size:xx-large;
     font-weight:bolder;
@@ -271,7 +251,6 @@ table{
     padding: 15px; /*--余白--*/
     border-radius: 5px; /*--角丸--*/ 
     border: solid 2px #cccccc; /*--ボーダー線--*/
-    font-family: '游明朝 Medium', serif;
     font-weight:bolder;
     font-size:x-large;
     box-shadow: 20px 15px 20px -15px 	#001965;
@@ -281,7 +260,6 @@ table{
 
 #comment{
   text-align: center;
-  font-family: '游明朝 Medium', serif;
     font-weight:bolder;
     font-size:x-large;
 }
@@ -293,8 +271,6 @@ table{
       width: 68%;
       padding: 20px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      /*background-color:lightgoldenrodyellow; /*--背景色--*/
-      font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:xx-large;
 
@@ -344,7 +320,6 @@ table{
   }
   
   #description {
-    font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
   }
@@ -369,7 +344,6 @@ table{
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     background-color: #fff;
-    font-family: Roboto;
   }
   
   #pac-container {
@@ -383,7 +357,6 @@ table{
   }
   
   .pac-controls label {
-    font-family: Roboto;
     font-size: 13px;
     font-weight: 300;
   }
@@ -391,10 +364,8 @@ table{
   #pac-input {
   
     text-align: center;
-    font-family: '游明朝 Medium', serif;
   
     background-color: #fff;
-    /*font-family: Roboto;*/
     font-size: 18px;
     font-weight: 300;
     margin-left: 12px;

@@ -128,7 +128,7 @@
     background-image: url("sky.png");
     height: 100%;
     width: 100%;
-   
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
     background-blend-mode:lighten;
     background-repeat: no-repeat;
     background-size: cover;
@@ -139,7 +139,6 @@
   /*h1タグ*/
   
   .h11{ 
-      font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
       font-weight:50px;
       font-size: 20px;
       color: white;
@@ -159,7 +158,6 @@
 
   .h22{        
         
-    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
     font-weight:bolder;
     color:white;
     font-size:large;
@@ -178,7 +176,6 @@
       padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       background-color:lavender;/*--背景色--*/
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:small;
       box-shadow: 15px 10px 15px -12px #4C4C4C;
@@ -192,7 +189,6 @@
   #start{
   
       display: flex;
-      font-family:'游明朝 Medium', serif;
       text-align:center;
       font-size:x-large;
       color: white;
@@ -213,7 +209,6 @@
       padding: 6px; /*--余白--*/
       border: solid 2px #cccccc; /*--ボーダー線--*/
       border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
       box-shadow: 20px 15px 20px -15px #000C32;
@@ -225,7 +220,6 @@
   #stop{
 
     display: flex;
-    font-family:'游明朝 Medium', serif;
     text-align:center;
     font-size:x-large;
     color: white;
@@ -246,7 +240,6 @@
     padding: 6px; /*--余白--*/
     border: solid 2px #cccccc; /*--ボーダー線--*/
     border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
     box-shadow: 20px 15px 20px -15px 	#001965;
@@ -260,7 +253,6 @@
       width: 70px; /*--幅--*/
       padding: 7px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:medium;
       box-shadow: 20px 15px 20px -15px 	#001965;
@@ -283,7 +275,6 @@
       width: 70px; /*--幅--*/
       padding: 7px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: medium;
       box-shadow: 20px 15px 20px -15px 	#001965;
@@ -306,7 +297,6 @@
   #ends{
   
       display: flex;
-      font-family:'游明朝 Medium', serif;
       font-size:x-large;
       color: white;
       text-shadow: 3px 3px 3px 	#001965	,
@@ -325,7 +315,6 @@
     padding: 6px; /*--余白--*/
     border: solid 2px #cccccc; /*--ボーダー線--*/
     border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
     box-shadow: 20px 15px 20px -15px 	#001965;
@@ -333,7 +322,6 @@
 
   .point{
     text-align: center;
-    font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: larger;
   }
@@ -347,8 +335,6 @@
       width: 380px;
       padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      /*background-color:lightgoldenrodyellow; /*--背景色--*/
-      font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
       box-shadow: 20px 15px 20px -15px 	#001965;
@@ -406,7 +392,6 @@
   }
   
   #description {
-    font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
   }
@@ -431,7 +416,6 @@
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     background-color: #fff;
-    font-family: Roboto;
   }
   
   #pac-container {
@@ -445,7 +429,6 @@
   }
   
   .pac-controls label {
-    font-family: Roboto;
     font-size: 13px;
     font-weight: 300;
   }
@@ -453,10 +436,8 @@
   #pac-input {
   
     text-align: center;
-    font-family: '游明朝 Medium', serif;
   
     background-color: #fff;
-    /*font-family: Roboto;*/
     font-size: 18px;
     font-weight: 300;
     margin-left: 12px;
@@ -509,54 +490,6 @@ input[type="checkbox"] {
   transform: scale(1.5); /*--チェックボックスの大きさ変更--*/
 }
 
-/*↓tableのrow(横並び)のような要素を形成する*/
-/* .kbaby2    tr[kbaby]{
-    display: table-row;
-  }
-  
-  .kuruma2  tr[kuruma]{
-    display: table-row;
-  }
-  
-  .knyutenok2   tr[knyutenok]{
-    display: table-row;
-  }
-  
-  .ksheet2   tr[ksheet]{
-    display: table-row;
-  }
-  
-  .dansang2   tr[dansang]{
-    display: table-row;
-  }
-  
-  .babyroom2   tr[babyroom]{
-    display: table-row;
-  }
-  
-  .kidsroom2   tr[kidsroom]{
-    display: table-row;
-  }
-  
-  .omutu2   tr[omutu]{
-    display: table-row;
-  }
-  
-  .kyukei2   tr[kyukei]{
-    display: table-row;
-  }
-  
-  .tesuri2   tr[tesuri]{
-    display: table-row;
-  }
-  
-  .osuto2   tr[osuto]{
-    display: table-row;
-  }
-  
-  .kyugo2   tr[kyugo]{
-    display: table-row;
-  } */
 /* 変更 */
 
 .categori {
