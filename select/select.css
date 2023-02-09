@@ -1,9 +1,11 @@
 @import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
 
 /*ホームページ名のところ-------------------------------------------------------------------------------------------------*/
+html{
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";;
+}
 p{
   text-align:center;
-  font-family: '游明朝 Medium', serif;
 
 }
 
@@ -37,7 +39,6 @@ table td {/*table内のtdに対して*/
     height: 200px;/*スマホ画面の高さ*/
     font-size:large;/*画面内のフォントサイズ*/
     font-weight: bolder;
-    font-family:"HG明朝E";
     width: 100%;
     padding-top: 23%;
     box-sizing: border-box;
