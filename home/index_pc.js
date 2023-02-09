@@ -7,7 +7,7 @@ var marker_d = [];
 var marker_a = [];
 var marker_e = [];
 //ペンギンの位置情報のリンク
-var penguin_url = "https://script.google.com/macros/s/AKfycbxHoTHnw1OCPXBGW7nBFqHRHlkxHReRxTk5FZMBhnd8Ixk3Rfr4a0PhNSvWbcFV6DfoeA/exec";
+var penguin_url = "https://script.google.com/macros/s/AKfycbyy8CQ1ELwJIa4DZsC_IkhTGoL9jta0SoZQyHkUwgZbzhHCVqu-Qx2URHacsRXJwoRICA/exec";
 //危険地点のリンク
 var danger_url = "https://script.google.com/macros/s/AKfycbznFU8308mD_BFMO_WP_SV7YzTB1qRm1v4TEpTq2Pwz7_DH0b-OnVuYpmdyxHiCV3BW/exec";
 //エレベーターのリンク
