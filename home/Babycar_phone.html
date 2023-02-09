@@ -77,7 +77,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
           <a class="categori" name="car">車椅子関連</a><br>
           <input class="filter-input" value = "kuruma" type="checkbox" onChange="goFilter2()" id="chkkuruma">車いす貸出
           <input class="filter-input" value = "ksheet" type="checkbox" onChange="goFilter2()" id="chkksheet">車いす用座席
-          <input class="filter-input" value = "knyutenok" type="checkbox" onChange="goFilter2()" id="chkknyutenok">車椅子入店可
+          <input class="filter-input" value = "knyutenok" type="checkbox" onChange="goFilter2()" id="chkknyutenok">車いす入店可
+          <input class="filter-input" value = "tyusyaok" type="checkbox" onChange="goFilter2()" id="chkktyusya">障がい者用駐車枠
           <input class="filter-input" value = "dansang" type="checkbox" onChange="goFilter2()" id="chkdansang">入口に段差がない<br>
           <a class="categori" name="baby">ベビーカー関連</a><br>
           <input class="filter-input" value="kbaby" type="checkbox" onChange="goFilter2()" id="chkbaby">ベビーカー貸出
@@ -88,6 +89,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
           <a class="categori" name="other">その他</a><br>
           <input class="filter-input" value="tesuri" type="checkbox" onChange="goFilter2()" id="chktesuri">手すり付き浴室
           <input class="filter-input" value="osuto" type="checkbox" onChange="goFilter2()" id="chkosuto">オストメイト対応トイレ
+          <input class="filter-input" value="bariatoire" type="checkbox" onChange="goFilter2()" id="chkbariatoire">バリアフリー対応トイレ
           <input class="filter-input" value="kyugo" type="checkbox" onChange="goFilter2()" id="chkkyugo">救護室あり
         </th>
       </tr>
@@ -100,10 +102,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <th class="color4">タグ</th>
       </tr>
       <tr class="table-data" data-tags="tesuri,dansang,kuruma" tesuri dansang kuruma>
-        <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉　ホテルきよ水</a></td>
+        <td><a href='https://www.kiyo-mizu.jp/'>仙台秋湯温泉 ホテルきよ水</a></td>
         <td>宮城県仙台市太白区秋保町湯元字平倉1</td>
         <td>朝６時からオープン</td>
-        <td>手すり付き浴室 入口に段差なし 車いす貸出</td>
+        <td>手すり付き浴室 入り口に段差がない 車いす貸出</td>
       </tr>
       <tr class="table-data" data-tags="knyutenok" knyutenok>
         <td><a href='https://ichiichigo.jp/'>一苺一笑松森農場</a></td>
@@ -117,20 +119,20 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         <td>施設ごとに利用料金が異なる</td>
         <td>入口に段差がない おむつ交換台あり</td>
       </tr>
-      <tr class="table-data" data-tags="babyroom,osuto,kyugo,kuruma,kbaby,ksheet" >
+      <tr class="table-data" data-tags="knyutenok,ksheet,babyroom,osuto,kyugo,kuruma,kbaby">
         <td><a href='http://www.sendai-astro.jp/'>仙台市天文台</a></td>
         <td>〒989-3123 宮城県仙台市青葉区錦ケ丘9-29-32</td>
-        <td>車いす貸出、ベビーカー貸出無料　車椅子席は中央・後方それぞれに4席
+        <td>車いす貸出、ベビーカー貸出無料 車椅子席は中央・後方それぞれに4席
             3階望遠鏡観測室、車椅子での利用可</td>
-        <td>授乳室　オストメイト対応トイレ　エレベーター　救護室 車いす貸出 ベビーカー貸出</td>
+        <td>授乳室 オストメイト対応トイレ エレベーター 救護室 車いす貸出 ベビーカー貸出 車椅子入店可 車いす用座席</td>
       </tr>
-      <tr class="table-data" data-tags="babyroom,kidsroom,ksheet" >
+      <tr class="table-data" data-tags="knyutenok,babyroom,kidsroom,ksheet," >
         <td><a
             href='https://www.rakuteneagles.jp/stadium/'>楽天生命パーク宮城</a>
         </td>
         <td>〒983-0045 宮城県仙台市宮城野区宮城野2-11-6</td>
         <td>車椅子席は付き添いの方一名様分も込み</td>
-        <td>託児所　授乳室　車椅子席</td>
+        <td>託児所 授乳室 車いす用座席 車椅子入店可</td>
       </tr>
       <tr class="table-data" data-tags="kbaby,omutu">
         <td><a
@@ -138,13 +140,13 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         </td>
         <td> 〒982-0108 宮城県仙台市太白区八木山本町1-43</td>
         <td>ベビーカー貸出は150円</td>
-        <td>ベビーカー貸出　おむつ交換台</td>
+        <td>ベビーカー貸出 おむつ交換台</td>
       </tr>
-      <tr class="table-data" data-tags="osuto,kuruma,kbaby,babyroom">
+      <tr class="table-data" data-tags="osuto,kuruma,kbaby,babyroom,dansang">
         <td><a href='https://www.pref.miyagi.jp/site/mmoa/'>宮城県美術館</a></td>
         <td>〒980-0861 宮城県仙台市青葉区川内元支倉34-1</td>
-        <td>北庭から館内への通路は階段のみ　障がい者手帳をお持ちの方本人と介護者一名の観覧料は無料</td>
-        <td>オストメイト対応トイレ　車いす貸出　エレベーター　自動ドア　スロープ　授乳室　おむつ交換台</td>
+        <td>北庭から館内への通路は階段のみ 障がい者手帳をお持ちの方本人と介護者一名の観覧料は無料</td>
+        <td>オストメイト対応トイレ 車いす貸出 エレベーター 入り口に段差がない 授乳室 おむつ交換台</td>
       </tr>
       <tr class="table-data" data-tags="kuruma,osuto,babyroom" >
         <td><a
@@ -152,7 +154,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         </td>
         <td>〒983-0013 宮城県仙台市宮城野区中野4-6</td>
         <td>新型コロナウイルスによりベビーカーの貸出休止中</td>
-        <td>車いす貸出　車いす利用可能トイレ　オストメイト対応トイレ　介護用ベッド　授乳室</td>
+        <td>車いす貸出 車いす利用可能トイレ オストメイト対応トイレ 介護用ベッド 授乳室</td>
       </tr>
       <tr class="table-data" data-tags="osuto,kuruma,kyukei" >
         <td><a
@@ -160,7 +162,49 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6x7xdqUNeeOq8oebY09R3R7G
         </td>
         <td>〒980-8450宮城県仙台市青葉区中央3丁目7-5</td>
         <td>ベビーカーの貸出、車いすの貸し出しは2F</td>
-        <td>多目的トイレ　車いす貸出　ベビーカー貸出　ベビーカー休憩室</td>
+        <td>多目的トイレ 車いす貸出 ベビーカー貸出 ベビーカー休憩室</td>
+      </tr>
+      <tr class="table-data" data-tags="knyutenok,dansang">
+        <td><a href='https://beauty.rakuten.co.jp/s2000049113/'>ACT仙台 deuxieme(美容室)</a></td>
+        <td>〒980-0811 宮城県仙台市青葉区一番町3-1-15</td>
+        <td>ビルの5階の奥。エレベーターが利用可能です。</td>
+        <td>入口に段差がない 、車いす入店可</td>
+      </tr>
+      <tr class="table-data" data-tags="knyutenok,dansang">
+        <td><a href='https://beauty.rakuten.co.jp/s2000049113/'>Regarita(美容室)</a></td>
+        <td>〒980-0022 宮城県仙台市青葉区五橋１-1-45 五橋パークホームズ仙台中央 1F</td>
+        <td>子供が待ち時間に遊べるキッズスペースあり</td>
+        <td>入口に段差がない 、車いす入店可</td>
+      </tr>
+      <tr class="table-data" data-tags="knyutenok,tyusyaok">
+        <td><a href='http://s-toshogu.jp/access/'>仙台東照宮</a></td>
+        <td>〒981-0908 宮城県仙台市青葉区東照宮1-6-1</td>
+        <td>車いすの方が段差なく境内に入れる駐車場があり</td>
+        <td>車いす用駐車場 、車いす入店可</td>
+      </tr>
+      <tr class="table-data" data-tags="knyutenok,tyusyaok">
+        <td><a href='http://www.city.sendai.jp/somu-chose/kurashi/machi/kotsu/chushajo/annai/chushajo/'>仙台市勾当台公園</a></td>
+        <td>〒980-0803 宮城県仙台市青葉区国分町3-7-1</td>
+        <td>ビルの5階の奥。エレベーターが利用可能です。</td>
+        <td>車いす入店可 障がい者用駐車枠</td>
+      </tr>
+      <tr class="table-data" data-tags="knyutenok,tyusyaok,bariatoire">
+        <td><a href='https://sendai-aer.jp/index.php'>AER展望テラス</a></td>
+        <td>〒980-0021 宮城県仙台市青葉区中央1-3-1</td>
+        <td>盲導犬入店可。エレベーターで入店できます。</td>
+        <td>障がい者用駐車場 車いす入店可 バリアフリートイレ</td>
+      </tr>
+      <tr class="table-data" data-tags="babyroom,omutu">
+        <td><a href='https://www.sendai-anpanman.jp/family/'>仙台アンパンマンこどもミュージアム</a></td>
+        <td>〒983-0817宮城県仙台市宮城野区小田原山本丁101-14</td>
+        <td>ベビーカーの利用はできません。子供用トイレ、多目的トイレが利用できます。補助犬同伴可能です。</td>
+        <td>おむつ交換台、授乳室あり</td>
+      </tr>
+      <tr class="table-data" data-tags="knyutenok,ksheet">
+        <td><a href='https://forum-movie.net/sendai'>チネ・ラヴィータ(映画館)</a></td>
+        <td>〒980-0801 宮城県仙台市青葉区木町通2-1-33</td>
+        <td>車いす席は各スクリーンに1席です。</td>
+        <td>車いす用座席 車いす入店可</td>
       </tr>
       <!--追加部分-->
       </div>
