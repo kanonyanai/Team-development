@@ -28,13 +28,13 @@
   /*文字入力の左側の分割サイズ指定*/
   
   .container_left{
-    width: calc(100% * 1/2);
+    width: calc(100% * 4/9);
   }
 
   /*文字入力の左側の分割サイズ指定*/
   
   .container_right{
-    width: calc(100% * 1/2);
+    width: calc(100% * 5/9);
   }
   /*ここまで*/
 
