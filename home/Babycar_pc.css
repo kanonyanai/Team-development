@@ -42,6 +42,7 @@
   .flex_container_h1{
     display: flex;
     margin-left: 65%;
+    margin-bottom: 0%;
   }
   
   /*h2タグのコンテナ*/
@@ -125,10 +126,10 @@
 
   html{
     /*background-color:rgba(255, 255, 0, 0.08);*/
-    background-image: url("MicrosoftTeams-img2.png");
+    background-image: url("sky.png");
     height: 100%;
     width: 100%;
-   
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
     background-blend-mode:lighten;
     background-repeat: no-repeat;
     background-size: cover;
@@ -139,15 +140,9 @@
   /*h1タグ*/
   
   .h11{ 
-      font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
       font-weight:50px;
-      font-size: 20px;
+      font-size: 25px;
       color: white;
-      /*text-shadow: 3px 3px 15px #323232,
-      -1px 1px 5px #323232,
-      1px -1px 5px #323232,
-      -1px -1px 5px #323232;*/
-
       text-shadow: 3px 3px 3px 		#001965	,
       -1px 1px 3px 			#001965,
       1px -1px 3px 			#001965,
@@ -159,7 +154,6 @@
 
   .h22{        
         
-    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
     font-weight:bolder;
     color:white;
     font-size:large;
@@ -178,7 +172,6 @@
       padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
       background-color:lavender;/*--背景色--*/
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size:small;
       box-shadow: 15px 10px 15px -12px #4C4C4C;
@@ -192,7 +185,6 @@
   #start{
   
       display: flex;
-      font-family:'游明朝 Medium', serif;
       text-align:center;
       font-size:x-large;
       color: white;
@@ -213,7 +205,6 @@
       padding: 6px; /*--余白--*/
       border: solid 2px #cccccc; /*--ボーダー線--*/
       border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
       font-weight:bolder;
       font-size: large;
       box-shadow: 20px 15px 20px -15px #000C32;
@@ -225,7 +216,6 @@
   #stop{
 
     display: flex;
-    font-family:'游明朝 Medium', serif;
     text-align:center;
     font-size:x-large;
     color: white;
@@ -246,7 +236,6 @@
     padding: 6px; /*--余白--*/
     border: solid 2px #cccccc; /*--ボーダー線--*/
     border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
     box-shadow: 20px 15px 20px -15px 	#001965;
@@ -255,49 +244,43 @@
   
   /*検索ボタン*/
   
-  #searchButton{
+  #searchButton.btn-border{
       
-      width: 70px; /*--幅--*/
-      padding: 7px; /*--余白--*/
-      border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
-      font-weight:bolder;
-      font-size:medium;
-      box-shadow: 20px 15px 20px -15px 	#001965;
-  
-  }
+    width: 70px; /*--幅--*/
+    padding: 7px; /*--余白--*/
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+    background: #fff;
+    font-weight:bolder;
+    font-size:medium;
+    border-radius: 20px 20px 20px 20px;
 
-   /*ボタンを押したとき*/
-   #seachButton:active{
-
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    border-bottom: none;/*線を消す*/
-  
-    }
+}
+#searchButton.btn-border:hover {
+  color: rgb(0, 0, 0);
+  background: rgb(97, 255, 215);
+}
   
   /*クリアボタン*/
   
   #startclear{
   
-      width: 70px; /*--幅--*/
-      padding: 7px; /*--余白--*/
-      border-radius: 5px; /*--角丸--*/ 
-      font-family: '游明朝 Medium', serif;;
-      font-weight:bolder;
-      font-size: medium;
-      box-shadow: 20px 15px 20px -15px 	#001965;
+    width: 70px; /*--幅--*/
+    padding: 7px; /*--余白--*/
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+    background: #fff;
+    font-weight:bolder;
+    font-size:medium;
+    border-radius: 20px 20px 20px 20px;
   
   }
     
   /*ボタンを押したとき*/
-  #startclear:active{
-
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    border-bottom: none;/*線を消す*/
-  
-    }
+  #startclear.btn-border:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(97, 255, 215);
+  }
 
   /*-----目的地-----*/
   
@@ -306,7 +289,6 @@
   #ends{
   
       display: flex;
-      font-family:'游明朝 Medium', serif;
       font-size:x-large;
       color: white;
       text-shadow: 3px 3px 3px 	#001965	,
@@ -325,7 +307,6 @@
     padding: 6px; /*--余白--*/
     border: solid 2px #cccccc; /*--ボーダー線--*/
     border-radius: 5px; /*--角丸--*/ 
-    font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: large;
     box-shadow: 20px 15px 20px -15px 	#001965;
@@ -333,7 +314,6 @@
 
   .point{
     text-align: center;
-    font-family: '游明朝 Medium', serif;;
     font-weight:bolder;
     font-size: larger;
   }
@@ -347,8 +327,6 @@
       width: 380px;
       padding: 10px; /*--余白--*/
       border-radius: 5px; /*--角丸--*/ 
-      /*background-color:lightgoldenrodyellow; /*--背景色--*/
-      font-family: '游明朝 Medium', serif;
       font-weight:bolder;
       font-size:large;
       box-shadow: 20px 15px 20px -15px 	#001965;
@@ -369,17 +347,17 @@
   #map{
   
     width: 90%;
-    height: 80%;
+    height: 75%;
     left: 10%;
     box-shadow: 20px 15px 20px -15px 	#4C4C4C;
     border: solid 2px black; /*--ボーダー線--*/
 
     }
 
-    #space{
-      width: 90%;
-    height: 80%;
-    }
+  #space{
+    width: 90%;
+    height: 40%;
+  }
     
   
     /*ここから下はAPIを使わないバージョンのために追記したもの（本来は必要なし）*/
@@ -394,6 +372,7 @@
   table{
     background-color:white;
     box-shadow: 20px 15px 20px -15px 	#4C4C4C;
+    font-family:sans-serif;
   }
   
   
@@ -406,7 +385,6 @@
   }
   
   #description {
-    font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
   }
@@ -431,7 +409,6 @@
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     background-color: #fff;
-    font-family: Roboto;
   }
   
   #pac-container {
@@ -445,7 +422,6 @@
   }
   
   .pac-controls label {
-    font-family: Roboto;
     font-size: 13px;
     font-weight: 300;
   }
@@ -453,10 +429,8 @@
   #pac-input {
   
     text-align: center;
-    font-family: '游明朝 Medium', serif;
   
     background-color: #fff;
-    /*font-family: Roboto;*/
     font-size: 18px;
     font-weight: 300;
     margin-left: 12px;
@@ -509,54 +483,6 @@ input[type="checkbox"] {
   transform: scale(1.5); /*--チェックボックスの大きさ変更--*/
 }
 
-/*↓tableのrow(横並び)のような要素を形成する*/
-/* .kbaby2    tr[kbaby]{
-    display: table-row;
-  }
-  
-  .kuruma2  tr[kuruma]{
-    display: table-row;
-  }
-  
-  .knyutenok2   tr[knyutenok]{
-    display: table-row;
-  }
-  
-  .ksheet2   tr[ksheet]{
-    display: table-row;
-  }
-  
-  .dansang2   tr[dansang]{
-    display: table-row;
-  }
-  
-  .babyroom2   tr[babyroom]{
-    display: table-row;
-  }
-  
-  .kidsroom2   tr[kidsroom]{
-    display: table-row;
-  }
-  
-  .omutu2   tr[omutu]{
-    display: table-row;
-  }
-  
-  .kyukei2   tr[kyukei]{
-    display: table-row;
-  }
-  
-  .tesuri2   tr[tesuri]{
-    display: table-row;
-  }
-  
-  .osuto2   tr[osuto]{
-    display: table-row;
-  }
-  
-  .kyugo2   tr[kyugo]{
-    display: table-row;
-  } */
 /* 変更 */
 
 .categori {
@@ -580,7 +506,8 @@ input[type="checkbox"] {
   background-color: #E5FFCC;
 }
 .color4{
-  background-color: #d5f3fd;
+  background-color: #f0d5fd;
+
 }
 
 /*一覧表示のテーブル*/
@@ -589,11 +516,73 @@ input[type="checkbox"] {
   text-align: left; /*文字を左詰め*/
   font-size: 12px; /*文字の大きさを指定*/ /*12/23更新*/
 
-  width: 77%; /*12/23更新*/
 
-  display: block;
+  height: 700px;
+  width: 600px; /*12/23更新*/
   overflow-y: scroll;
-  overflow-x: scroll;
+  overflow-x: hidden;
+  display: block;
   /*right: 25%;
     height: 50%; /* スクロールバー表示*/
+}
+.btn,
+#opinion_button.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+#opinion_button.btn-border-shadow--radius {
+  border-radius: 100vh;
+}
+#opinion_button.btn-border-shadow {
+  padding: calc(1.5rem - 12px) 3rem 1.5rem;
+
+  background: #fff;
+}
+
+#opinion_button.btn-border-shadow:before {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  border: 3px solid #000;
+  border-radius: 0.5rem;
+}
+
+#opinion_button.btn-border-shadow--radius:before {
+  border-radius: 100vh;
+}
+
+#opinion_button.btn-border-shadow:hover {
+  padding: calc(1.5rem - 6px) 3rem;
+}
+
+#opinion_button.btn-border-shadow:hover:before {
+  top: 0;
+  left: 0;
 }
